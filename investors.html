@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Investor Relations | IT Consultants PLC.</title>
+
+    <meta name="description"
+          content="Investor Relations of IT Consultants PLC. Explore corporate information, capital structure, shareholder information, financial highlights and governance.">
+
+    <meta name="theme-color" content="#05070d">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <style>
+
+        /* =========================================================
+           INVESTOR PAGE
+        ========================================================= */
+
+        .investor-page {
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+
+        .investor-hero {
+            min-height: 86vh;
+            padding: 150px 7% 90px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .investor-hero::before {
+            content: "";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            right: -260px;
+            top: -80px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(0, 229, 255, 0.13),
+                transparent 68%
+            );
+            filter: blur(20px);
+            z-index: -2;
+        }
+
+        .investor-hero::after {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            left: -280px;
+            bottom: -260px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(124, 58, 237, 0.15),
+                transparent 68%
+            );
+            filter: blur(20px);
+            z-index: -2;
+        }
+
+        .investor-hero-grid {
+            width: 100%;
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 75px;
+            align-items: center;
+        }
+
+        .investor-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            padding: 9px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(0, 229, 255, 0.23);
+            background: rgba(0, 229, 255, 0.04);
+            backdrop-filter: blur(14px);
+            color: #87edff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .investor-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow: 0 0 18px rgba(0, 229, 255, 0.9);
+            animation: investorPulse 1.8s infinite;
+        }
+
+        .investor-hero h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(46px, 6vw, 84px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin: 0 0 27px;
+        }
+
+        .investor-hero h1 span {
+            display: block;
+            background: linear-gradient(
+                100deg,
+                #ffffff,
+                #8ff4ff 45%,
+                #8b5cf6
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .investor-hero p {
+            max-width: 720px;
+            color: rgba(255,255,255,0.62);
+            line-height: 1.85;
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
+
+        .investor-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .investor-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 14px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .investor-btn.primary {
+            background: #00e5ff;
+            color: #02050a;
+            box-shadow: 0 0 30px rgba(0,229,255,0.2);
+        }
+
+        .investor-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 45px rgba(0,229,255,0.42);
+        }
+
+        .investor-btn.secondary {
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.13);
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(15px);
+        }
+
+        .investor-btn.secondary:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0,229,255,0.35);
+        }
+
+        /* HERO DATA CORE */
+
+        .investor-core {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .investor-core::before {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            border: 1px solid rgba(0,229,255,0.14);
+            border-radius: 50%;
+            animation: investorOrbit 18s linear infinite;
+        }
+
+        .investor-core::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px dashed rgba(139,92,246,0.25);
+            border-radius: 50%;
+            animation: investorOrbitReverse 12s linear infinite;
+        }
+
+        .investor-core-center {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at 35% 25%,
+                    rgba(0,229,255,0.17),
+                    rgba(5,9,17,0.96) 67%
+                );
+            border: 1px solid rgba(0,229,255,0.32);
+            box-shadow:
+                0 0 60px rgba(0,229,255,0.13),
+                inset 0 0 35px rgba(0,229,255,0.08);
+        }
+
+        .investor-core-center strong {
+            font-family: "Orbitron", sans-serif;
+            font-size: 34px;
+        }
+
+        .investor-core-center span {
+            margin-top: 7px;
+            color: #77edff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        .data-node {
+            position: absolute;
+            min-width: 120px;
+            padding: 14px 15px;
+            border-radius: 13px;
+            text-align: center;
+            background: rgba(7,12,21,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            z-index: 5;
+        }
+
+        .data-node strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .data-node span {
+            display: block;
+            color: rgba(255,255,255,0.4);
+            font-size: 8px;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .data-one {
+            top: 45px;
+            left: 6%;
+        }
+
+        .data-two {
+            top: 43%;
+            right: -1%;
+        }
+
+        .data-three {
+            bottom: 45px;
+            left: 12%;
+        }
+
+        .data-four {
+            bottom: 25%;
+            right: 12%;
+        }
+
+        /* SECTION */
+
+        .investor-section {
+            padding: 105px 7%;
+            position: relative;
+        }
+
+        .investor-container {
+            max-width: 1450px;
+            margin: auto;
+        }
+
+        .investor-heading {
+            max-width: 820px;
+            margin-bottom: 55px;
+        }
+
+        .investor-heading .eyebrow {
+            color: #00e5ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .investor-heading h2 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(32px, 4vw, 56px);
+            line-height: 1.08;
+            margin: 0 0 17px;
+            letter-spacing: -1.5px;
+        }
+
+        .investor-heading p {
+            color: rgba(255,255,255,0.55);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* COMPANY SNAPSHOT */
+
+        .snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .snapshot-card {
+            min-height: 185px;
+            padding: 27px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+            backdrop-filter: blur(18px);
+            transition: 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .snapshot-card::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: -55px;
+            bottom: -55px;
+            border-radius: 50%;
+            background: rgba(0,229,255,0.1);
+            filter: blur(20px);
+        }
+
+        .snapshot-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,229,255,0.25);
+        }
+
+        .snapshot-number {
+            font-family: "Orbitron", sans-serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .snapshot-title {
+            color: rgba(255,255,255,0.45);
+            font-size: 11px;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+            line-height: 1.5;
+        }
+
+        /* CORPORATE PROFILE */
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 25px;
+        }
+
+        .profile-card {
+            padding: 35px;
+            border-radius: 22px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.035);
+            backdrop-filter: blur(18px);
+        }
+
+        .profile-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 20px;
+            margin-bottom: 23px;
+        }
+
+        .profile-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .profile-list li {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 13px;
+        }
+
+        .profile-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .profile-list strong {
+            color: rgba(255,255,255,0.72);
+        }
+
+        .profile-list span {
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* CAPITAL */
+
+        .capital-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .capital-card {
+            padding: 35px;
+            border-radius: 22px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(0,229,255,0.07),
+                    transparent 40%
+                ),
+                rgba(255,255,255,0.03);
+            backdrop-filter: blur(18px);
+            transition: 0.35s ease;
+        }
+
+        .capital-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,229,255,0.24);
+        }
+
+        .capital-label {
+            color: rgba(255,255,255,0.4);
+            font-size: 10px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .capital-value {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(28px, 3vw, 42px);
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .capital-description {
+            color: rgba(255,255,255,0.43);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* SHAREHOLDERS */
+
+        .shareholder-panel {
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.025);
+            backdrop-filter: blur(20px);
+        }
+
+        .shareholder-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .shareholder-header h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 22px;
+            margin: 0;
+        }
+
+        .shareholder-header p {
+            max-width: 500px;
+            color: rgba(255,255,255,0.42);
+            font-size: 12px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .shareholder-visual {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .shareholder-orb {
+            width: 230px;
+            height: 230px;
+            margin: auto;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                conic-gradient(
+                    rgba(0,229,255,0.7) 0deg,
+                    rgba(0,229,255,0.7) 245deg,
+                    rgba(139,92,246,0.7) 245deg,
+                    rgba(139,92,246,0.7) 360deg
+                );
+            box-shadow:
+                0 0 55px rgba(0,229,255,0.08);
+        }
+
+        .shareholder-orb::before {
+            content: "";
+            position: absolute;
+            inset: 13px;
+            border-radius: 50%;
+            background: #070b13;
+        }
+
+        .shareholder-orb-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .shareholder-orb-content strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 28px;
+        }
+
+        .shareholder-orb-content span {
+            color: rgba(255,255,255,0.4);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+        }
+
+        .shareholder-data {
+            display: grid;
+            gap: 14px;
+        }
+
+        .share-row {
+            display: grid;
+            grid-template-columns: 145px 1fr 80px;
+            gap: 15px;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .share-row label {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .share-bar {
+            height: 7px;
+            border-radius: 100px;
+            background: rgba(255,255,255,0.06);
+            overflow: hidden;
+        }
+
+        .share-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(
+                90deg,
+                #00e5ff,
+                #8b5cf6
+            );
+            width: 68%;
+            box-shadow: 0 0 15px rgba(0,229,255,0.2);
+        }
+
+        .share-value {
+            text-align: right;
+            color: rgba(255,255,255,0.6);
+            font-family: "Orbitron", sans-serif;
+            font-size: 9px;
+        }
+
+        /* CORPORATE DOCUMENTS */
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .document-card {
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.035);
+            transition: 0.35s ease;
+        }
+
+        .document-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,229,255,0.26);
+        }
+
+        .document-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+            color: #87efff;
+            border: 1px solid rgba(0,229,255,0.2);
+            background: rgba(0,229,255,0.05);
+        }
+
+        .document-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .document-card p {
+            color: rgba(255,255,255,0.44);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #00e5ff;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .document-link:hover {
+            text-decoration: underline;
+        }
+
+        /* GOVERNANCE */
+
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .governance-card {
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            transition: 0.3s ease;
+        }
+
+        .governance-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139,92,246,0.3);
+        }
+
+        .governance-number {
+            color: #8befff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .governance-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 18px;
+            margin-bottom: 11px;
+        }
+
+        .governance-card p {
+            color: rgba(255,255,255,0.47);
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        /* CTA */
+
+        .investor-cta {
+            padding: 100px 7% 130px;
+        }
+
+        .cta-panel {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px;
+            text-align: center;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,229,255,0.14);
+            background:
+                radial-gradient(
+                    circle at 50% 0,
+                    rgba(0,229,255,0.1),
+                    transparent 48%
+                ),
+                rgba(255,255,255,0.025);
+        }
+
+        .cta-panel h2 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(31px, 4vw, 53px);
+            margin-bottom: 17px;
+        }
+
+        .cta-panel p {
+            max-width: 700px;
+            margin: auto auto 30px;
+            color: rgba(255,255,255,0.48);
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        /* FOOTER */
+
+        .investor-footer {
+            padding: 50px 7% 35px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-grid {
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            max-width: 450px;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        .footer-column h4 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.43);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 0;
+            transition: 0.25s ease;
+        }
+
+        .footer-column a:hover {
+            color: #00e5ff;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            max-width: 1450px;
+            margin: auto;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.3);
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes investorPulse {
+
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.35;
+                transform: scale(0.65);
+            }
+
+        }
+
+        @keyframes investorOrbit {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        @keyframes investorOrbitReverse {
+
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
+
+            .investor-hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .snapshot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .documents-grid,
+            .governance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 750px) {
+
+            .investor-hero {
+                padding: 125px 6% 70px;
+            }
+
+            .investor-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .investor-hero p {
+                font-size: 15px;
+            }
+
+            .investor-core {
+                min-height: 390px;
+            }
+
+            .investor-core::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .investor-core::after {
+                width: 220px;
+                height: 220px;
+            }
+
+            .investor-core-center {
+                width: 140px;
+                height: 140px;
+            }
+
+            .investor-core-center strong {
+                font-size: 27px;
+            }
+
+            .data-node {
+                min-width: 92px;
+                padding: 9px;
+            }
+
+            .data-node strong {
+                font-size: 10px;
+            }
+
+            .data-node span {
+                font-size: 7px;
+            }
+
+            .data-one {
+                left: 0;
+                top: 25px;
+            }
+
+            .data-two {
+                right: 0;
+            }
+
+            .data-three {
+                left: 3%;
+                bottom: 25px;
+            }
+
+            .data-four {
+                right: 3%;
+            }
+
+            .snapshot-grid,
+            .capital-grid,
+            .documents-grid,
+            .governance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .investor-section,
+            .investor-cta {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .profile-card,
+            .capital-card,
+            .shareholder-panel {
+                padding: 25px;
+            }
+
+            .profile-list li {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .shareholder-header {
+                display: block;
+            }
+
+            .shareholder-header p {
+                margin-top: 12px;
+            }
+
+            .shareholder-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .shareholder-orb {
+                width: 190px;
+                height: 190px;
+            }
+
+            .share-row {
+                grid-template-columns: 100px 1fr 55px;
+                gap: 9px;
+                font-size: 9px;
+            }
+
+            .cta-panel {
+                padding: 50px 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="investor-page">
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">
+                    ITC
+                </span>
+
+                <span class="logo-text">
+                    IT CONSULTANTS PLC.
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="company.html">
+                    Company
+                </a>
+
+                <a href="solutions.html">
+                    Solutions
+                </a>
+
+                <a href="technology.html">
+                    Technology
+                </a>
+
+                <a href="achievements.html">
+                    Achievements
+                </a>
+
+                <a href="investors.html"
+                   class="active">
+                    Investors
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button class="menu-toggle"
+                    aria-label="Open navigation">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="investor-hero">
+
+            <div class="investor-hero-grid">
+
+
+                <div class="reveal">
+
+                    <div class="investor-kicker">
+                        CORPORATE // INVESTOR RELATIONS
+                    </div>
+
+                    <h1>
+                        Built for
+                        <span>long-term value.</span>
+                    </h1>
+
+                    <p>
+                        Explore the corporate structure, capital
+                        information, shareholder profile and governance
+                        framework of IT Consultants PLC. — a public
+                        company building digital infrastructure for
+                        financial services and payment frameworks.
+                    </p>
+
+
+                    <div class="investor-actions">
+
+                        <a href="#corporate"
+                           class="investor-btn primary">
+                            Company profile →
+                        </a>
+
+                        <a href="contact.html"
+                           class="investor-btn secondary">
+                            Investor contact
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATA CORE -->
+
+                <div class="investor-core reveal">
+
+
+                    <div class="investor-core-center">
+
+                        <strong>
+                            PLC
+                        </strong>
+
+                        <span>
+                            PUBLIC COMPANY
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-node data-one">
+
+                        <strong>
+                            DSE
+                        </strong>
+
+                        <span>
+                            Listed
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-node data-two">
+
+                        <strong>
+                            CSE
+                        </strong>
+
+                        <span>
+                            Listed
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-node data-three">
+
+                        <strong>
+                            338
+                        </strong>
+
+                        <span>
+                            Employees
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-node data-four">
+
+                        <strong>
+                            5,738
+                        </strong>
+
+                        <span>
+                            Shareholders
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SNAPSHOT -->
+
+        <section class="investor-section">
+
+            <div class="investor-container">
+
+
+                <div class="investor-heading reveal">
+
+                    <div class="eyebrow">
+                        01 // Corporate Snapshot
+                    </div>
+
+                    <h2>
+                        The company behind
+                        the infrastructure.
+                    </h2>
+
+                    <p>
+                        A quick view of key corporate information
+                        reported by IT Consultants PLC.
+                    </p>
+
+                </div>
+
+
+                <div class="snapshot-grid">
+
+
+                    <div class="snapshot-card reveal">
+
+                        <div class="snapshot-number">
+                            2000
+                        </div>
+
+                        <div class="snapshot-title">
+                            Year of incorporation
+                        </div>
+
+                    </div>
+
+
+                    <div class="snapshot-card reveal">
+
+                        <div class="snapshot-number">
+                            PLC
+                        </div>
+
+                        <div class="snapshot-title">
+                            Public limited company
+                        </div>
+
+                    </div>
+
+
+                    <div class="snapshot-card reveal">
+
+                        <div class="snapshot-number">
+                            338
+                        </div>
+
+                        <div class="snapshot-title">
+                            Employees
+                        </div>
+
+                    </div>
+
+
+                    <div class="snapshot-card reveal">
+
+                        <div class="snapshot-number">
+                            5,738
+                        </div>
+
+                        <div class="snapshot-title">
+                            Shareholders
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CORPORATE PROFILE -->
+
+        <section class="investor-section"
+                 id="corporate">
+
+            <div class="investor-container">
+
+
+                <div class="investor-heading reveal">
+
+                    <div class="eyebrow">
+                        02 // Corporate Profile
+                    </div>
+
+                    <h2>
+                        Corporate identity,
+                        clearly defined.
+                    </h2>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+
+                    <div class="profile-card reveal">
+
+                        <h3>
+                            Company Information
+                        </h3>
+
+
+                        <ul class="profile-list">
+
+                            <li>
+
+                                <strong>
+                                    Legal name
+                                </strong>
+
+                                <span>
+                                    IT Consultants PLC.
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Company type
+                                </strong>
+
+                                <span>
+                                    Public Limited Company
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Incorporated
+                                </strong>
+
+                                <span>
+                                    23 August 2000
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Listing
+                                </strong>
+
+                                <span>
+                                    Dhaka Stock Exchange /
+                                    Chittagong Stock Exchange
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Core sector
+                                </strong>
+
+                                <span>
+                                    Payment technology &
+                                    transaction processing
+                                </span>
+
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="profile-card reveal">
+
+                        <h3>
+                            Registered Office
+                        </h3>
+
+
+                        <ul class="profile-list">
+
+                            <li>
+
+                                <strong>
+                                    Building
+                                </strong>
+
+                                <span>
+                                    Evergreen Plaza
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Address
+                                </strong>
+
+                                <span>
+                                    260/B, Tejgaon Industrial Area,
+                                    Dhaka 1208, Bangladesh
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Floor
+                                </strong>
+
+                                <span>
+                                    3rd Floor
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Business
+                                </strong>
+
+                                <span>
+                                    Electronic payment systems,
+                                    transaction processing,
+                                    software and technology
+                                </span>
+
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAPITAL STRUCTURE -->
+
+        <section class="investor-section">
+
+            <div class="investor-container">
+
+
+                <div class="investor-heading reveal">
+
+                    <div class="eyebrow">
+                        03 // Capital Structure
+                    </div>
+
+                    <h2>
+                        A transparent
+                        corporate foundation.
+                    </h2>
+
+                    <p>
+                        Selected capital and ownership indicators
+                        reported in the company's corporate disclosures.
+                    </p>
+
+                </div>
+
+
+                <div class="capital-grid">
+
+
+                    <div class="capital-card reveal">
+
+                        <div class="capital-label">
+                            Authorized capital
+                        </div>
+
+                        <div class="capital-value">
+                            ৳ 2.00B
+                        </div>
+
+                        <div class="capital-description">
+                            Authorized share capital reported by
+                            IT Consultants PLC.
+                        </div>
+
+                    </div>
+
+
+                    <div class="capital-card reveal">
+
+                        <div class="capital-label">
+                            Paid-up capital
+                        </div>
+
+                        <div class="capital-value">
+                            ৳ 1.286B
+                        </div>
+
+                        <div class="capital-description">
+                            Paid-up capital reported in the
+                            company's annual report.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SHAREHOLDER PROFILE -->
+
+        <section class="investor-section">
+
+            <div class="investor-container">
+
+
+                <div class="investor-heading reveal">
+
+                    <div class="eyebrow">
+                        04 // Shareholder Landscape
+                    </div>
+
+                    <h2>
+                        Ownership at a glance.
+                    </h2>
+
+                </div>
+
+
+                <div class="shareholder-panel reveal">
+
+
+                    <div class="shareholder-header">
+
+                        <h3>
+                            Shareholder overview
+                        </h3>
+
+                        <p>
+                            IT Consultants PLC. reported a total of
+                            5,738 shareholders in its 2024–25 annual
+                            report.
+                        </p>
+
+                    </div>
+
+
+                    <div class="shareholder-visual">
+
+
+                        <div class="shareholder-orb">
+
+                            <div class="shareholder-orb-content">
+
+                                <strong>
+                                    5,738
+                                </strong>
+
+                                <span>
+                                    SHAREHOLDERS
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shareholder-data">
+
+
+                            <div class="share-row">
+
+                                <label>
+                                    Shareholder base
+                                </label>
+
+                                <div class="share-bar">
+                                    <div class="share-fill"
+                                         style="width: 68%;">
+                                    </div>
+                                </div>
+
+                                <div class="share-value">
+                                    DIVERSE
+                                </div>
+
+                            </div>
+
+
+                            <div class="share-row">
+
+                                <label>
+                                    Public company
+                                </label>
+
+                                <div class="share-bar">
+                                    <div class="share-fill"
+                                         style="width: 84%;">
+                                    </div>
+                                </div>
+
+                                <div class="share-value">
+                                    PLC
+                                </div>
+
+                            </div>
+
+
+                            <div class="share-row">
+
+                                <label>
+                                    Market access
+                                </label>
+
+                                <div class="share-bar">
+                                    <div class="share-fill"
+                                         style="width: 76%;">
+                                    </div>
+                                </div>
+
+                                <div class="share-value">
+                                    DSE/CSE
+                                </div>
+
+                            </div>
+
+
+                            <div class="share-row">
+
+                                <label>
+                                    Corporate disclosure
+                                </label>
+
+                                <div class="share-bar">
+                                    <div class="share-fill"
+                                         style="width: 90%;">
+                                    </div>
+                                </div>
+
+                                <div class="share-value">
+                                    REPORTS
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CORPORATE DOCUMENTS -->
+
+        <section class="investor-section">
+
+            <div class="investor-container">
+
+
+                <div class="investor-heading reveal">
+
+                    <div class="eyebrow">
+                        05 // Corporate Documents
+                    </div>
+
+                    <h2>
+                        Corporate information,
+                        organized.
+                    </h2>
+
+                    <p>
+                        Dedicated spaces for the documents and
+                        disclosures investors may need.
+                    </p>
+
+                </div>
+
+
+                <div class="documents-grid">
+
+
+                    <article class="document-card reveal">
+
+                        <div class="document-icon">
+                            AR
+                        </div>
+
+                        <h3>
+                            Annual Reports
+                        </h3>
+
+                        <p>
+                            Financial and corporate performance
+                            information presented through annual
+                            reporting.
+                        </p>
+
+                        <a href="https://www.itcbd.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="document-link">
+
+                            Visit corporate website →
+
+                        </a>
+
+                    </article>
+
+
+                    <article class="document-card reveal">
+
+                        <div class="document-icon">
+                            CG
+                        </div>
+
+                        <h3>
+                            Corporate Governance
+                        </h3>
+
+                        <p>
+                            Corporate governance, board and
+                            organizational information for
+                            stakeholders.
+                        </p>
+
+                        <a href="https://www.itcbd.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="document-link">
+
+                            Explore ITC →
+
+                        </a>
+
+                    </article>
+
+
+                    <article class="document-card reveal">
+
+                        <div class="document-icon">
+                            IR
+                        </div>
+
+                        <h3>
+                            Investor Relations
+                        </h3>
+
+                        <p>
+                            Investor-focused corporate information,
+                            disclosures and relevant company resources.
+                        </p>
+
+                        <a href="contact.html"
+                           class="document-link">
+
+                            Contact investor desk →
+
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GOVERNANCE -->
+
+        <section class="investor-section">
+
+            <div class="investor-container">
+
+
+                <div class="investor-heading reveal">
+
+                    <div class="eyebrow">
+                        06 // Governance
+                    </div>
+
+                    <h2>
+                        Responsible infrastructure
+                        requires responsible governance.
+                    </h2>
+
+                    <p>
+                        ITC's corporate framework connects technology,
+                        regulatory responsibility, operational
+                        resilience and stakeholder relationships.
+                    </p>
+
+                </div>
+
+
+                <div class="governance-grid">
+
+
+                    <article class="governance-card reveal">
+
+                        <div class="governance-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Regulatory Alignment
+                        </h3>
+
+                        <p>
+                            Operating within Bangladesh's financial
+                            technology and payment ecosystem as a
+                            licensed Payment System Operator.
+                        </p>
+
+                    </article>
+
+
+                    <article class="governance-card reveal">
+
+                        <div class="governance-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Security
+                        </h3>
+
+                        <p>
+                            Security and payment compliance remain
+                            fundamental to infrastructure designed for
+                            sensitive financial transactions.
+                        </p>
+
+                    </article>
+
+
+                    <article class="governance-card reveal">
+
+                        <div class="governance-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Stakeholders
+                        </h3>
+
+                        <p>
+                            Long-term relationships with clients,
+                            shareholders, employees and technology
+                            partners support sustainable growth.
+                        </p>
+
+                    </article>
+
+
+                    <article class="governance-card reveal">
+
+                        <div class="governance-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Resilience
+                        </h3>
+
+                        <p>
+                            High availability, disaster recovery,
+                            monitoring and infrastructure continuity
+                            support critical payment environments.
+                        </p>
+
+                    </article>
+
+
+                    <article class="governance-card reveal">
+
+                        <div class="governance-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Innovation
+                        </h3>
+
+                        <p>
+                            Continuous technology development enables
+                            ITC to respond to changing payment channels
+                            and financial infrastructure requirements.
+                        </p>
+
+                    </article>
+
+
+                    <article class="governance-card reveal">
+
+                        <div class="governance-number">
+                            06
+                        </div>
+
+                        <h3>
+                            Transparency
+                        </h3>
+
+                        <p>
+                            Corporate reporting and structured
+                            investor information provide stakeholders
+                            with a clearer view of the company.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="investor-cta">
+
+            <div class="cta-panel reveal">
+
+                <h2>
+                    Looking beyond
+                    the balance sheet.
+                </h2>
+
+                <p>
+                    Explore ITC's technology, achievements and latest
+                    corporate developments to understand the
+                    infrastructure behind the company.
+                </p>
+
+
+                <div class="cta-buttons">
+
+                    <a href="achievements.html"
+                       class="investor-btn primary">
+                        View achievements →
+                    </a>
+
+                    <a href="news.html"
+                       class="investor-btn secondary">
+                        Latest news
+                    </a>
+
+                    <a href="contact.html"
+                       class="investor-btn secondary">
+                        Contact ITC
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="investor-footer">
+
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <strong>
+                    IT CONSULTANTS PLC.
+                </strong>
+
+                <p>
+                    Building digital infrastructure and capabilities
+                    for financial services and payment frameworks.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    EXPLORE
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="company.html">
+                    Company
+                </a>
+
+                <a href="solutions.html">
+                    Solutions
+                </a>
+
+                <a href="technology.html">
+                    Technology
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    CORPORATE
+                </h4>
+
+                <a href="achievements.html">
+                    Achievements
+                </a>
+
+                <a href="investors.html">
+                    Investors
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 IT Consultants PLC. All rights reserved.
+            </span>
+
+            <span>
+                Secure • Scalable • Intelligent
+            </span>
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- =========================================================
+         SCRIPTS
+    ========================================================== -->
+
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+
+
+    <script>
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================= */
+
+        const investorReveal =
+            document.querySelectorAll(".reveal");
+
+        const investorObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        investorReveal.forEach((element) => {
+
+            investorObserver.observe(element);
+
+        });
+
+
+        /* =========================================================
+           DATA NODE FLOAT
+        ========================================================= */
+
+        const investorNodes =
+            document.querySelectorAll(".data-node");
+
+
+        investorNodes.forEach((node, index) => {
+
+            let direction =
+                index % 2 === 0 ? 1 : -1;
+
+            setInterval(() => {
+
+                node.style.transform =
+                    `translateY(${direction * 3}px)`;
+
+                direction *= -1;
+
+            }, 1600 + index * 170);
+
+        });
+
+
+        /* =========================================================
+           CORE MOUSE PARALLAX
+        ========================================================= */
+
+        const investorCore =
+            document.querySelector(".investor-core");
+
+
+        if (investorCore) {
+
+            investorCore.addEventListener(
+                "mousemove",
+                (event) => {
+
+                    const rect =
+                        investorCore.getBoundingClientRect();
+
+                    const x =
+                        event.clientX - rect.left;
+
+                    const y =
+                        event.clientY - rect.top;
+
+                    const rotateX =
+                        ((y / rect.height) - 0.5) * -4;
+
+                    const rotateY =
+                        ((x / rect.width) - 0.5) * 4;
+
+                    investorCore.style.transform =
+                        `perspective(1100px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)`;
+
+                }
+            );
+
+
+            investorCore.addEventListener(
+                "mouseleave",
+                () => {
+
+                    investorCore.style.transform =
+                        "perspective(1100px) rotateX(0) rotateY(0)";
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           SMOOTH INTERNAL NAVIGATION
+        ========================================================== */
+
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach((link) => {
+
+                link.addEventListener(
+                    "click",
+                    function(event) {
+
+                        const target =
+                            document.querySelector(
+                                this.getAttribute("href")
+                            );
+
+                        if (target) {
+
+                            event.preventDefault();
+
+                            target.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+
+                    }
+                );
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
+
