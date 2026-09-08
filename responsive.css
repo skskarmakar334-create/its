@@ -1,0 +1,505 @@
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .container {
+        width: min(
+            calc(100% - 36px),
+            var(--container)
+        );
+    }
+
+    .desktop-nav {
+        gap: 18px;
+    }
+
+    .desktop-nav a {
+        font-size: 9px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .eyebrow,
+    .hero-actions,
+    .hero-meta {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-visual {
+        min-height: 520px;
+    }
+
+    .solution-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .technology-panel {
+        grid-template-columns: 1fr;
+
+        padding: 50px;
+    }
+
+    .technology-copy {
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .technology-copy p {
+        margin-inline: auto;
+    }
+
+    .network-visual {
+        min-height: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .header {
+        height: 72px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+        padding-bottom: 100px;
+    }
+
+    .hero-grid {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            48px,
+            13vw,
+            78px
+        );
+    }
+
+    .hero-visual {
+        min-height: 450px;
+
+        margin-top: 30px;
+    }
+
+    .hero-meta {
+        gap: 20px;
+
+        flex-wrap: wrap;
+
+        margin-top: 50px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .trust-grid > div:nth-child(3) {
+        border-left: 1px solid var(--line);
+    }
+
+    .section {
+        padding: 100px 0;
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 45px;
+    }
+
+    .section-number {
+        font-size: 10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-side {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .investor-panel {
+        grid-template-columns: 1fr;
+
+        padding: 50px;
+
+        text-align: center;
+    }
+
+    .investor-actions {
+        justify-content: center;
+    }
+
+    .investor-visual {
+        height: 350px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .brand-text small {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 115px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .hero-meta {
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+    .hero-meta strong {
+        font-size: 19px;
+    }
+
+    .hero-visual {
+        min-height: 380px;
+    }
+
+    .orbit-system {
+        width: 370px;
+        max-width: 100%;
+    }
+
+    .central-core {
+        width: 115px;
+        height: 115px;
+    }
+
+    .core-content span {
+        font-size: 29px;
+    }
+
+    .data-panel {
+        transform: scale(.8);
+    }
+
+    .panel-one {
+        left: -12px;
+    }
+
+    .panel-two {
+        right: -12px;
+    }
+
+    .panel-three {
+        left: 0;
+    }
+
+    .orbit-node {
+        font-size: 6px;
+        padding: 6px 8px;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .trust-grid > div {
+        min-height: 90px;
+
+        padding: 15px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 40px;
+    }
+
+    .about-main {
+        min-height: 430px;
+
+        padding: 28px;
+    }
+
+    .large-copy {
+        font-size: 27px;
+    }
+
+    .about-side {
+        grid-template-columns: 1fr;
+    }
+
+    .mini-card {
+        padding: 28px;
+    }
+
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-card {
+        min-height: 320px;
+    }
+
+    .solution-icon {
+        margin-top: 50px;
+    }
+
+    .technology-panel {
+        padding: 30px 20px;
+
+        border-radius: 22px;
+    }
+
+    .technology-copy h2 {
+        font-size: 42px;
+    }
+
+    .network-visual {
+        min-height: 350px;
+    }
+
+    .ring-a {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ring-b {
+        width: 230px;
+        height: 230px;
+    }
+
+    .ring-c {
+        width: 145px;
+        height: 145px;
+    }
+
+    .network-core {
+        width: 85px;
+        height: 85px;
+    }
+
+    .network-core strong {
+        font-size: 21px;
+    }
+
+    .network-node {
+        font-size: 6px;
+    }
+
+    .achievement-card {
+        grid-template-columns: 60px 1fr;
+
+        padding: 24px;
+    }
+
+    .achievement-card h3 {
+        font-size: 23px;
+    }
+
+    .investor-panel {
+        padding: 35px 20px;
+    }
+
+    .investor-panel h2 {
+        font-size: 45px;
+    }
+
+    .investor-visual {
+        height: 300px;
+    }
+
+    .circle-one {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle-two {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-three {
+        width: 120px;
+        height: 120px;
+    }
+
+    .news-card {
+        min-height: 270px;
+    }
+
+    .final-section {
+        padding-bottom: 80px;
+    }
+
+    .final-panel {
+        min-height: 450px;
+    }
+
+    .final-orbit {
+        width: 380px;
+        height: 380px;
+    }
+
+    .final-content {
+        padding: 25px;
+    }
+
+    .final-content h2 {
+        font-size: 48px;
+    }
+
+    .contact-section h2 {
+        font-size: 50px;
+    }
+
+    .footer-links {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .hero h1 {
+        font-size: 41px;
+    }
+
+    .hero-meta {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .hero-meta span {
+        font-size: 6px;
+    }
+
+    .hero-visual {
+        min-height: 330px;
+    }
+
+    .orbit-system {
+        width: 330px;
+    }
+
+    .data-panel {
+        display: none;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+    }
+
+}
