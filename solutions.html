@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Solutions | IT Consultants PLC.</title>
+
+<meta name="description"
+      content="Explore IT Consultants PLC. payment, transaction processing, card management, ATM, POS, infrastructure and digital financial technology solutions.">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+    /* =========================================================
+       SOLUTIONS PAGE
+    ========================================================= */
+
+    .solutions-page {
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at 10% 12%, rgba(110,231,255,.08), transparent 28%),
+            radial-gradient(circle at 90% 25%, rgba(143,124,255,.09), transparent 30%),
+            #03050b;
+        color: #f4f8ff;
+        overflow: hidden;
+    }
+
+    .solutions-hero {
+        min-height: 76vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 150px 7% 100px;
+        isolation: isolate;
+    }
+
+    .solutions-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(rgba(110,231,255,.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(110,231,255,.035) 1px, transparent 1px);
+        background-size: 58px 58px;
+        mask-image: linear-gradient(to bottom, black, transparent);
+        pointer-events: none;
+        z-index: -2;
+    }
+
+    .solutions-hero::after {
+        content: "";
+        position: absolute;
+        width: 650px;
+        height: 650px;
+        right: -220px;
+        top: 40px;
+        border-radius: 50%;
+        background:
+            radial-gradient(
+                circle,
+                rgba(110,231,255,.12),
+                rgba(143,124,255,.05) 40%,
+                transparent 70%
+            );
+        filter: blur(12px);
+        z-index: -1;
+    }
+
+    .solutions-hero-content {
+        max-width: 900px;
+    }
+
+    .solutions-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 15px;
+        border: 1px solid rgba(110,231,255,.22);
+        border-radius: 999px;
+        background: rgba(110,231,255,.045);
+        color: #6ee7ff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    .solutions-eyebrow span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #6ee7ff;
+        box-shadow: 0 0 15px #6ee7ff;
+    }
+
+    .solutions-hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(50px, 7vw, 100px);
+        line-height: .96;
+        letter-spacing: -.055em;
+        margin: 0 0 30px;
+    }
+
+    .solutions-gradient {
+        background: linear-gradient(
+            100deg,
+            #ffffff,
+            #6ee7ff 45%,
+            #8f7cff
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .solutions-hero p {
+        max-width: 730px;
+        color: #8d99ad;
+        font-size: 18px;
+        line-height: 1.85;
+        margin: 0;
+    }
+
+    .solutions-command {
+        width: min(1180px, 86%);
+        margin: -35px auto 100px;
+        position: relative;
+        z-index: 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    .command-card {
+        padding: 23px;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 20px;
+        background: rgba(10,15,26,.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        transition: .35s ease;
+    }
+
+    .command-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(110,231,255,.3);
+    }
+
+    .command-card strong {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 27px;
+        color: #6ee7ff;
+        margin-bottom: 8px;
+    }
+
+    .command-card span {
+        color: #8d99ad;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .solutions-section {
+        width: min(1180px, 86%);
+        margin: 0 auto 130px;
+    }
+
+    .solutions-heading {
+        max-width: 760px;
+        margin-bottom: 55px;
+    }
+
+    .solutions-label {
+        display: block;
+        color: #6ee7ff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .solutions-heading h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(36px, 5vw, 62px);
+        line-height: 1.04;
+        letter-spacing: -.04em;
+        margin: 0 0 20px;
+    }
+
+    .solutions-heading p {
+        color: #8d99ad;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .solution-card {
+        position: relative;
+        min-height: 380px;
+        padding: 38px;
+        border-radius: 28px;
+        border: 1px solid rgba(255,255,255,.08);
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.055),
+                rgba(255,255,255,.012)
+            );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
+        transition: .45s ease;
+    }
+
+    .solution-card::before {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        right: -120px;
+        bottom: -130px;
+        border-radius: 50%;
+        background: rgba(110,231,255,.07);
+        filter: blur(10px);
+        transition: .45s ease;
+    }
+
+    .solution-card:hover {
+        transform: translateY(-9px);
+        border-color: rgba(110,231,255,.32);
+        box-shadow:
+            0 25px 80px rgba(0,0,0,.28),
+            inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .solution-card:hover::before {
+        transform: scale(1.4);
+        background: rgba(110,231,255,.11);
+    }
+
+    .solution-number {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 12px;
+        color: #586477;
+        letter-spacing: .15em;
+        margin-bottom: 35px;
+    }
+
+    .solution-icon {
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        border-radius: 17px;
+        border: 1px solid rgba(110,231,255,.2);
+        background: rgba(110,231,255,.05);
+        color: #6ee7ff;
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .solution-card h3 {
+        position: relative;
+        z-index: 2;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 27px;
+        margin: 0 0 14px;
+    }
+
+    .solution-card p {
+        position: relative;
+        z-index: 2;
+        color: #8d99ad;
+        line-height: 1.75;
+        font-size: 14px;
+        max-width: 510px;
+        margin: 0 0 24px;
+    }
+
+    .solution-features {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .solution-feature {
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.07);
+        color: #9eabbf;
+        background: rgba(255,255,255,.025);
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .solution-arrow {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255,255,255,.08);
+        color: #6ee7ff;
+        font-size: 18px;
+        transition: .35s ease;
+    }
+
+    .solution-card:hover .solution-arrow {
+        transform: translate(4px,-4px);
+        border-color: rgba(110,231,255,.3);
+    }
+
+    .transaction-section {
+        display: grid;
+        grid-template-columns: .85fr 1.15fr;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    .transaction-visual {
+        min-height: 510px;
+        border-radius: 30px;
+        border: 1px solid rgba(255,255,255,.08);
+        background:
+            radial-gradient(circle at center, rgba(110,231,255,.1), transparent 35%),
+            rgba(7,11,20,.8);
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+    }
+
+    .network-ring {
+        position: absolute;
+        border: 1px solid rgba(110,231,255,.16);
+        border-radius: 50%;
+        animation: solutionSpin 18s linear infinite;
+    }
+
+    .network-ring.r1 {
+        width: 210px;
+        height: 210px;
+    }
+
+    .network-ring.r2 {
+        width: 330px;
+        height: 330px;
+        animation-duration: 25s;
+        animation-direction: reverse;
+    }
+
+    .network-ring.r3 {
+        width: 450px;
+        height: 450px;
+        animation-duration: 32s;
+    }
+
+    .network-core {
+        width: 115px;
+        height: 115px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        border: 1px solid rgba(110,231,255,.45);
+        background:
+            radial-gradient(circle, rgba(110,231,255,.18), rgba(10,15,26,.9));
+        box-shadow:
+            0 0 50px rgba(110,231,255,.12),
+            inset 0 0 30px rgba(110,231,255,.06);
+        z-index: 4;
+    }
+
+    .network-core strong {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 13px;
+        color: #6ee7ff;
+        letter-spacing: .1em;
+    }
+
+    .network-node {
+        position: absolute;
+        padding: 8px 11px;
+        border-radius: 8px;
+        border: 1px solid rgba(110,231,255,.18);
+        background: rgba(10,15,26,.9);
+        color: #8d99ad;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: .08em;
+    }
+
+    .network-node.n1 {
+        top: 17%;
+        left: 14%;
+    }
+
+    .network-node.n2 {
+        top: 25%;
+        right: 12%;
+    }
+
+    .network-node.n3 {
+        bottom: 24%;
+        left: 10%;
+    }
+
+    .network-node.n4 {
+        bottom: 15%;
+        right: 15%;
+    }
+
+    .transaction-content {
+        padding: 45px;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 30px;
+        background: rgba(10,15,26,.7);
+    }
+
+    .transaction-content h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 38px;
+        margin: 0 0 18px;
+    }
+
+    .transaction-content > p {
+        color: #8d99ad;
+        line-height: 1.8;
+        margin: 0 0 28px;
+    }
+
+    .feature-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .feature-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 13px;
+        padding: 14px;
+        border-radius: 13px;
+        border: 1px solid rgba(255,255,255,.055);
+        background: rgba(255,255,255,.018);
+    }
+
+    .feature-check {
+        flex: 0 0 25px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #6ee7ff;
+        border: 1px solid rgba(110,231,255,.2);
+        font-size: 12px;
+    }
+
+    .feature-row span {
+        color: #9ba7b9;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .digital-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .digital-card {
+        padding: 30px;
+        min-height: 245px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,.07);
+        background: rgba(8,13,23,.65);
+        transition: .35s ease;
+    }
+
+    .digital-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(143,124,255,.3);
+    }
+
+    .digital-card small {
+        display: block;
+        color: #586477;
+        font-family: "Space Grotesk", sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .digital-card h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 21px;
+        margin: 0 0 13px;
+    }
+
+    .digital-card p {
+        color: #8d99ad;
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .qpay-section {
+        position: relative;
+        padding: 70px;
+        border-radius: 32px;
+        overflow: hidden;
+        border: 1px solid rgba(110,231,255,.14);
+        background:
+            radial-gradient(circle at 80% 20%, rgba(143,124,255,.15), transparent 32%),
+            radial-gradient(circle at 15% 80%, rgba(110,231,255,.11), transparent 35%),
+            rgba(9,14,24,.76);
+    }
+
+    .qpay-section::before {
+        content: "QPAY";
+        position: absolute;
+        right: -30px;
+        bottom: -65px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 210px;
+        font-weight: 800;
+        color: rgba(255,255,255,.018);
+        letter-spacing: -.08em;
+    }
+
+    .qpay-content {
+        position: relative;
+        z-index: 2;
+        max-width: 720px;
+    }
+
+    .qpay-label {
+        display: inline-block;
+        color: #6ee7ff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .18em;
+        margin-bottom: 15px;
+    }
+
+    .qpay-section h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(36px, 5vw, 60px);
+        line-height: 1;
+        letter-spacing: -.045em;
+        margin: 0 0 20px;
+    }
+
+    .qpay-section p {
+        color: #8d99ad;
+        line-height: 1.8;
+        margin: 0 0 28px;
+    }
+
+    .qpay-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .qpay-feature {
+        padding: 9px 13px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.08);
+        background: rgba(255,255,255,.025);
+        color: #a8b3c4;
+        font-size: 11px;
+    }
+
+    .solutions-cta {
+        width: min(1180px, 86%);
+        margin: 0 auto 100px;
+        padding: 65px;
+        border-radius: 32px;
+        border: 1px solid rgba(110,231,255,.15);
+        text-align: center;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(110,231,255,.09), transparent 45%),
+            rgba(10,15,26,.72);
+    }
+
+    .solutions-cta h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(34px, 5vw, 58px);
+        letter-spacing: -.04em;
+        margin: 0 0 18px;
+    }
+
+    .solutions-cta p {
+        max-width: 650px;
+        margin: 0 auto 30px;
+        color: #8d99ad;
+        line-height: 1.8;
+    }
+
+    .solutions-cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 23px;
+        border-radius: 999px;
+        color: #03050b;
+        background: #6ee7ff;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        transition: .3s ease;
+    }
+
+    .solutions-cta a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(110,231,255,.2);
+    }
+
+    @keyframes solutionSpin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media (max-width: 950px) {
+
+        .solutions-command {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .transaction-section {
+            grid-template-columns: 1fr;
+        }
+
+        .digital-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    @media (max-width: 700px) {
+
+        .solutions-hero {
+            min-height: auto;
+            padding: 125px 6% 80px;
+        }
+
+        .solutions-hero h1 {
+            font-size: 50px;
+        }
+
+        .solutions-hero p {
+            font-size: 15px;
+        }
+
+        .solutions-command {
+            width: 88%;
+            grid-template-columns: 1fr 1fr;
+            margin-top: -20px;
+            margin-bottom: 80px;
+        }
+
+        .command-card {
+            padding: 18px;
+        }
+
+        .command-card strong {
+            font-size: 23px;
+        }
+
+        .solutions-section {
+            width: 88%;
+            margin-bottom: 90px;
+        }
+
+        .solution-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .solution-card {
+            min-height: auto;
+            padding: 30px;
+        }
+
+        .transaction-content {
+            padding: 30px;
+        }
+
+        .transaction-content h3 {
+            font-size: 31px;
+        }
+
+        .transaction-visual {
+            min-height: 380px;
+        }
+
+        .network-ring.r3 {
+            width: 330px;
+            height: 330px;
+        }
+
+        .network-ring.r2 {
+            width: 250px;
+            height: 250px;
+        }
+
+        .network-ring.r1 {
+            width: 170px;
+            height: 170px;
+        }
+
+        .digital-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .qpay-section {
+            padding: 40px 27px;
+        }
+
+        .solutions-cta {
+            width: 88%;
+            padding: 40px 25px;
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="solutions-page">
+
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-mark">ITC</span>
+
+            <span class="logo-text">
+                IT CONSULTANTS
+                <small>PLC.</small>
+            </span>
+        </a>
+
+        <nav class="desktop-nav">
+
+            <a href="index.html">Home</a>
+            <a href="company.html">Company</a>
+            <a href="solutions.html" class="active">Solutions</a>
+            <a href="technology.html">Technology</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="investors.html">Investors</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+        <button class="menu-toggle" aria-label="Open navigation">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+</header>
+
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+
+    <a href="index.html">Home</a>
+    <a href="company.html">Company</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="technology.html">Technology</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="investors.html">Investors</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+
+</div>
+
+
+<main>
+
+    <!-- HERO -->
+    <section class="solutions-hero">
+
+        <div class="solutions-hero-content">
+
+            <div class="solutions-eyebrow">
+                <span></span>
+                Digital Infrastructure
+            </div>
+
+            <h1>
+                Technology for
+                <span class="solutions-gradient">
+                    every transaction.
+                </span>
+            </h1>
+
+            <p>
+                From transaction switching and card management to ATM,
+                POS, digital payments and infrastructure, ITC provides
+                technology designed to connect financial institutions,
+                governments, businesses and consumers.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK METRICS -->
+    <section class="solutions-command">
+
+        <div class="command-card">
+            <strong>ATM</strong>
+            <span>Transaction processing & network infrastructure</span>
+        </div>
+
+        <div class="command-card">
+            <strong>POS</strong>
+            <span>Merchant payment acceptance & processing</span>
+        </div>
+
+        <div class="command-card">
+            <strong>CMS</strong>
+            <span>Card issuance & management technology</span>
+        </div>
+
+        <div class="command-card">
+            <strong>QPAY</strong>
+            <span>FinTech & electronic payment services</span>
+        </div>
+
+    </section>
+
+
+    <!-- CORE SOLUTIONS -->
+    <section class="solutions-section">
+
+        <div class="solutions-heading">
+
+            <span class="solutions-label">
+                01 / Core Solutions
+            </span>
+
+            <h2>
+                Infrastructure that
+                moves money.
+            </h2>
+
+            <p>
+                ITC's core technology portfolio covers transaction
+                switching, card management, biometric banking,
+                infrastructure and the systems required to operate
+                modern payment environments.
+            </p>
+
+        </div>
+
+
+        <div class="solution-grid">
+
+            <!-- TRANSACTION SWITCHING -->
+            <article class="solution-card">
+
+                <div class="solution-number">01 / SWITCHING</div>
+
+                <div class="solution-icon">↔</div>
+
+                <div class="solution-arrow">↗</div>
+
+                <h3>Transaction Switching</h3>
+
+                <p>
+                    Payment-switching technology designed to connect
+                    transaction channels and financial institutions
+                    while supporting processing, settlement,
+                    reconciliation and network management.
+                </p>
+
+                <div class="solution-features">
+
+                    <span class="solution-feature">
+                        ATM Management
+                    </span>
+
+                    <span class="solution-feature">
+                        Debit Cards
+                    </span>
+
+                    <span class="solution-feature">
+                        Credit Cards
+                    </span>
+
+                    <span class="solution-feature">
+                        Merchant Acquiring
+                    </span>
+
+                    <span class="solution-feature">
+                        Fraud Management
+                    </span>
+
+                    <span class="solution-feature">
+                        High Availability
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD MANAGEMENT -->
+            <article class="solution-card">
+
+                <div class="solution-number">02 / CARDS</div>
+
+                <div class="solution-icon">▣</div>
+
+                <div class="solution-arrow">↗</div>
+
+                <h3>Card Management System</h3>
+
+                <p>
+                    A scalable card-management environment supporting
+                    card issuance, circulation, acquiring and merchant
+                    management, account management, reporting,
+                    analysis and customer service.
+                </p>
+
+                <div class="solution-features">
+
+                    <span class="solution-feature">
+                        Card Issuance
+                    </span>
+
+                    <span class="solution-feature">
+                        Merchant Management
+                    </span>
+
+                    <span class="solution-feature">
+                        Account Management
+                    </span>
+
+                    <span class="solution-feature">
+                        Reporting
+                    </span>
+
+                    <span class="solution-feature">
+                        Analysis
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIOMETRIC -->
+            <article class="solution-card">
+
+                <div class="solution-number">03 / BIOMETRIC</div>
+
+                <div class="solution-icon">◎</div>
+
+                <div class="solution-arrow">↗</div>
+
+                <h3>Biometric ATM Solution</h3>
+
+                <p>
+                    Biometric banking technology enabling fingerprint
+                    authentication for ATM and other supported
+                    transaction environments.
+                </p>
+
+                <div class="solution-features">
+
+                    <span class="solution-feature">
+                        Fingerprint Authentication
+                    </span>
+
+                    <span class="solution-feature">
+                        ATM Integration
+                    </span>
+
+                    <span class="solution-feature">
+                        Host Processing
+                    </span>
+
+                    <span class="solution-feature">
+                        Secure Verification
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- INFRASTRUCTURE -->
+            <article class="solution-card">
+
+                <div class="solution-number">04 / INFRASTRUCTURE</div>
+
+                <div class="solution-icon">⌬</div>
+
+                <div class="solution-arrow">↗</div>
+
+                <h3>IT Infrastructure & Solutions</h3>
+
+                <p>
+                    Infrastructure consulting and technology services
+                    designed to improve operational capabilities,
+                    resilience, security and long-term performance.
+                </p>
+
+                <div class="solution-features">
+
+                    <span class="solution-feature">
+                        Data Centers
+                    </span>
+
+                    <span class="solution-feature">
+                        Security
+                    </span>
+
+                    <span class="solution-feature">
+                        Disaster Recovery
+                    </span>
+
+                    <span class="solution-feature">
+                        Virtualization
+                    </span>
+
+                    <span class="solution-feature">
+                        Migration
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRANSACTION PROCESSING -->
+    <section class="solutions-section">
+
+        <div class="solutions-heading">
+
+            <span class="solutions-label">
+                02 / Processing
+            </span>
+
+            <h2>
+                One ecosystem.
+                Multiple transaction channels.
+            </h2>
+
+            <p>
+                ITC's transaction-processing services extend across
+                ATM, POS, payment gateways, remittance, e-commerce,
+                mobile financial services and other digital channels.
+            </p>
+
+        </div>
+
+
+        <div class="transaction-section">
+
+            <div class="transaction-visual">
+
+                <div class="network-ring r1"></div>
+                <div class="network-ring r2"></div>
+                <div class="network-ring r3"></div>
+
+                <div class="network-node n1">
+                    BANKS
+                </div>
+
+                <div class="network-node n2">
+                    ATM
+                </div>
+
+                <div class="network-node n3">
+                    POS
+                </div>
+
+                <div class="network-node n4">
+                    DIGITAL
+                </div>
+
+                <div class="network-core">
+                    <strong>
+                        ITC<br>
+                        SWITCH
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="transaction-content">
+
+                <h3>
+                    Transaction processing
+                    at the core.
+                </h3>
+
+                <p>
+                    The company's service portfolio includes
+                    real-time transaction switching and settlement,
+                    ATM and POS processing, online payment gateways,
+                    remittance processing and integration with
+                    digital financial channels.
+                </p>
+
+
+                <div class="feature-list">
+
+                    <div class="feature-row">
+
+                        <div class="feature-check">✓</div>
+
+                        <span>
+                            Real-time transaction switching with
+                            automated settlement and reconciliation.
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <div class="feature-check">✓</div>
+
+                        <span>
+                            ATM and POS transaction processing.
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <div class="feature-check">✓</div>
+
+                        <span>
+                            Online payment gateway and e-commerce
+                            transaction processing.
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <div class="feature-check">✓</div>
+
+                        <span>
+                            Real-time remittance transaction
+                            processing.
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <div class="feature-check">✓</div>
+
+                        <span>
+                            Mobile Financial Services integration
+                            and real-time fund transfer.
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature-row">
+
+                        <div class="feature-check">✓</div>
+
+                        <span>
+                            QR-code based transaction processing
+                            and digital payment capabilities.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIGITAL SERVICES -->
+    <section class="solutions-section">
+
+        <div class="solutions-heading">
+
+            <span class="solutions-label">
+                03 / Digital Services
+            </span>
+
+            <h2>
+                Extending payments
+                beyond the terminal.
+            </h2>
+
+            <p>
+                ITC's technology ecosystem supports digital payment
+                services across e-commerce, mobile financial services,
+                QR transactions and government-related payment
+                environments.
+            </p>
+
+        </div>
+
+
+        <div class="digital-grid">
+
+            <article class="digital-card">
+
+                <small>01</small>
+
+                <h3>E-Commerce</h3>
+
+                <p>
+                    Online payment and transaction-processing
+                    capabilities for digital commerce environments,
+                    including payment gateway services.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>02</small>
+
+                <h3>Mobile Financial Services</h3>
+
+                <p>
+                    Integration and real-time fund-transfer capabilities
+                    supporting mobile financial service environments.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>03</small>
+
+                <h3>QR Payments</h3>
+
+                <p>
+                    Transaction processing capabilities for Bangla QR
+                    and VISA QR-code based payment environments.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>04</small>
+
+                <h3>Financial Inclusion</h3>
+
+                <p>
+                    Technology supporting wider access to electronic
+                    financial services for underserved populations.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>05</small>
+
+                <h3>Government Services</h3>
+
+                <p>
+                    Payment and transaction-processing capabilities
+                    supporting government-related digital services
+                    and revenue collection.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>06</small>
+
+                <h3>Postal Financial Services</h3>
+
+                <p>
+                    Digital payment infrastructure supporting postal
+                    financial services and electronic transaction
+                    environments.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- POS -->
+    <section class="solutions-section">
+
+        <div class="solutions-heading">
+
+            <span class="solutions-label">
+                04 / Merchant Technology
+            </span>
+
+            <h2>
+                Connecting merchants
+                to digital payments.
+            </h2>
+
+        </div>
+
+
+        <div class="transaction-section">
+
+            <div class="transaction-content">
+
+                <h3>
+                    POS ecosystem
+                </h3>
+
+                <p>
+                    ITC provides payment terminals and financial
+                    software products designed for merchant payment
+                    environments.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature-row">
+                        <div class="feature-check">✓</div>
+                        <span>
+                            Payment terminal technology.
+                        </span>
+                    </div>
+
+                    <div class="feature-row">
+                        <div class="feature-check">✓</div>
+                        <span>
+                            POS transaction processing.
+                        </span>
+                    </div>
+
+                    <div class="feature-row">
+                        <div class="feature-check">✓</div>
+                        <span>
+                            Merchant payment acceptance.
+                        </span>
+                    </div>
+
+                    <div class="feature-row">
+                        <div class="feature-check">✓</div>
+                        <span>
+                            Financial software integration.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="transaction-visual">
+
+                <div class="network-ring r1"></div>
+                <div class="network-ring r2"></div>
+
+                <div class="network-node n1">
+                    MERCHANT
+                </div>
+
+                <div class="network-node n2">
+                    CARD
+                </div>
+
+                <div class="network-node n3">
+                    BANK
+                </div>
+
+                <div class="network-node n4">
+                    SWITCH
+                </div>
+
+                <div class="network-core">
+
+                    <strong>
+                        POS<br>
+                        NETWORK
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QPAY -->
+    <section class="solutions-section">
+
+        <div class="qpay-section">
+
+            <div class="qpay-content">
+
+                <span class="qpay-label">
+                    05 / FINTECH
+                </span>
+
+                <h2>
+                    Qpay — digital
+                    financial services.
+                </h2>
+
+                <p>
+                    QPay is a FinTech application introduced for
+                    Q-Cash member-bank customers, providing electronic
+                    payment and financial-management features through
+                    a mobile experience.
+                </p>
+
+                <div class="qpay-features">
+
+                    <span class="qpay-feature">
+                        Account & Card Balance
+                    </span>
+
+                    <span class="qpay-feature">
+                        Multiple Account Tagging
+                    </span>
+
+                    <span class="qpay-feature">
+                        Inter-bank Fund Transfer
+                    </span>
+
+                    <span class="qpay-feature">
+                        Bill Payment
+                    </span>
+
+                    <span class="qpay-feature">
+                        Bangla QR Payment
+                    </span>
+
+                    <span class="qpay-feature">
+                        Online Payments
+                    </span>
+
+                    <span class="qpay-feature">
+                        Transaction Control
+                    </span>
+
+                    <span class="qpay-feature">
+                        Transaction History
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFRASTRUCTURE -->
+    <section class="solutions-section">
+
+        <div class="solutions-heading">
+
+            <span class="solutions-label">
+                06 / Enterprise Infrastructure
+            </span>
+
+            <h2>
+                Infrastructure designed
+                for continuity.
+            </h2>
+
+            <p>
+                ITC's infrastructure services address both current
+                operational requirements and future technology
+                capabilities.
+            </p>
+
+        </div>
+
+
+        <div class="digital-grid">
+
+            <article class="digital-card">
+
+                <small>01</small>
+
+                <h3>Facility Management</h3>
+
+                <p>
+                    Facility Management Services supporting technology
+                    environments and operational infrastructure.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>02</small>
+
+                <h3>Data Center Design</h3>
+
+                <p>
+                    Data center architectural design and implementation
+                    capabilities.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>03</small>
+
+                <h3>Security Solutions</h3>
+
+                <p>
+                    Infrastructure security solutions designed to
+                    strengthen enterprise technology environments.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>04</small>
+
+                <h3>Backup & Recovery</h3>
+
+                <p>
+                    Backup and disaster-recovery management supporting
+                    business continuity.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>05</small>
+
+                <h3>Virtualization</h3>
+
+                <p>
+                    Server consolidation and virtualization services
+                    for improved infrastructure efficiency.
+                </p>
+
+            </article>
+
+
+            <article class="digital-card">
+
+                <small>06</small>
+
+                <h3>Migration & Support</h3>
+
+                <p>
+                    Relocation, migration planning, implementation and
+                    IT-related support services.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="solutions-cta">
+
+        <h2>
+            Technology is only useful
+            when it moves the world forward.
+        </h2>
+
+        <p>
+            Explore the technology ecosystem behind ITC's payment,
+            transaction processing and infrastructure capabilities.
+        </p>
+
+        <a href="technology.html">
+            Explore Technology
+            <span>→</span>
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="logo">
+
+                    <span class="logo-mark">ITC</span>
+
+                    <span class="logo-text">
+                        IT CONSULTANTS
+                        <small>PLC.</small>
+                    </span>
+
+                </div>
+
+                <p>
+                    Digital infrastructure. Payment technology.
+                    Transaction intelligence.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="company.html">Company</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="technology.html">Technology</a>
+                <a href="investors.html">Investors</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 IT Consultants PLC. All rights reserved.
+            </span>
+
+            <span>
+                Dhaka, Bangladesh
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" aria-label="Back to top">
+    ↑
+</button>
+
+
+</div>
+
+<script src="main.js"></script>
+
+<script src="animations.js"></script>
+
+</body>
+</html>
+id="74162"
+
+Save it as **`solutions.html`**, upload it to the same GitHub repository, and commit it.
+
+Then your site will have:
+
+text
+index.html          ✅
+company.html        ✅
+solutions.html      ✅ NEW
+
+
+Open:
+
+**`https://skskarmakar334-create.github.io/its/solutions.html`**
+
+The next page after this will be **`technology.html`**, where we'll make the site considerably more futuristic with the technology architecture, switching ecosystem, network visualization, security, scalability, cloud-native infrastructure, and digital-payment architecture.
