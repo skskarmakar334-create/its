@@ -1,0 +1,2924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technology | IT Consultants PLC.</title>
+
+    <meta name="description"
+          content="Explore the technology architecture, transaction switching, security, infrastructure, data centers, disaster recovery and digital payment capabilities of IT Consultants PLC.">
+
+    <meta name="keywords"
+          content="IT Consultants PLC, ITC Bangladesh, payment technology, transaction switching, banking technology, payment infrastructure, Q-Cash, TranzAxis, TranzWare">
+
+    <meta name="author" content="IT Consultants PLC.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           TECHNOLOGY PAGE
+        ========================================================= */
+
+        .technology-page {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .technology-page::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(0, 229, 255, 0.07), transparent 30%),
+                radial-gradient(circle at 85% 35%, rgba(128, 80, 255, 0.08), transparent 32%),
+                radial-gradient(circle at 50% 90%, rgba(0, 255, 200, 0.05), transparent 35%);
+            z-index: -1;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .tech-hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 140px 7% 100px;
+        }
+
+        .tech-hero-content {
+            width: 52%;
+            position: relative;
+            z-index: 5;
+        }
+
+        .tech-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 16px;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(16px);
+            color: #6defff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .tech-eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow: 0 0 15px #00e5ff;
+            animation: techPulse 2s infinite;
+        }
+
+        @keyframes techPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .45;
+                transform: scale(.7);
+            }
+        }
+
+        .tech-hero h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(42px, 5.7vw, 86px);
+            line-height: 1.03;
+            letter-spacing: -2px;
+            margin: 0 0 28px;
+        }
+
+        .tech-gradient {
+            background: linear-gradient(
+                100deg,
+                #ffffff 0%,
+                #9ff8ff 42%,
+                #b6a4ff 75%,
+                #ffffff 100%
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tech-hero-description {
+            max-width: 680px;
+            color: rgba(255,255,255,.68);
+            font-size: 18px;
+            line-height: 1.85;
+            margin-bottom: 35px;
+        }
+
+        .tech-hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tech-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 50px;
+            padding: 0 22px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: .3px;
+            transition: .3s ease;
+        }
+
+        .tech-button-primary {
+            color: #001014;
+            background: linear-gradient(100deg, #00e5ff, #65f7e6);
+            box-shadow: 0 0 35px rgba(0,229,255,.18);
+        }
+
+        .tech-button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 45px rgba(0,229,255,.35);
+        }
+
+        .tech-button-secondary {
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.045);
+            backdrop-filter: blur(14px);
+        }
+
+        .tech-button-secondary:hover {
+            border-color: rgba(0,229,255,.4);
+            transform: translateY(-3px);
+        }
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+
+        .tech-orbit {
+            position: absolute;
+            width: min(47vw, 650px);
+            height: min(47vw, 650px);
+            right: 4%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid rgba(0,229,255,.14);
+            border-radius: 50%;
+            inset: 4%;
+            animation: orbitRotate 22s linear infinite;
+        }
+
+        .orbit-ring:nth-child(2) {
+            inset: 15%;
+            border-color: rgba(150,90,255,.16);
+            animation-duration: 16s;
+            animation-direction: reverse;
+        }
+
+        .orbit-ring:nth-child(3) {
+            inset: 27%;
+            border-color: rgba(0,255,200,.13);
+            animation-duration: 11s;
+        }
+
+        @keyframes orbitRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .orbit-node {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow:
+                0 0 10px #00e5ff,
+                0 0 25px rgba(0,229,255,.75);
+        }
+
+        .node-one {
+            top: 8%;
+            left: 50%;
+        }
+
+        .node-two {
+            top: 50%;
+            right: 7%;
+        }
+
+        .node-three {
+            bottom: 10%;
+            left: 25%;
+        }
+
+        .node-four {
+            top: 25%;
+            left: 14%;
+        }
+
+        .tech-core {
+            width: 185px;
+            height: 185px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 4;
+
+            background:
+                radial-gradient(circle,
+                rgba(0,229,255,.22),
+                rgba(50,20,100,.15) 45%,
+                rgba(5,8,20,.95) 72%);
+
+            border: 1px solid rgba(0,229,255,.4);
+
+            box-shadow:
+                0 0 50px rgba(0,229,255,.15),
+                inset 0 0 50px rgba(0,229,255,.08);
+
+            animation: coreFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes coreFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .tech-core::before {
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border: 1px solid rgba(0,229,255,.08);
+            border-radius: 50%;
+            animation: coreSpin 8s linear infinite;
+        }
+
+        @keyframes coreSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .tech-core-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-core-label {
+            display: block;
+            color: #6defff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
+        }
+
+        .tech-core-title {
+            display: block;
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .tech-data-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0,229,255,.65),
+                transparent
+            );
+            transform-origin: left center;
+            animation: dataFlow 3s ease-in-out infinite;
+        }
+
+        .data-line-one {
+            width: 210px;
+            top: 32%;
+            left: 21%;
+            transform: rotate(24deg);
+        }
+
+        .data-line-two {
+            width: 230px;
+            top: 61%;
+            left: 56%;
+            transform: rotate(-20deg);
+            animation-delay: .8s;
+        }
+
+        .data-line-three {
+            width: 180px;
+            top: 72%;
+            left: 30%;
+            transform: rotate(7deg);
+            animation-delay: 1.4s;
+        }
+
+        @keyframes dataFlow {
+            0%, 100% {
+                opacity: .25;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================================
+           METRICS
+        ========================================================= */
+
+        .tech-metrics {
+            padding: 0 7% 100px;
+        }
+
+        .tech-metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .tech-metric {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(18px);
+            border-radius: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-metric::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: -40px;
+            top: -40px;
+            border-radius: 50%;
+            background: rgba(0,229,255,.08);
+            filter: blur(20px);
+        }
+
+        .tech-metric-number {
+            font-family: "Orbitron", sans-serif;
+            font-size: 29px;
+            color: #8ff5ff;
+            margin-bottom: 8px;
+        }
+
+        .tech-metric-title {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 7px;
+        }
+
+        .tech-metric-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255,255,255,.5);
+        }
+
+        /* =========================================================
+           SECTION SYSTEM
+        ========================================================= */
+
+        .tech-section {
+            padding: 110px 7%;
+            position: relative;
+        }
+
+        .tech-section-header {
+            max-width: 800px;
+            margin-bottom: 55px;
+        }
+
+        .tech-section-tag {
+            color: #6defff;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 14px;
+        }
+
+        .tech-section-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(30px, 4vw, 55px);
+            line-height: 1.12;
+            margin: 0 0 18px;
+        }
+
+        .tech-section-description {
+            color: rgba(255,255,255,.58);
+            line-height: 1.8;
+            font-size: 16px;
+            max-width: 750px;
+        }
+
+        /* =========================================================
+           ARCHITECTURE
+        ========================================================= */
+
+        .architecture-container {
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.025);
+            backdrop-filter: blur(18px);
+            border-radius: 30px;
+            padding: 35px;
+            overflow: hidden;
+        }
+
+        .architecture-flow {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: center;
+            gap: 12px;
+        }
+
+        .architecture-node {
+            min-height: 150px;
+            border: 1px solid rgba(0,229,255,.14);
+            border-radius: 20px;
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,.06),
+                rgba(255,255,255,.015)
+            );
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            transition: .35s ease;
+        }
+
+        .architecture-node:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,229,255,.42);
+            box-shadow: 0 15px 40px rgba(0,229,255,.08);
+        }
+
+        .architecture-icon {
+            font-size: 25px;
+            margin-bottom: 14px;
+        }
+
+        .architecture-node h3 {
+            font-size: 16px;
+            margin: 0 0 7px;
+            color: #fff;
+        }
+
+        .architecture-node p {
+            margin: 0;
+            color: rgba(255,255,255,.47);
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        .architecture-arrow {
+            color: #00e5ff;
+            font-size: 24px;
+            text-align: center;
+            animation: arrowPulse 2s infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% {
+                opacity: .35;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================================
+           TECHNOLOGY CARDS
+        ========================================================= */
+
+        .tech-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .tech-card {
+            position: relative;
+            min-height: 270px;
+            padding: 30px;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.08);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.065),
+                    rgba(255,255,255,.018)
+                );
+            backdrop-filter: blur(20px);
+            transition: .4s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,229,255,.32);
+            box-shadow:
+                0 25px 55px rgba(0,0,0,.25),
+                0 0 30px rgba(0,229,255,.06);
+        }
+
+        .tech-card-number {
+            font-family: "Orbitron", sans-serif;
+            color: rgba(0,229,255,.35);
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+        }
+
+        .tech-card h3 {
+            font-size: 21px;
+            margin: 0 0 15px;
+            color: #fff;
+        }
+
+        .tech-card p {
+            color: rgba(255,255,255,.53);
+            font-size: 14px;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .tech-card ul {
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tech-card li {
+            color: rgba(255,255,255,.55);
+            font-size: 12px;
+            margin-bottom: 9px;
+            padding-left: 17px;
+            position: relative;
+        }
+
+        .tech-card li::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #00e5ff;
+            position: absolute;
+            left: 0;
+            top: 7px;
+            box-shadow: 0 0 10px #00e5ff;
+        }
+
+        /* =========================================================
+           SECURITY
+        ========================================================= */
+
+        .security-layout {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .security-panel {
+            border-radius: 30px;
+            border: 1px solid rgba(0,229,255,.15);
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(0,229,255,.12),
+                    transparent 35%
+                ),
+                rgba(255,255,255,.025);
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .security-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,229,255,.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow:
+                0 0 60px rgba(0,229,255,.12),
+                inset 0 0 45px rgba(0,229,255,.08);
+        }
+
+        .security-circle::before,
+        .security-circle::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(0,229,255,.14);
+        }
+
+        .security-circle::before {
+            inset: -35px;
+        }
+
+        .security-circle::after {
+            inset: -70px;
+        }
+
+        .security-lock {
+            font-size: 65px;
+            filter: drop-shadow(0 0 18px rgba(0,229,255,.5));
+        }
+
+        .security-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .security-item {
+            display: flex;
+            gap: 18px;
+            padding: 21px;
+            border-radius: 18px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.07);
+        }
+
+        .security-number {
+            width: 38px;
+            height: 38px;
+            flex: 0 0 38px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,229,255,.08);
+            color: #6defff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+        }
+
+        .security-item h4 {
+            margin: 0 0 7px;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .security-item p {
+            margin: 0;
+            color: rgba(255,255,255,.48);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           AVAILABILITY
+        ========================================================= */
+
+        .availability-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .availability-card {
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 23px;
+            background: rgba(255,255,255,.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .availability-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(
+                #00e5ff,
+                transparent
+            );
+        }
+
+        .availability-card h3 {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 19px;
+        }
+
+        .availability-card p {
+            color: rgba(255,255,255,.5);
+            line-height: 1.7;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* =========================================================
+           DATA CENTER
+        ========================================================= */
+
+        .datacenter {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 25px;
+        }
+
+        .data-main {
+            min-height: 400px;
+            border-radius: 28px;
+            border: 1px solid rgba(255,255,255,.08);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,255,.055),
+                    rgba(120,80,255,.04),
+                    rgba(255,255,255,.015)
+                );
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .server-rack {
+            position: absolute;
+            right: 8%;
+            bottom: 0;
+            width: 220px;
+            height: 310px;
+            border: 1px solid rgba(0,229,255,.2);
+            border-bottom: none;
+            border-radius: 18px 18px 0 0;
+            background: rgba(0,0,0,.3);
+            padding: 18px;
+        }
+
+        .server-unit {
+            height: 43px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.035);
+            position: relative;
+        }
+
+        .server-unit::before {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            left: 13px;
+            top: 17px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow: 0 0 10px #00e5ff;
+        }
+
+        .server-unit::after {
+            content: "••••••";
+            position: absolute;
+            right: 13px;
+            top: 10px;
+            color: rgba(255,255,255,.15);
+            letter-spacing: 4px;
+        }
+
+        .data-main-content {
+            position: relative;
+            z-index: 2;
+            max-width: 50%;
+        }
+
+        .data-main-content h3 {
+            font-size: 27px;
+            margin: 0 0 15px;
+        }
+
+        .data-main-content p {
+            color: rgba(255,255,255,.5);
+            line-height: 1.75;
+            font-size: 14px;
+        }
+
+        .data-side {
+            display: grid;
+            gap: 18px;
+        }
+
+        .data-side-card {
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 22px;
+            padding: 27px;
+            background: rgba(255,255,255,.03);
+        }
+
+        .data-side-card h4 {
+            margin: 0 0 9px;
+            color: #fff;
+            font-size: 17px;
+        }
+
+        .data-side-card p {
+            color: rgba(255,255,255,.47);
+            line-height: 1.65;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* =========================================================
+           DIGITAL CHANNELS
+        ========================================================= */
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .channel-card {
+            text-align: center;
+            padding: 27px 18px;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 20px;
+            background: rgba(255,255,255,.025);
+            transition: .3s ease;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,229,255,.3);
+        }
+
+        .channel-symbol {
+            font-family: "Orbitron", sans-serif;
+            font-size: 20px;
+            color: #75f3ff;
+            margin-bottom: 13px;
+        }
+
+        .channel-card h4 {
+            margin: 0 0 7px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .channel-card p {
+            margin: 0;
+            color: rgba(255,255,255,.42);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* =========================================================
+           NETWORK VISUAL
+        ========================================================= */
+
+        .network-box {
+            min-height: 520px;
+            position: relative;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,.08);
+            background:
+                linear-gradient(
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+                ),
+                rgba(255,255,255,.02);
+            background-size: 40px 40px;
+            overflow: hidden;
+        }
+
+        .network-center {
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,229,255,.2),
+                    rgba(4,10,25,.95) 65%
+                );
+            border: 1px solid rgba(0,229,255,.4);
+            box-shadow: 0 0 55px rgba(0,229,255,.13);
+            z-index: 3;
+        }
+
+        .network-center strong {
+            font-family: "Orbitron", sans-serif;
+            font-size: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .network-point {
+            position: absolute;
+            width: 125px;
+            min-height: 80px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(8,12,25,.75);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgba(255,255,255,.75);
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 3;
+            transition: .3s ease;
+        }
+
+        .network-point:hover {
+            border-color: rgba(0,229,255,.4);
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+        .np-bank {
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .np-atm {
+            top: 32%;
+            left: 8%;
+        }
+
+        .np-pos {
+            bottom: 14%;
+            left: 12%;
+        }
+
+        .np-ecommerce {
+            top: 31%;
+            right: 8%;
+        }
+
+        .np-mfs {
+            bottom: 14%;
+            right: 12%;
+        }
+
+        .np-government {
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .network-line {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 260px;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0,229,255,.45),
+                transparent
+            );
+            transform-origin: left center;
+            z-index: 1;
+        }
+
+        .line-bank {
+            transform: rotate(-90deg);
+        }
+
+        .line-atm {
+            transform: rotate(156deg);
+        }
+
+        .line-pos {
+            transform: rotate(137deg);
+        }
+
+        .line-ecommerce {
+            transform: rotate(-24deg);
+        }
+
+        .line-mfs {
+            transform: rotate(27deg);
+        }
+
+        .line-government {
+            transform: rotate(90deg);
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .tech-cta {
+            margin: 30px 7% 100px;
+            padding: 75px 8%;
+            border-radius: 35px;
+            border: 1px solid rgba(0,229,255,.15);
+            background:
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(0,229,255,.1),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(130,70,255,.1),
+                    transparent 35%
+                ),
+                rgba(255,255,255,.025);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-cta h2 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(30px, 4vw, 52px);
+            margin: 0 0 17px;
+        }
+
+        .tech-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,.52);
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .tech-hero-content {
+                width: 60%;
+            }
+
+            .tech-orbit {
+                opacity: .65;
+                right: -12%;
+            }
+
+            .tech-metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .architecture-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .architecture-arrow {
+                transform: rotate(90deg);
+            }
+
+            .tech-card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .channel-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            .tech-hero {
+                min-height: auto;
+                padding-top: 120px;
+            }
+
+            .tech-hero-content {
+                width: 100%;
+            }
+
+            .tech-orbit {
+                position: absolute;
+                width: 550px;
+                height: 550px;
+                opacity: .18;
+                right: -200px;
+            }
+
+            .tech-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .security-layout,
+            .datacenter {
+                grid-template-columns: 1fr;
+            }
+
+            .data-main-content {
+                max-width: 55%;
+            }
+
+            .tech-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .availability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .network-box {
+                min-height: 580px;
+            }
+
+            .network-point {
+                width: 105px;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            .tech-metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-section,
+            .tech-metrics {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .tech-hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .tech-cta {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .tech-core {
+                width: 145px;
+                height: 145px;
+            }
+
+            .tech-core-title {
+                font-size: 17px;
+            }
+
+            .security-panel {
+                min-height: 350px;
+            }
+
+            .data-main {
+                min-height: 480px;
+            }
+
+            .server-rack {
+                width: 170px;
+                right: 4%;
+            }
+
+            .data-main-content {
+                max-width: 100%;
+            }
+
+            .channel-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .network-box {
+                min-height: 620px;
+            }
+
+            .np-bank {
+                top: 5%;
+            }
+
+            .np-atm {
+                top: 28%;
+                left: 3%;
+            }
+
+            .np-pos {
+                bottom: 21%;
+                left: 3%;
+            }
+
+            .np-ecommerce {
+                top: 28%;
+                right: 3%;
+            }
+
+            .np-mfs {
+                bottom: 21%;
+                right: 3%;
+            }
+
+            .np-government {
+                bottom: 5%;
+            }
+
+            .network-line {
+                width: 175px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body class="technology-page">
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">ITC</span>
+                <span class="logo-text">
+                    IT CONSULTANTS
+                    <small>PLC.</small>
+                </span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="company.html">Company</a>
+
+                <a href="solutions.html">Solutions</a>
+
+                <a href="technology.html" class="active">
+                    Technology
+                </a>
+
+                <a href="achievements.html">
+                    Achievements
+                </a>
+
+                <a href="investors.html">
+                    Investors
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <button class="mobile-menu-btn"
+                    aria-label="Open navigation menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="tech-hero">
+
+            <div class="tech-hero-content">
+
+                <div class="tech-eyebrow">
+                    Technology Infrastructure
+                </div>
+
+                <h1>
+                    <span class="tech-gradient">
+                        ENGINEERED
+                    </span>
+                    <br>
+                    FOR THE
+                    <br>
+                    TRANSACTION ERA.
+                </h1>
+
+                <p class="tech-hero-description">
+
+                    Behind every secure transaction is an infrastructure
+                    engineered for speed, reliability and resilience.
+                    IT Consultants PLC. combines payment technology,
+                    transaction switching, security and enterprise
+                    infrastructure to power critical financial services.
+
+                </p>
+
+                <div class="tech-hero-actions">
+
+                    <a href="solutions.html"
+                       class="tech-button tech-button-primary">
+
+                        Explore Solutions
+                        <span>→</span>
+
+                    </a>
+
+                    <a href="contact.html"
+                       class="tech-button tech-button-secondary">
+
+                        Connect With ITC
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TECHNOLOGY ORBIT -->
+
+            <div class="tech-orbit">
+
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+
+                <div class="orbit-node node-one"></div>
+                <div class="orbit-node node-two"></div>
+                <div class="orbit-node node-three"></div>
+                <div class="orbit-node node-four"></div>
+
+                <div class="tech-data-line data-line-one"></div>
+                <div class="tech-data-line data-line-two"></div>
+                <div class="tech-data-line data-line-three"></div>
+
+                <div class="tech-core">
+
+                    <div class="tech-core-content">
+
+                        <span class="tech-core-label">
+                            ITC
+                        </span>
+
+                        <span class="tech-core-title">
+                            PAYMENT<br>
+                            CORE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             METRICS
+        ====================================================== -->
+
+        <section class="tech-metrics">
+
+            <div class="tech-metric-grid">
+
+                <div class="tech-metric reveal">
+
+                    <div class="tech-metric-number">
+                        24/7
+                    </div>
+
+                    <div class="tech-metric-title">
+                        Transaction Operations
+                    </div>
+
+                    <div class="tech-metric-text">
+                        Infrastructure designed to support continuous
+                        transaction processing and monitoring.
+                    </div>
+
+                </div>
+
+
+                <div class="tech-metric reveal">
+
+                    <div class="tech-metric-number">
+                        ATM
+                    </div>
+
+                    <div class="tech-metric-title">
+                        Network Processing
+                    </div>
+
+                    <div class="tech-metric-text">
+                        Technology supporting ATM, POS and electronic
+                        payment transaction environments.
+                    </div>
+
+                </div>
+
+
+                <div class="tech-metric reveal">
+
+                    <div class="tech-metric-number">
+                        PCI
+                    </div>
+
+                    <div class="tech-metric-title">
+                        Security Focus
+                    </div>
+
+                    <div class="tech-metric-text">
+                        Security and compliance capabilities designed
+                        for critical payment environments.
+                    </div>
+
+                </div>
+
+
+                <div class="tech-metric reveal">
+
+                    <div class="tech-metric-number">
+                        QR
+                    </div>
+
+                    <div class="tech-metric-title">
+                        Digital Payments
+                    </div>
+
+                    <div class="tech-metric-text">
+                        Modern payment channels including QR and
+                        electronic financial services.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ARCHITECTURE
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    01 / Architecture
+                </div>
+
+                <h2 class="tech-section-title">
+                    From payment initiation
+                    to secure settlement.
+                </h2>
+
+                <p class="tech-section-description">
+
+                    ITC's technology ecosystem connects multiple
+                    transaction channels with processing, switching,
+                    security and settlement capabilities to create
+                    a unified payment infrastructure.
+
+                </p>
+
+            </div>
+
+
+            <div class="architecture-container">
+
+                <div class="architecture-flow">
+
+                    <div class="architecture-node reveal">
+
+                        <div class="architecture-icon">
+                            ◉
+                        </div>
+
+                        <h3>
+                            Digital Channels
+                        </h3>
+
+                        <p>
+                            ATM, POS, e-commerce, mobile and QR
+                            payment environments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-arrow">
+                        →
+                    </div>
+
+
+                    <div class="architecture-node reveal">
+
+                        <div class="architecture-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Transaction Switch
+                        </h3>
+
+                        <p>
+                            Intelligent routing and transaction
+                            processing across payment networks.
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-arrow">
+                        →
+                    </div>
+
+
+                    <div class="architecture-node reveal">
+
+                        <div class="architecture-icon">
+                            ⬡
+                        </div>
+
+                        <h3>
+                            Banking Ecosystem
+                        </h3>
+
+                        <p>
+                            Banks, financial institutions,
+                            merchants and service providers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-arrow">
+                        →
+                    </div>
+
+
+                    <div class="architecture-node reveal">
+
+                        <div class="architecture-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Settlement
+                        </h3>
+
+                        <p>
+                            Settlement, reconciliation,
+                            reporting and transaction control.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CORE TECHNOLOGY
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    02 / Core Technology
+                </div>
+
+                <h2 class="tech-section-title">
+                    Technology built around
+                    critical transactions.
+                </h2>
+
+                <p class="tech-section-description">
+
+                    From switching and card management to infrastructure
+                    and digital payment platforms, ITC's technology
+                    capabilities cover multiple layers of the financial
+                    transaction ecosystem.
+
+                </p>
+
+            </div>
+
+
+            <div class="tech-card-grid">
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        CORE / 01
+                    </div>
+
+                    <h3>
+                        Transaction Switching
+                    </h3>
+
+                    <p>
+                        Payment switching technology designed to
+                        process transactions between channels,
+                        institutions and payment networks.
+                    </p>
+
+                    <ul>
+                        <li>ATM transaction processing</li>
+                        <li>Debit and credit card processing</li>
+                        <li>Merchant acquiring</li>
+                        <li>Fraud management</li>
+                        <li>Settlement and reconciliation</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        CORE / 02
+                    </div>
+
+                    <h3>
+                        Card Management
+                    </h3>
+
+                    <p>
+                        Scalable card management capabilities
+                        supporting issuing, acquiring, accounts,
+                        merchants and reporting.
+                    </p>
+
+                    <ul>
+                        <li>Card issuance</li>
+                        <li>Merchant management</li>
+                        <li>Account management</li>
+                        <li>Reporting</li>
+                        <li>Transaction analysis</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        CORE / 03
+                    </div>
+
+                    <h3>
+                        Biometric ATM
+                    </h3>
+
+                    <p>
+                        Biometric transaction technology enabling
+                        fingerprint-based authentication within
+                        supported ATM environments.
+                    </p>
+
+                    <ul>
+                        <li>Fingerprint authentication</li>
+                        <li>ATM integration</li>
+                        <li>Host processing</li>
+                        <li>Secure verification</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        CORE / 04
+                    </div>
+
+                    <h3>
+                        Payment Platforms
+                    </h3>
+
+                    <p>
+                        Technology platforms supporting modern
+                        electronic payments and interconnected
+                        financial services.
+                    </p>
+
+                    <ul>
+                        <li>Online payment gateways</li>
+                        <li>E-commerce payments</li>
+                        <li>QR payments</li>
+                        <li>Mobile financial services</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        CORE / 05
+                    </div>
+
+                    <h3>
+                        Integration
+                    </h3>
+
+                    <p>
+                        Middleware and integration capabilities
+                        connect financial applications, switching
+                        platforms and external services.
+                    </p>
+
+                    <ul>
+                        <li>Banking integration</li>
+                        <li>MFS integration</li>
+                        <li>Internet banking</li>
+                        <li>Payment network connectivity</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        CORE / 06
+                    </div>
+
+                    <h3>
+                        Enterprise Infrastructure
+                    </h3>
+
+                    <p>
+                        Infrastructure engineering for critical
+                        financial technology environments.
+                    </p>
+
+                    <ul>
+                        <li>Data center design</li>
+                        <li>Security solutions</li>
+                        <li>Virtualization</li>
+                        <li>Backup and recovery</li>
+                        <li>Migration services</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECURITY
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="security-layout">
+
+
+                <div>
+
+                    <div class="tech-section-tag">
+                        03 / Security
+                    </div>
+
+                    <h2 class="tech-section-title">
+                        Security is part
+                        of the architecture.
+                    </h2>
+
+                    <p class="tech-section-description">
+
+                        Financial infrastructure requires security
+                        at every layer. ITC combines payment security,
+                        infrastructure protection, monitoring and
+                        operational controls for critical transaction
+                        environments.
+
+                    </p>
+
+                </div>
+
+
+                <div class="security-panel">
+
+                    <div class="security-circle">
+
+                        <div class="security-lock">
+                            ◈
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-list">
+
+                    <div class="security-item reveal">
+
+                        <div class="security-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Payment Security
+                            </h4>
+
+                            <p>
+                                Security capabilities supporting
+                                sensitive payment and transaction
+                                environments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-item reveal">
+
+                        <div class="security-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                PCI DSS
+                            </h4>
+
+                            <p>
+                                ITC identifies PCI DSS compliance and
+                                certification as an important part of
+                                its payment technology environment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-item reveal">
+
+                        <div class="security-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Fraud Management
+                            </h4>
+
+                            <p>
+                                Transaction processing environments
+                                incorporate fraud management and
+                                operational controls.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-item reveal">
+
+                        <div class="security-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Monitoring
+                            </h4>
+
+                            <p>
+                                Continuous operational monitoring
+                                supports high-availability transaction
+                                environments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AVAILABILITY
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    04 / Resilience
+                </div>
+
+                <h2 class="tech-section-title">
+                    Designed for environments
+                    where downtime matters.
+                </h2>
+
+                <p class="tech-section-description">
+
+                    Payment systems must remain available even
+                    when individual components experience failure.
+                    ITC's technology capabilities include high
+                    availability, fault tolerance, backup,
+                    disaster recovery and continuous monitoring.
+
+                </p>
+
+            </div>
+
+
+            <div class="availability-grid">
+
+
+                <div class="availability-card reveal">
+
+                    <h3>
+                        High Availability
+                    </h3>
+
+                    <p>
+                        Transaction processing platforms can be
+                        designed around high availability and
+                        fault-tolerant architectures for critical
+                        payment services.
+                    </p>
+
+                </div>
+
+
+                <div class="availability-card reveal">
+
+                    <h3>
+                        Active-Active Architecture
+                    </h3>
+
+                    <p>
+                        Modern switching technology can support
+                        resilient processing architectures that
+                        distribute workloads across available
+                        resources.
+                    </p>
+
+                </div>
+
+
+                <div class="availability-card reveal">
+
+                    <h3>
+                        Disaster Recovery
+                    </h3>
+
+                    <p>
+                        Backup and disaster recovery management
+                        helps organizations prepare for operational
+                        disruption and service continuity.
+                    </p>
+
+                </div>
+
+
+                <div class="availability-card reveal">
+
+                    <h3>
+                        24/7 Monitoring
+                    </h3>
+
+                    <p>
+                        Continuous performance monitoring is an
+                        important part of maintaining reliable
+                        transaction-processing environments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DATA CENTER
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    05 / Infrastructure
+                </div>
+
+                <h2 class="tech-section-title">
+                    Infrastructure beneath
+                    the transaction layer.
+                </h2>
+
+            </div>
+
+
+            <div class="datacenter">
+
+
+                <div class="data-main">
+
+                    <div class="data-main-content">
+
+                        <h3>
+                            Enterprise Data Infrastructure
+                        </h3>
+
+                        <p>
+
+                            ITC provides infrastructure-related
+                            capabilities covering data center
+                            architectural design and implementation,
+                            security, backup and disaster recovery,
+                            virtualization, migration and IT support.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="server-rack">
+
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+                        <div class="server-unit"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="data-side">
+
+                    <div class="data-side-card reveal">
+
+                        <h4>
+                            Data Center Design
+                        </h4>
+
+                        <p>
+                            Architectural design and implementation
+                            for enterprise data center environments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="data-side-card reveal">
+
+                        <h4>
+                            Virtualization
+                        </h4>
+
+                        <p>
+                            Server consolidation and virtualization
+                            support for efficient infrastructure
+                            management.
+                        </p>
+
+                    </div>
+
+
+                    <div class="data-side-card reveal">
+
+                        <h4>
+                            Migration
+                        </h4>
+
+                        <p>
+                            Relocation and migration planning with
+                            implementation and support capabilities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DIGITAL CHANNELS
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    06 / Digital Ecosystem
+                </div>
+
+                <h2 class="tech-section-title">
+                    One infrastructure.
+                    Multiple payment channels.
+                </h2>
+
+                <p class="tech-section-description">
+
+                    ITC technology connects traditional and digital
+                    transaction channels across banking, commerce,
+                    mobile financial services and government
+                    payment environments.
+
+                </p>
+
+            </div>
+
+
+            <div class="channel-grid">
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        ATM
+                    </div>
+
+                    <h4>
+                        ATM Networks
+                    </h4>
+
+                    <p>
+                        Automated teller transaction processing
+                        and network connectivity.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        POS
+                    </div>
+
+                    <h4>
+                        Point of Sale
+                    </h4>
+
+                    <p>
+                        Merchant payment acceptance and
+                        transaction processing.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        WEB
+                    </div>
+
+                    <h4>
+                        E-Commerce
+                    </h4>
+
+                    <p>
+                        Online payment gateway and electronic
+                        commerce transaction capabilities.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        QR
+                    </div>
+
+                    <h4>
+                        QR Payments
+                    </h4>
+
+                    <p>
+                        Bangla QR and digital QR payment
+                        processing environments.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        MFS
+                    </div>
+
+                    <h4>
+                        Mobile Finance
+                    </h4>
+
+                    <p>
+                        Integration with mobile financial
+                        services and real-time fund transfer.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        IB
+                    </div>
+
+                    <h4>
+                        Internet Banking
+                    </h4>
+
+                    <p>
+                        Electronic banking and inter-bank
+                        transfer capabilities.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        GOV
+                    </div>
+
+                    <h4>
+                        Government
+                    </h4>
+
+                    <p>
+                        Digital payment infrastructure supporting
+                        government services.
+                    </p>
+
+                </div>
+
+
+                <div class="channel-card reveal">
+
+                    <div class="channel-symbol">
+                        POS+
+                    </div>
+
+                    <h4>
+                        Merchant Ecosystem
+                    </h4>
+
+                    <p>
+                        Payment terminals, merchants and
+                        financial software integration.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NETWORK
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    07 / Network
+                </div>
+
+                <h2 class="tech-section-title">
+                    A connected financial
+                    technology ecosystem.
+                </h2>
+
+                <p class="tech-section-description">
+
+                    The transaction ecosystem brings together
+                    banks, ATMs, POS terminals, e-commerce,
+                    mobile financial services and government
+                    channels through interconnected payment
+                    infrastructure.
+
+                </p>
+
+            </div>
+
+
+            <div class="network-box">
+
+
+                <div class="network-line line-bank"></div>
+                <div class="network-line line-atm"></div>
+                <div class="network-line line-pos"></div>
+                <div class="network-line line-ecommerce"></div>
+                <div class="network-line line-mfs"></div>
+                <div class="network-line line-government"></div>
+
+
+                <div class="network-center">
+
+                    <strong>
+                        ITC<br>
+                        TRANSACTION<br>
+                        CORE
+                    </strong>
+
+                </div>
+
+
+                <div class="network-point np-bank">
+                    BANKING<br>
+                    INSTITUTIONS
+                </div>
+
+
+                <div class="network-point np-atm">
+                    ATM<br>
+                    NETWORK
+                </div>
+
+
+                <div class="network-point np-pos">
+                    POS<br>
+                    MERCHANTS
+                </div>
+
+
+                <div class="network-point np-ecommerce">
+                    E-COMMERCE<br>
+                    PAYMENTS
+                </div>
+
+
+                <div class="network-point np-mfs">
+                    MOBILE<br>
+                    FINANCIAL SERVICES
+                </div>
+
+
+                <div class="network-point np-government">
+                    GOVERNMENT<br>
+                    SERVICES
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TECHNOLOGY PLATFORM
+        ====================================================== -->
+
+        <section class="tech-section">
+
+            <div class="tech-section-header">
+
+                <div class="tech-section-tag">
+                    08 / Platforms
+                </div>
+
+                <h2 class="tech-section-title">
+                    Platforms engineered
+                    for modern payments.
+                </h2>
+
+            </div>
+
+
+            <div class="tech-card-grid">
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        PLATFORM / 01
+                    </div>
+
+                    <h3>
+                        TranzAxis
+                    </h3>
+
+                    <p>
+                        An open development payment platform
+                        designed around service-oriented architecture
+                        for modern transaction processing.
+                    </p>
+
+                    <ul>
+                        <li>Service-oriented architecture</li>
+                        <li>ATM management</li>
+                        <li>Card processing</li>
+                        <li>Merchant acquiring</li>
+                        <li>Fraud management</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        PLATFORM / 02
+                    </div>
+
+                    <h3>
+                        TranzWare CMS
+                    </h3>
+
+                    <p>
+                        Card management technology supporting
+                        issuing, acquiring, account management,
+                        merchant management and reporting.
+                    </p>
+
+                    <ul>
+                        <li>Card lifecycle management</li>
+                        <li>Merchant management</li>
+                        <li>Account management</li>
+                        <li>Reporting and analysis</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tech-card reveal">
+
+                    <div class="tech-card-number">
+                        PLATFORM / 03
+                    </div>
+
+                    <h3>
+                        QPay
+                    </h3>
+
+                    <p>
+                        A financial technology application supporting
+                        account and card management, fund transfer,
+                        bill payment and QR-based payments.
+                    </p>
+
+                    <ul>
+                        <li>Inter-bank fund transfer</li>
+                        <li>Bangla QR</li>
+                        <li>Bill payment</li>
+                        <li>Transaction history</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="tech-cta">
+
+            <h2>
+                Technology that moves
+                financial systems forward.
+            </h2>
+
+            <p>
+
+                Explore how IT Consultants PLC. combines payment
+                technology, infrastructure and digital innovation
+                to build dependable financial technology ecosystems.
+
+            </p>
+
+            <div class="tech-hero-actions"
+                 style="justify-content:center;">
+
+                <a href="achievements.html"
+                   class="tech-button tech-button-primary">
+
+                    Explore Achievements
+                    <span>→</span>
+
+                </a>
+
+                <a href="contact.html"
+                   class="tech-button tech-button-secondary">
+
+                    Contact ITC
+                    <span>↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-mark">
+                        ITC
+                    </span>
+
+                    <span class="logo-text">
+
+                        IT CONSULTANTS
+                        <small>PLC.</small>
+
+                    </span>
+
+                </a>
+
+                <p>
+
+                    Powering the next transaction era through
+                    secure technology, digital infrastructure
+                    and intelligent payment solutions.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="company.html">
+                    About ITC
+                </a>
+
+                <a href="achievements.html">
+                    Achievements
+                </a>
+
+                <a href="investors.html">
+                    Investor Relations
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Technology
+                </h4>
+
+                <a href="solutions.html">
+                    Solutions
+                </a>
+
+                <a href="technology.html">
+                    Technology
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="mailto:info@itcbd.com">
+                    Email ITC
+                </a>
+
+                <a href="tel:+88029830310">
+                    +880 2 983 0310
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 IT Consultants PLC. All Rights Reserved.
+                </p>
+
+                <a href="index.html">
+                    ITC Bangladesh
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================== -->
+
+    <button id="backToTop"
+            class="back-to-top"
+            aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+
+
+    <script>
+
+        /* =====================================================
+           TECHNOLOGY PAGE INTERACTIONS
+        ====================================================== */
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* Scroll reveal */
+
+            const revealElements =
+                document.querySelectorAll(".reveal");
+
+            const revealObserver =
+                new IntersectionObserver(
+                    (entries) => {
+
+                        entries.forEach((entry) => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.style.opacity = "1";
+                                entry.target.style.transform =
+                                    "translateY(0)";
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+
+            revealElements.forEach((element) => {
+
+                element.style.opacity = "0";
+
+                element.style.transform =
+                    "translateY(25px)";
+
+                element.style.transition =
+                    "opacity .7s ease, transform .7s ease";
+
+                revealObserver.observe(element);
+
+            });
+
+
+            /* Network center pulse */
+
+            const networkCenter =
+                document.querySelector(".network-center");
+
+            if (networkCenter) {
+
+                let scale = 1;
+                let direction = 1;
+
+                setInterval(() => {
+
+                    scale += direction * 0.0025;
+
+                    if (scale >= 1.035) {
+                        direction = -1;
+                    }
+
+                    if (scale <= 1) {
+                        direction = 1;
+                    }
+
+                    networkCenter.style.transform =
+                        `translate(-50%, -50%) scale(${scale})`;
+
+                }, 30);
+
+            }
+
+
+            /* Architecture arrows */
+
+            const arrows =
+                document.querySelectorAll(".architecture-arrow");
+
+            arrows.forEach((arrow, index) => {
+
+                arrow.style.animationDelay =
+                    `${index * .25}s`;
+
+            });
+
+
+            /* Smooth internal navigation */
+
+            document.querySelectorAll(
+                'a[href^="#"]'
+            ).forEach((anchor) => {
+
+                anchor.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const target =
+                            document.querySelector(
+                                this.getAttribute("href")
+                            );
+
+                        if (target) {
+
+                            event.preventDefault();
+
+                            target.scrollIntoView({
+                                behavior: "smooth"
+                            });
+
+                        }
+
+                    }
+                );
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
