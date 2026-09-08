@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Company | IT Consultants PLC.</title>
+
+<meta name="description"
+      content="Discover IT Consultants PLC., its history, mission, vision, technology capabilities and role in Bangladesh's digital payment infrastructure.">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+    /* =========================================================
+       COMPANY PAGE
+    ========================================================= */
+
+    .company-page {
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at 15% 15%, rgba(110,231,255,.08), transparent 30%),
+            radial-gradient(circle at 85% 25%, rgba(143,124,255,.08), transparent 30%),
+            #03050b;
+        color: #f4f8ff;
+        overflow: hidden;
+    }
+
+    .company-hero {
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 150px 7% 100px;
+        isolation: isolate;
+    }
+
+    .company-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(rgba(110,231,255,.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(110,231,255,.035) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: linear-gradient(to bottom, black, transparent);
+        pointer-events: none;
+        z-index: -2;
+    }
+
+    .company-hero::after {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        right: -180px;
+        top: 40px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(110,231,255,.12),
+            rgba(143,124,255,.04) 42%,
+            transparent 70%
+        );
+        filter: blur(10px);
+        z-index: -1;
+    }
+
+    .company-hero-content {
+        max-width: 850px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .company-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 15px;
+        border: 1px solid rgba(110,231,255,.22);
+        border-radius: 999px;
+        background: rgba(110,231,255,.045);
+        color: #6ee7ff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    .company-eyebrow span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #6ee7ff;
+        box-shadow: 0 0 15px #6ee7ff;
+    }
+
+    .company-hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(48px, 7vw, 100px);
+        line-height: .96;
+        letter-spacing: -.055em;
+        margin: 0 0 30px;
+        max-width: 950px;
+    }
+
+    .company-hero h1 .gradient {
+        background: linear-gradient(
+            100deg,
+            #ffffff 0%,
+            #6ee7ff 45%,
+            #8f7cff 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .company-hero p {
+        max-width: 720px;
+        color: #8d99ad;
+        font-size: 18px;
+        line-height: 1.85;
+        margin: 0;
+    }
+
+    .company-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        max-width: 1150px;
+        margin: -50px auto 100px;
+        padding: 0 7%;
+        position: relative;
+        z-index: 5;
+    }
+
+    .company-stat {
+        padding: 28px 25px;
+        border: 1px solid rgba(255,255,255,.08);
+        background: rgba(10,15,26,.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 20px;
+        transition: .35s ease;
+    }
+
+    .company-stat:hover {
+        transform: translateY(-7px);
+        border-color: rgba(110,231,255,.35);
+        box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+
+    .company-stat strong {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 38px;
+        line-height: 1;
+        color: #6ee7ff;
+        margin-bottom: 10px;
+    }
+
+    .company-stat span {
+        color: #8d99ad;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .company-section {
+        width: min(1180px, 86%);
+        margin: 0 auto 130px;
+    }
+
+    .company-section-heading {
+        max-width: 760px;
+        margin-bottom: 55px;
+    }
+
+    .company-section-label {
+        display: block;
+        color: #6ee7ff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .company-section-heading h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(34px, 5vw, 62px);
+        line-height: 1.05;
+        letter-spacing: -.04em;
+        margin: 0 0 20px;
+    }
+
+    .company-section-heading p {
+        color: #8d99ad;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .company-overview {
+        display: grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    .company-glass {
+        border: 1px solid rgba(255,255,255,.08);
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.055),
+                rgba(255,255,255,.015)
+            );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 28px;
+        padding: 42px;
+    }
+
+    .company-glass h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 28px;
+        margin: 0 0 20px;
+    }
+
+    .company-glass p {
+        color: #8d99ad;
+        line-height: 1.85;
+        margin: 0 0 18px;
+    }
+
+    .company-glass p:last-child {
+        margin-bottom: 0;
+    }
+
+    .company-highlight {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .company-highlight::before {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        right: -100px;
+        bottom: -100px;
+        background: rgba(110,231,255,.1);
+        filter: blur(5px);
+    }
+
+    .company-highlight .big-number {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 82px;
+        line-height: 1;
+        font-weight: 700;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(110,231,255,.7);
+    }
+
+    .company-highlight h3 {
+        max-width: 350px;
+        position: relative;
+    }
+
+    .company-highlight p {
+        position: relative;
+        max-width: 380px;
+    }
+
+    .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .mission-card {
+        min-height: 280px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 28px;
+        padding: 38px;
+        background: rgba(8,13,23,.72);
+        transition: .4s ease;
+    }
+
+    .mission-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(110,231,255,.3);
+    }
+
+    .mission-card::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        right: -100px;
+        bottom: -100px;
+        background: rgba(143,124,255,.08);
+        filter: blur(5px);
+    }
+
+    .mission-icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        border: 1px solid rgba(110,231,255,.2);
+        background: rgba(110,231,255,.05);
+        color: #6ee7ff;
+        font-size: 21px;
+        margin-bottom: 35px;
+    }
+
+    .mission-card h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 28px;
+        margin: 0 0 15px;
+    }
+
+    .mission-card p {
+        color: #8d99ad;
+        line-height: 1.8;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .timeline {
+        position: relative;
+        margin-top: 60px;
+    }
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(110,231,255,.35),
+            rgba(143,124,255,.35),
+            transparent
+        );
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding: 0 55px 70px 0;
+        position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 50%;
+        padding: 0 0 70px 55px;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #6ee7ff;
+        box-shadow: 0 0 20px rgba(110,231,255,.8);
+        right: -6px;
+        top: 8px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -6px;
+        right: auto;
+    }
+
+    .timeline-year {
+        color: #6ee7ff;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        margin-bottom: 13px;
+    }
+
+    .timeline-card {
+        padding: 28px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,.07);
+        background: rgba(10,15,26,.68);
+        transition: .35s ease;
+    }
+
+    .timeline-card:hover {
+        border-color: rgba(110,231,255,.28);
+        transform: translateY(-5px);
+    }
+
+    .timeline-card h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 21px;
+        margin: 0 0 10px;
+    }
+
+    .timeline-card p {
+        color: #8d99ad;
+        line-height: 1.7;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .capability-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .capability {
+        padding: 30px 25px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,.07);
+        background: rgba(8,13,23,.65);
+        transition: .35s ease;
+    }
+
+    .capability:hover {
+        transform: translateY(-6px);
+        border-color: rgba(110,231,255,.3);
+    }
+
+    .capability-number {
+        color: #586477;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 13px;
+        margin-bottom: 35px;
+    }
+
+    .capability h3 {
+        font-size: 18px;
+        margin: 0 0 12px;
+    }
+
+    .capability p {
+        color: #8d99ad;
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .company-cta {
+        width: min(1180px, 86%);
+        margin: 0 auto 100px;
+        padding: 65px;
+        border-radius: 32px;
+        border: 1px solid rgba(110,231,255,.15);
+        background:
+            radial-gradient(circle at 85% 20%, rgba(143,124,255,.14), transparent 30%),
+            radial-gradient(circle at 15% 80%, rgba(110,231,255,.1), transparent 35%),
+            rgba(10,15,26,.72);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .company-cta h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(32px, 5vw, 58px);
+        letter-spacing: -.04em;
+        margin: 0 0 18px;
+    }
+
+    .company-cta p {
+        max-width: 650px;
+        margin: 0 auto 30px;
+        color: #8d99ad;
+        line-height: 1.8;
+    }
+
+    .company-cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 23px;
+        border-radius: 999px;
+        color: #03050b;
+        background: #6ee7ff;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        transition: .3s ease;
+    }
+
+    .company-cta a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(110,231,255,.2);
+    }
+
+    @media (max-width: 900px) {
+
+        .company-stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .company-overview {
+            grid-template-columns: 1fr;
+        }
+
+        .mission-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .capability-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    @media (max-width: 650px) {
+
+        .company-hero {
+            padding: 125px 6% 80px;
+            min-height: auto;
+        }
+
+        .company-hero h1 {
+            font-size: 48px;
+        }
+
+        .company-hero p {
+            font-size: 15px;
+        }
+
+        .company-stats {
+            grid-template-columns: 1fr 1fr;
+            padding: 0 6%;
+            margin-top: -25px;
+            margin-bottom: 80px;
+        }
+
+        .company-stat {
+            padding: 22px 18px;
+        }
+
+        .company-stat strong {
+            font-size: 29px;
+        }
+
+        .company-section {
+            width: 88%;
+            margin-bottom: 90px;
+        }
+
+        .company-glass {
+            padding: 28px;
+        }
+
+        .timeline::before {
+            left: 7px;
+        }
+
+        .timeline-item,
+        .timeline-item:nth-child(even) {
+            width: 100%;
+            margin-left: 0;
+            padding: 0 0 45px 35px;
+        }
+
+        .timeline-dot,
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: 1px;
+            right: auto;
+        }
+
+        .capability-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .company-cta {
+            width: 88%;
+            padding: 40px 25px;
+            margin-bottom: 60px;
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="company-page">
+
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-mark">ITC</span>
+            <span class="logo-text">
+                IT CONSULTANTS
+                <small>PLC.</small>
+            </span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="company.html" class="active">Company</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="technology.html">Technology</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="investors.html">Investors</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>
+
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+
+    <a href="index.html">Home</a>
+    <a href="company.html">Company</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="technology.html">Technology</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="investors.html">Investors</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+
+</div>
+
+
+<!-- HERO -->
+<main>
+
+    <section class="company-hero">
+
+        <div class="company-hero-content">
+
+            <div class="company-eyebrow">
+                <span></span>
+                Corporate Intelligence
+            </div>
+
+            <h1>
+                Building the
+                <span class="gradient">digital infrastructure</span>
+                behind modern transactions.
+            </h1>
+
+            <p>
+                IT Consultants PLC. is a Bangladesh-based technology and
+                payment infrastructure company providing electronic payment
+                solutions, transaction processing services and technology
+                infrastructure to banks, governments, financial institutions
+                and businesses.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEY NUMBERS -->
+    <section class="company-stats">
+
+        <div class="company-stat">
+            <strong>2000</strong>
+            <span>Company formed</span>
+        </div>
+
+        <div class="company-stat">
+            <strong>2001</strong>
+            <span>Technology & business operations introduced</span>
+        </div>
+
+        <div class="company-stat">
+            <strong>35+</strong>
+            <span>Banks in the Q-Cash consortium</span>
+        </div>
+
+        <div class="company-stat">
+            <strong>80%+</strong>
+            <span>Approximate Q-Cash member-bank branch coverage</span>
+        </div>
+
+    </section>
+
+
+    <!-- COMPANY OVERVIEW -->
+    <section class="company-section">
+
+        <div class="company-section-heading">
+
+            <span class="company-section-label">
+                01 / Company
+            </span>
+
+            <h2>
+                Technology built around
+                real-world financial systems.
+            </h2>
+
+            <p>
+                From transaction switching to payment infrastructure,
+                ITC has developed a technology ecosystem designed to
+                support reliable and scalable electronic transactions.
+            </p>
+
+        </div>
+
+
+        <div class="company-overview">
+
+            <article class="company-glass">
+
+                <h3>Who we are</h3>
+
+                <p>
+                    IT Consultants PLC. (ITC PLC.) is a public limited
+                    company and a Licensed Payment System Operator (PSO).
+                    The company was formed in 2000 and introduced its
+                    technology and business operations in 2001.
+                </p>
+
+                <p>
+                    ITC provides end-to-end payment services, infrastructure
+                    and technology to banks, governments, financial
+                    institutions and non-financial organizations.
+                </p>
+
+                <p>
+                    Its technology and payment solutions have been
+                    recognized, accredited and certified by international
+                    payment organizations and governing bodies.
+                </p>
+
+            </article>
+
+
+            <article class="company-glass company-highlight">
+
+                <div class="big-number">01</div>
+
+                <div>
+
+                    <h3>
+                        A long-term technology partner for critical
+                        transaction infrastructure.
+                    </h3>
+
+                    <p>
+                        ITC combines payment technology, transaction
+                        processing and infrastructure capabilities to
+                        support organizations operating at scale.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION & VISION -->
+    <section class="company-section">
+
+        <div class="company-section-heading">
+
+            <span class="company-section-label">
+                02 / Direction
+            </span>
+
+            <h2>
+                A clear direction for
+                digital transformation.
+            </h2>
+
+        </div>
+
+
+        <div class="mission-grid">
+
+            <article class="mission-card">
+
+                <div class="mission-icon">◎</div>
+
+                <h3>Vision</h3>
+
+                <p>
+                    Establishing digital infrastructure and capabilities
+                    for financial services and payment frameworks.
+                </p>
+
+            </article>
+
+
+            <article class="mission-card">
+
+                <div class="mission-icon">↗</div>
+
+                <h3>Mission</h3>
+
+                <p>
+                    ITC aspires to lead the IT horizons in Bangladesh by
+                    providing innovative technological infrastructure,
+                    electronic payment solutions and real-time transaction
+                    processing services in the banking sector while
+                    fostering strong partnerships with clients,
+                    stakeholders and employees.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTORY -->
+    <section class="company-section">
+
+        <div class="company-section-heading">
+
+            <span class="company-section-label">
+                03 / Evolution
+            </span>
+
+            <h2>
+                From a local technology company
+                to a major transaction-processing ecosystem.
+            </h2>
+
+            <p>
+                ITC's development has been closely connected with the
+                growth of electronic payments and financial technology
+                infrastructure in Bangladesh.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                    2000
+                </div>
+
+                <div class="timeline-card">
+
+                    <h3>Company formed</h3>
+
+                    <p>
+                        IT Consultants PLC. was formed, establishing the
+                        foundation for its technology and payment
+                        infrastructure operations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                    2001
+                </div>
+
+                <div class="timeline-card">
+
+                    <h3>Operations begin</h3>
+
+                    <p>
+                        ITC introduced its technology and business
+                        operations, beginning its development as a
+                        payment-services and technology provider.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                    2008
+                </div>
+
+                <div class="timeline-card">
+
+                    <h3>BEPS acquisition</h3>
+
+                    <p>
+                        ITC acquired Bangladesh Electronic Payment Systems
+                        Ltd. (BEPS), strengthening its position in
+                        electronic transaction processing.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">
+                    TODAY
+                </div>
+
+                <div class="timeline-card">
+
+                    <h3>Digital infrastructure ecosystem</h3>
+
+                    <p>
+                        ITC continues to provide payment infrastructure,
+                        transaction processing, banking technology and
+                        related IT solutions across multiple sectors.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAPABILITIES -->
+    <section class="company-section">
+
+        <div class="company-section-heading">
+
+            <span class="company-section-label">
+                04 / Capabilities
+            </span>
+
+            <h2>
+                Core capabilities engineered
+                for scale.
+            </h2>
+
+        </div>
+
+
+        <div class="capability-grid">
+
+            <article class="capability">
+
+                <div class="capability-number">01</div>
+
+                <h3>Payment Infrastructure</h3>
+
+                <p>
+                    Infrastructure supporting electronic payment and
+                    transaction-processing environments.
+                </p>
+
+            </article>
+
+
+            <article class="capability">
+
+                <div class="capability-number">02</div>
+
+                <h3>Transaction Processing</h3>
+
+                <p>
+                    Technology designed to support secure and reliable
+                    real-time transaction processing.
+                </p>
+
+            </article>
+
+
+            <article class="capability">
+
+                <div class="capability-number">03</div>
+
+                <h3>Banking Technology</h3>
+
+                <p>
+                    Technology solutions supporting banks and financial
+                    institutions across multiple operational areas.
+                </p>
+
+            </article>
+
+
+            <article class="capability">
+
+                <div class="capability-number">04</div>
+
+                <h3>Digital Transformation</h3>
+
+                <p>
+                    Infrastructure and technology solutions supporting
+                    organizations moving toward digital services.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPANY PHILOSOPHY -->
+    <section class="company-section">
+
+        <div class="company-overview">
+
+            <article class="company-glass">
+
+                <h3>Customer-first philosophy</h3>
+
+                <p>
+                    ITC states that its customer-first philosophy is
+                    centered on providing technology services and
+                    solutions that help clients optimize business
+                    performance and meet operational goals.
+                </p>
+
+                <p>
+                    The company also emphasizes investment in its people,
+                    partnerships with clients and continuous adoption of
+                    emerging technologies and industry practices.
+                </p>
+
+            </article>
+
+
+            <article class="company-glass">
+
+                <h3>Built for critical environments</h3>
+
+                <p>
+                    ITC provides infrastructure and transaction-processing
+                    services to major banks, financial institutions,
+                    government organizations and retailers.
+                </p>
+
+                <p>
+                    Its technology ecosystem includes payment solutions,
+                    transaction switching, card management, ATM-related
+                    technology and broader IT infrastructure services.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="company-cta">
+
+        <h2>
+            Explore the technology
+            behind the ecosystem.
+        </h2>
+
+        <p>
+            Discover how ITC's solutions, infrastructure and technology
+            capabilities connect financial institutions, businesses
+            and digital payment environments.
+        </p>
+
+        <a href="solutions.html">
+            Explore Solutions
+            <span>→</span>
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <div class="logo">
+                    <span class="logo-mark">ITC</span>
+                    <span class="logo-text">
+                        IT CONSULTANTS
+                        <small>PLC.</small>
+                    </span>
+                </div>
+
+                <p>
+                    Digital infrastructure. Payment technology.
+                    Transaction intelligence.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="company.html">Company</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="technology.html">Technology</a>
+                <a href="investors.html">Investors</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 IT Consultants PLC. All rights reserved.
+            </span>
+
+            <span>
+                Dhaka, Bangladesh
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" aria-label="Back to top">
+    ↑
+</button>
+
+
+</div>
+
+<script src="main.js"></script>
+
+<script src="animations.js"></script>
+
+</body>
+</html>
+
+
+### After saving
+
+Upload **only this new file** to your GitHub repository:
+
+text
+company.html
+
+
+Your repository will now be:
+
+text
+its/
+├── index.html
+├── company.html       ← NEW
+├── style.css
+├── responsive.css
+├── main.js
+├── animations.js
+└── README.md
+
+
+Then open:
+
+**`https://skskarmakar334-create.github.io/its/company.html`**
+
+The existing homepage doesn't need to be replaced.
+
+**Next after this:** we'll create `solutions.html` with the actual ITC solutions — Transaction Switching, Card Management System, Biometric ATM Solution, IT Infrastructure & Solutions, POS, Qpay and the payment-service ecosystem.
