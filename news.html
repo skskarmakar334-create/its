@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>News & Updates | IT Consultants PLC.</title>
+
+    <meta name="description"
+          content="IT Consultants PLC. newsroom — corporate updates, payment technology, digital infrastructure and transaction ecosystem developments.">
+
+    <meta name="keywords"
+          content="IT Consultants PLC, ITC Bangladesh, payment technology, transaction processing, digital payments, Q-Cash, QPay, banking technology">
+
+    <meta name="author" content="IT Consultants PLC.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <style>
+
+        /* =========================================================
+           NEWS PAGE — IT CONSULTANTS PLC.
+           ========================================================= */
+
+        .news-page {
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .news-page::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            top: 10%;
+            right: -250px;
+            border-radius: 50%;
+            background: rgba(0, 220, 255, 0.08);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .news-page::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            bottom: 5%;
+            left: -250px;
+            border-radius: 50%;
+            background: rgba(130, 80, 255, 0.07);
+            filter: blur(110px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ---------------------------------------------------------
+           HERO
+           --------------------------------------------------------- */
+
+        .news-hero {
+            position: relative;
+            min-height: 72vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 7% 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .news-grid-background {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: linear-gradient(to bottom, black, transparent);
+            pointer-events: none;
+        }
+
+        .news-hero-orbit {
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            border: 1px solid rgba(0, 220, 255, 0.10);
+            border-radius: 50%;
+            animation: newsOrbit 22s linear infinite;
+            pointer-events: none;
+        }
+
+        .news-hero-orbit::before,
+        .news-hero-orbit::after {
+            content: "";
+            position: absolute;
+            inset: 55px;
+            border: 1px solid rgba(130, 80, 255, 0.10);
+            border-radius: 50%;
+        }
+
+        .news-hero-orbit::after {
+            inset: 130px;
+            border-color: rgba(0, 220, 255, 0.08);
+        }
+
+        @keyframes newsOrbit {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .news-hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1050px;
+        }
+
+        .news-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 16px;
+            border: 1px solid rgba(0, 220, 255, 0.20);
+            border-radius: 100px;
+            background: rgba(0, 220, 255, 0.045);
+            color: #65eaff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(12px);
+        }
+
+        .news-eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #5eeaff;
+            box-shadow: 0 0 15px #5eeaff;
+            animation: newsPulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes newsPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .35;
+                transform: scale(.7);
+            }
+        }
+
+        .news-hero h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(42px, 7vw, 92px);
+            line-height: 1.02;
+            margin: 0;
+            letter-spacing: -2px;
+            font-weight: 700;
+        }
+
+        .news-hero h1 span {
+            background: linear-gradient(90deg, #ffffff, #66eaff, #a884ff, #ffffff);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientFlow 7s linear infinite;
+        }
+
+        @keyframes gradientFlow {
+            to {
+                background-position: 250% center;
+            }
+        }
+
+        .news-hero p {
+            max-width: 760px;
+            margin: 30px auto 0;
+            color: rgba(255,255,255,0.63);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .news-hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 38px;
+        }
+
+        .news-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 0 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .4px;
+            transition: .3s ease;
+            cursor: pointer;
+        }
+
+        .news-button.primary {
+            color: #001116;
+            background: linear-gradient(135deg, #69ecff, #9a8cff);
+            box-shadow: 0 0 35px rgba(0, 220, 255, 0.18);
+        }
+
+        .news-button.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 45px rgba(0, 220, 255, 0.35);
+        }
+
+        .news-button.secondary {
+            color: #dffbff;
+            border: 1px solid rgba(255,255,255,.13);
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(14px);
+        }
+
+        .news-button.secondary:hover {
+            border-color: rgba(0,220,255,.35);
+            background: rgba(0,220,255,.06);
+            transform: translateY(-3px);
+        }
+
+        /* ---------------------------------------------------------
+           LIVE STATUS
+           --------------------------------------------------------- */
+
+        .news-status-strip {
+            width: min(1100px, 88%);
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 5;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 22px;
+            overflow: hidden;
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(22px);
+            box-shadow: 0 25px 80px rgba(0,0,0,.25);
+        }
+
+        .news-status-item {
+            padding: 25px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,.07);
+        }
+
+        .news-status-item:last-child {
+            border-right: none;
+        }
+
+        .news-status-value {
+            font-family: "Orbitron", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #e8fcff;
+        }
+
+        .news-status-label {
+            margin-top: 7px;
+            color: rgba(255,255,255,.45);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* ---------------------------------------------------------
+           MAIN NEWS AREA
+           --------------------------------------------------------- */
+
+        .news-section {
+            width: min(1200px, 88%);
+            margin: 130px auto;
+        }
+
+        .news-section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .news-section-heading h2 {
+            margin: 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(28px, 4vw, 48px);
+            line-height: 1.1;
+        }
+
+        .news-section-heading p {
+            max-width: 520px;
+            margin: 0;
+            color: rgba(255,255,255,.50);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* ---------------------------------------------------------
+           FEATURED STORY
+           --------------------------------------------------------- */
+
+        .featured-news {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            min-height: 440px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 75% 20%, rgba(0,220,255,.12), transparent 35%),
+                radial-gradient(circle at 90% 80%, rgba(130,80,255,.10), transparent 35%),
+                rgba(255,255,255,.035);
+            backdrop-filter: blur(22px);
+            box-shadow: 0 30px 100px rgba(0,0,0,.25);
+        }
+
+        .featured-news::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            right: -180px;
+            top: -180px;
+            border: 1px solid rgba(0,220,255,.12);
+            border-radius: 50%;
+        }
+
+        .featured-copy {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-tag {
+            display: inline-flex;
+            width: fit-content;
+            padding: 7px 12px;
+            border-radius: 8px;
+            background: rgba(0,220,255,.08);
+            border: 1px solid rgba(0,220,255,.18);
+            color: #67eaff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+        }
+
+        .featured-copy h3 {
+            margin: 0;
+            max-width: 650px;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(25px, 3.2vw, 45px);
+            line-height: 1.18;
+        }
+
+        .featured-copy p {
+            max-width: 610px;
+            margin: 22px 0 0;
+            color: rgba(255,255,255,.55);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .featured-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 28px;
+            width: fit-content;
+            color: #72ebff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .25s ease;
+        }
+
+        .featured-link:hover {
+            gap: 14px;
+            color: white;
+        }
+
+        .featured-visual {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .featured-core {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,220,255,.30);
+            background:
+                radial-gradient(circle at 35% 30%, rgba(255,255,255,.14), transparent 20%),
+                radial-gradient(circle, rgba(0,220,255,.14), rgba(20,20,35,.2) 65%);
+            box-shadow:
+                0 0 60px rgba(0,220,255,.13),
+                inset 0 0 50px rgba(0,220,255,.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: coreFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes coreFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .featured-core span {
+            font-family: "Orbitron", sans-serif;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.6;
+            letter-spacing: 1.5px;
+            color: #dffcff;
+        }
+
+        .featured-orbit {
+            position: absolute;
+            width: 310px;
+            height: 130px;
+            border: 1px solid rgba(0,220,255,.20);
+            border-radius: 50%;
+            transform: rotate(-25deg);
+            animation: featuredOrbit 9s linear infinite;
+        }
+
+        .featured-orbit:nth-child(2) {
+            width: 340px;
+            height: 150px;
+            transform: rotate(55deg);
+            border-color: rgba(150,100,255,.18);
+            animation-duration: 12s;
+            animation-direction: reverse;
+        }
+
+        .featured-orbit:nth-child(3) {
+            width: 260px;
+            height: 100px;
+            transform: rotate(85deg);
+            border-color: rgba(255,255,255,.10);
+            animation-duration: 7s;
+        }
+
+        @keyframes featuredOrbit {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ---------------------------------------------------------
+           FILTER BAR
+           --------------------------------------------------------- */
+
+        .news-controls {
+            margin: 90px 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .news-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .news-filter {
+            border: 1px solid rgba(255,255,255,.10);
+            background: rgba(255,255,255,.035);
+            color: rgba(255,255,255,.55);
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            transition: .25s ease;
+        }
+
+        .news-filter:hover,
+        .news-filter.active {
+            color: #dffcff;
+            border-color: rgba(0,220,255,.35);
+            background: rgba(0,220,255,.07);
+            box-shadow: 0 0 20px rgba(0,220,255,.06);
+        }
+
+        .news-search {
+            position: relative;
+            min-width: 240px;
+        }
+
+        .news-search input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid rgba(255,255,255,.10);
+            outline: none;
+            border-radius: 11px;
+            padding: 12px 16px;
+            color: white;
+            background: rgba(255,255,255,.035);
+            font-family: "Inter", sans-serif;
+            font-size: 12px;
+            backdrop-filter: blur(12px);
+            transition: .25s ease;
+        }
+
+        .news-search input:focus {
+            border-color: rgba(0,220,255,.35);
+            box-shadow: 0 0 25px rgba(0,220,255,.06);
+        }
+
+        .news-search input::placeholder {
+            color: rgba(255,255,255,.30);
+        }
+
+        /* ---------------------------------------------------------
+           NEWS CARDS
+           --------------------------------------------------------- */
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .news-card {
+            position: relative;
+            min-height: 330px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 20px;
+            background: rgba(255,255,255,.032);
+            backdrop-filter: blur(18px);
+            transition: .35s ease;
+        }
+
+        .news-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -90px;
+            top: -90px;
+            border-radius: 50%;
+            background: rgba(0,220,255,.06);
+            filter: blur(30px);
+            transition: .35s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,220,255,.24);
+            box-shadow: 0 25px 70px rgba(0,0,0,.24);
+        }
+
+        .news-card:hover::before {
+            background: rgba(0,220,255,.12);
+        }
+
+        .news-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .news-card-category {
+            color: #6feaff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 9px;
+            letter-spacing: 1.4px;
+            padding: 6px 9px;
+            border-radius: 7px;
+            border: 1px solid rgba(0,220,255,.16);
+            background: rgba(0,220,255,.05);
+        }
+
+        .news-card-status {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6feaff;
+            box-shadow: 0 0 12px rgba(0,220,255,.6);
+        }
+
+        .news-card h3 {
+            position: relative;
+            z-index: 2;
+            margin: 30px 0 15px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 19px;
+            line-height: 1.4;
+        }
+
+        .news-card p {
+            position: relative;
+            z-index: 2;
+            color: rgba(255,255,255,.48);
+            font-size: 13px;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .news-card-footer {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 28px;
+        }
+
+        .news-card-link {
+            color: #dffcff;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            transition: .25s ease;
+        }
+
+        .news-card-link:hover {
+            color: #6feaff;
+        }
+
+        .news-card-arrow {
+            color: rgba(255,255,255,.30);
+            transition: .25s ease;
+        }
+
+        .news-card:hover .news-card-arrow {
+            color: #6feaff;
+            transform: translateX(4px);
+        }
+
+        .news-empty {
+            display: none;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 18px;
+            background: rgba(255,255,255,.025);
+            color: rgba(255,255,255,.45);
+            margin-top: 20px;
+        }
+
+        /* ---------------------------------------------------------
+           INFORMATION BAND
+           --------------------------------------------------------- */
+
+        .news-information {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .information-card {
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.028);
+            backdrop-filter: blur(18px);
+        }
+
+        .information-number {
+            font-family: "Orbitron", sans-serif;
+            font-size: 38px;
+            color: #70eaff;
+            margin-bottom: 12px;
+        }
+
+        .information-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 18px;
+            margin: 0 0 12px;
+        }
+
+        .information-card p {
+            margin: 0;
+            color: rgba(255,255,255,.48);
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        /* ---------------------------------------------------------
+           CTA
+           --------------------------------------------------------- */
+
+        .news-cta {
+            width: min(1200px, 88%);
+            margin: 0 auto 120px;
+            padding: 70px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            border: 1px solid rgba(0,220,255,.14);
+            background:
+                radial-gradient(circle at 50% 0%, rgba(0,220,255,.11), transparent 45%),
+                rgba(255,255,255,.028);
+            backdrop-filter: blur(20px);
+        }
+
+        .news-cta::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border: 1px solid rgba(255,255,255,.045);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .news-cta h2 {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(28px, 4vw, 52px);
+        }
+
+        .news-cta p {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            margin: 20px auto 30px;
+            color: rgba(255,255,255,.48);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .news-cta-actions {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ---------------------------------------------------------
+           REVEAL
+           --------------------------------------------------------- */
+
+        .news-reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .news-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------------------------------------------------------
+           RESPONSIVE
+           --------------------------------------------------------- */
+
+        @media (max-width: 1000px) {
+
+            .news-status-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news-status-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .news-status-item:nth-child(-n+2) {
+                border-bottom: 1px solid rgba(255,255,255,.07);
+            }
+
+            .featured-news {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-visual {
+                min-height: 350px;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news-information {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .news-hero {
+                min-height: 68vh;
+                padding: 130px 6% 80px;
+            }
+
+            .news-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .news-hero p {
+                font-size: 15px;
+            }
+
+            .news-hero-orbit {
+                width: 400px;
+                height: 400px;
+            }
+
+            .news-status-strip {
+                width: 88%;
+                margin-top: -20px;
+            }
+
+            .news-status-item {
+                padding: 20px 12px;
+            }
+
+            .news-section {
+                width: 88%;
+                margin: 90px auto;
+            }
+
+            .news-section-heading {
+                display: block;
+            }
+
+            .news-section-heading p {
+                margin-top: 15px;
+            }
+
+            .featured-copy {
+                padding: 35px 28px;
+            }
+
+            .featured-visual {
+                min-height: 300px;
+            }
+
+            .featured-core {
+                width: 170px;
+                height: 170px;
+            }
+
+            .featured-orbit {
+                width: 270px;
+            }
+
+            .news-controls {
+                align-items: stretch;
+            }
+
+            .news-search {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-cta {
+                width: 88%;
+                padding: 50px 25px;
+                margin-bottom: 80px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="news-page">
+
+
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">ITC</span>
+                <span class="logo-text">IT CONSULTANTS PLC.</span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+                <a href="company.html">Company</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="technology.html">Technology</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="investors.html">Investors</a>
+                <a href="news.html" class="active">News</a>
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <button class="mobile-menu-toggle"
+                    aria-label="Open navigation menu"
+                    type="button">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <main>
+
+        <section class="news-hero">
+
+            <div class="news-grid-background"></div>
+
+            <div class="news-hero-orbit"></div>
+
+            <div class="news-hero-content news-reveal">
+
+                <div class="news-eyebrow">
+                    ITC NEWSROOM
+                </div>
+
+                <h1>
+                    The network<br>
+                    <span>keeps moving.</span>
+                </h1>
+
+                <p>
+                    Explore the technology, infrastructure, payment ecosystem
+                    and corporate developments shaping the next generation of
+                    digital transactions.
+                </p>
+
+                <div class="news-hero-actions">
+
+                    <a href="#latest" class="news-button primary">
+                        Explore updates
+                        <span>→</span>
+                    </a>
+
+                    <a href="company.html" class="news-button secondary">
+                        About ITC
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             STATUS STRIP
+             ===================================================== -->
+
+        <section class="news-status-strip news-reveal">
+
+            <div class="news-status-item">
+
+                <div class="news-status-value">2000</div>
+
+                <div class="news-status-label">
+                    Company formed
+                </div>
+
+            </div>
+
+
+            <div class="news-status-item">
+
+                <div class="news-status-value">24/7</div>
+
+                <div class="news-status-label">
+                    Transaction infrastructure
+                </div>
+
+            </div>
+
+
+            <div class="news-status-item">
+
+                <div class="news-status-value">PCI DSS</div>
+
+                <div class="news-status-label">
+                    Security focus
+                </div>
+
+            </div>
+
+
+            <div class="news-status-item">
+
+                <div class="news-status-value">Q-CASH</div>
+
+                <div class="news-status-label">
+                    Payment network
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LATEST / FEATURED
+             ===================================================== -->
+
+        <section class="news-section" id="latest">
+
+            <div class="news-section-heading news-reveal">
+
+                <div>
+
+                    <div class="section-kicker">
+                        LATEST
+                    </div>
+
+                    <h2>
+                        Inside the<br>
+                        transaction ecosystem.
+                    </h2>
+
+                </div>
+
+                <p>
+                    ITC's work spans payment switching, card management,
+                    digital channels, infrastructure, security and financial
+                    technology. Explore the ecosystem through these curated
+                    technology and corporate updates.
+                </p>
+
+            </div>
+
+
+            <article class="featured-news news-reveal">
+
+                <div class="featured-copy">
+
+                    <div class="featured-tag">
+                        FEATURED / TECHNOLOGY
+                    </div>
+
+                    <h3>
+                        Building the infrastructure behind modern digital payments.
+                    </h3>
+
+                    <p>
+                        From transaction switching and card management to
+                        ATM, POS, e-commerce, QR and mobile financial services,
+                        ITC's technology ecosystem is designed around reliable
+                        real-time transaction processing.
+                    </p>
+
+                    <a href="technology.html" class="featured-link">
+                        Explore the technology architecture
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="featured-visual">
+
+                    <div class="featured-orbit"></div>
+                    <div class="featured-orbit"></div>
+                    <div class="featured-orbit"></div>
+
+                    <div class="featured-core">
+
+                        <span>
+                            ITC<br>
+                            PAYMENT<br>
+                            CORE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 FILTER CONTROLS
+                 ================================================= -->
+
+            <div class="news-controls news-reveal">
+
+                <div class="news-filters">
+
+                    <button class="news-filter active"
+                            type="button"
+                            data-filter="all">
+                        ALL
+                    </button>
+
+                    <button class="news-filter"
+                            type="button"
+                            data-filter="corporate">
+                        CORPORATE
+                    </button>
+
+                    <button class="news-filter"
+                            type="button"
+                            data-filter="technology">
+                        TECHNOLOGY
+                    </button>
+
+                    <button class="news-filter"
+                            type="button"
+                            data-filter="payments">
+                        PAYMENTS
+                    </button>
+
+                    <button class="news-filter"
+                            type="button"
+                            data-filter="network">
+                        NETWORK
+                    </button>
+
+                </div>
+
+
+                <div class="news-search">
+
+                    <input
+                        type="search"
+                        id="newsSearch"
+                        placeholder="Search newsroom..."
+                        aria-label="Search newsroom">
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 NEWS GRID
+                 ================================================= -->
+
+            <div class="news-grid" id="newsGrid">
+
+
+                <!-- CORPORATE -->
+
+                <article class="news-card news-reveal"
+                         data-category="corporate"
+                         data-title="Corporate profile and company background">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            CORPORATE
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        A payment technology company built for Bangladesh.
+                    </h3>
+
+                    <p>
+                        Discover ITC's corporate background, evolution,
+                        operating philosophy and role within Bangladesh's
+                        digital payment infrastructure.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="company.html"
+                           class="news-card-link">
+                            READ COMPANY STORY →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TECHNOLOGY -->
+
+                <article class="news-card news-reveal"
+                         data-category="technology"
+                         data-title="Transaction switching technology architecture">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            TECHNOLOGY
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        Transaction switching at the center of the ecosystem.
+                    </h3>
+
+                    <p>
+                        Explore the architecture connecting digital channels,
+                        financial institutions, transaction processing,
+                        settlement and real-time payment services.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="technology.html"
+                           class="news-card-link">
+                            VIEW TECHNOLOGY →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PAYMENTS -->
+
+                <article class="news-card news-reveal"
+                         data-category="payments"
+                         data-title="QPay fintech application digital payments">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            PAYMENTS
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        Moving payments beyond traditional channels.
+                    </h3>
+
+                    <p>
+                        QPay brings together account and card management,
+                        inter-bank fund transfer, bill payment, QR payments,
+                        online payments and transaction control.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="solutions.html"
+                           class="news-card-link">
+                            EXPLORE SOLUTIONS →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NETWORK -->
+
+                <article class="news-card news-reveal"
+                         data-category="network"
+                         data-title="Q-Cash ATM merchant network">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            NETWORK
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        Connecting banks through the Q-Cash ecosystem.
+                    </h3>
+
+                    <p>
+                        Q-Cash supports electronic transaction processing,
+                        inter-bank settlement, ATM and POS connectivity and
+                        a wider digital financial ecosystem.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="solutions.html"
+                           class="news-card-link">
+                            EXPLORE Q-CASH →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TECHNOLOGY -->
+
+                <article class="news-card news-reveal"
+                         data-category="technology"
+                         data-title="Card management system technology">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            TECHNOLOGY
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        The systems behind the card lifecycle.
+                    </h3>
+
+                    <p>
+                        Card issuance, merchant management, account management,
+                        reporting and analysis form an integrated technology
+                        layer for modern card ecosystems.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="solutions.html"
+                           class="news-card-link">
+                            VIEW CARD SYSTEMS →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PAYMENTS -->
+
+                <article class="news-card news-reveal"
+                         data-category="payments"
+                         data-title="Digital channels ATM POS ecommerce QR">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            PAYMENTS
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        One infrastructure. Multiple transaction channels.
+                    </h3>
+
+                    <p>
+                        ATM, POS, e-commerce, QR, mobile finance and internet
+                        banking channels can operate as part of a connected
+                        transaction environment.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="solutions.html"
+                           class="news-card-link">
+                            VIEW PAYMENT CHANNELS →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CORPORATE -->
+
+                <article class="news-card news-reveal"
+                         data-category="corporate"
+                         data-title="ITC achievements recognition milestones">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            CORPORATE
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        Milestones that shaped the ITC journey.
+                    </h3>
+
+                    <p>
+                        From its formation in 2000 and operations in 2001 to
+                        the development of a wider electronic transaction
+                        ecosystem, explore the company's milestones.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="achievements.html"
+                           class="news-card-link">
+                            VIEW MILESTONES →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TECHNOLOGY -->
+
+                <article class="news-card news-reveal"
+                         data-category="technology"
+                         data-title="IT infrastructure data center disaster recovery">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            TECHNOLOGY
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        Infrastructure designed for continuity.
+                    </h3>
+
+                    <p>
+                        Data center architecture, security, disaster recovery,
+                        virtualization, migration and IT support form the
+                        infrastructure layer behind critical services.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="technology.html"
+                           class="news-card-link">
+                            EXPLORE INFRASTRUCTURE →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NETWORK -->
+
+                <article class="news-card news-reveal"
+                         data-category="network"
+                         data-title="Biometric ATM fingerprint authentication">
+
+                    <div class="news-card-top">
+
+                        <span class="news-card-category">
+                            NETWORK
+                        </span>
+
+                        <span class="news-card-status"></span>
+
+                    </div>
+
+                    <h3>
+                        Authentication evolving at the ATM.
+                    </h3>
+
+                    <p>
+                        Biometric ATM technology introduces fingerprint
+                        authentication into ATM transaction environments,
+                        connecting secure verification with host processing.
+                    </p>
+
+                    <div class="news-card-footer">
+
+                        <a href="solutions.html"
+                           class="news-card-link">
+                            VIEW ATM SOLUTIONS →
+                        </a>
+
+                        <span class="news-card-arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="news-empty" id="newsEmpty">
+                No newsroom items match your search.
+            </div>
+
+
+            <!-- =================================================
+                 INFORMATION CARDS
+                 ================================================= -->
+
+            <div class="news-information">
+
+
+                <div class="information-card news-reveal">
+
+                    <div class="information-number">
+                        24/7
+                    </div>
+
+                    <h3>
+                        Always-on infrastructure
+                    </h3>
+
+                    <p>
+                        Payment infrastructure is built around continuous
+                        transaction processing, monitoring, resilience and
+                        operational availability.
+                    </p>
+
+                </div>
+
+
+                <div class="information-card news-reveal">
+
+                    <div class="information-number">
+                        360°
+                    </div>
+
+                    <h3>
+                        A connected ecosystem
+                    </h3>
+
+                    <p>
+                        Banks, merchants, ATMs, POS terminals, digital channels,
+                        governments and payment platforms can connect through
+                        an integrated technology environment.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+             ===================================================== -->
+
+        <section class="news-cta news-reveal">
+
+            <h2>
+                Want to go deeper?
+            </h2>
+
+            <p>
+                Explore ITC's technology, corporate milestones and investor
+                information to understand the infrastructure powering the
+                transaction ecosystem.
+            </p>
+
+            <div class="news-cta-actions">
+
+                <a href="technology.html"
+                   class="news-button primary">
+                    Explore technology →
+                </a>
+
+                <a href="achievements.html"
+                   class="news-button secondary">
+                    View achievements
+                </a>
+
+                <a href="contact.html"
+                   class="news-button secondary">
+                    Contact ITC
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-mark">ITC</span>
+
+                    <span class="logo-text">
+                        IT CONSULTANTS PLC.
+                    </span>
+
+                </a>
+
+                <p>
+                    Digital infrastructure and payment technology
+                    powering secure, scalable transactions.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Explore</h4>
+
+                <a href="company.html">Company</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="technology.html">Technology</a>
+                <a href="achievements.html">Achievements</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Corporate</h4>
+
+                <a href="investors.html">Investor Relations</a>
+                <a href="news.html">News & Updates</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://www.itcbd.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Official ITC Website ↗
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Connect</h4>
+
+                <a href="mailto:info@itcbd.com">
+                    info@itcbd.com
+                </a>
+
+                <a href="tel:+88029830310">
+                    +880 2 983 0310
+                </a>
+
+                <a href="contact.html">
+                    Dhaka, Bangladesh
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 IT Consultants PLC. All rights reserved.
+            </div>
+
+            <div>
+                Futuristic concept interface · ITC
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+         ========================================================= -->
+
+    <button id="backToTop"
+            class="back-to-top"
+            aria-label="Back to top"
+            type="button">
+
+        ↑
+
+    </button>
+
+
+    <!-- =========================================================
+         SHARED JAVASCRIPT
+         ========================================================= -->
+
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+
+
+    <!-- =========================================================
+         NEWS PAGE JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            /* -----------------------------------------------------
+               REVEAL ANIMATIONS
+               ----------------------------------------------------- */
+
+            const revealItems =
+                document.querySelectorAll(".news-reveal");
+
+            const revealObserver =
+                new IntersectionObserver(
+                    function (entries) {
+
+                        entries.forEach(function (entry) {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add("visible");
+
+                                revealObserver.unobserve(entry.target);
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.08
+                    }
+                );
+
+
+            revealItems.forEach(function (item) {
+
+                revealObserver.observe(item);
+
+            });
+
+
+            /* -----------------------------------------------------
+               NEWS FILTER
+               ----------------------------------------------------- */
+
+            const filters =
+                document.querySelectorAll(".news-filter");
+
+            const cards =
+                document.querySelectorAll(".news-card");
+
+            const searchInput =
+                document.getElementById("newsSearch");
+
+            const emptyMessage =
+                document.getElementById("newsEmpty");
+
+            let activeFilter = "all";
+
+
+            function filterNews() {
+
+                const searchTerm =
+                    searchInput.value
+                        .toLowerCase()
+                        .trim();
+
+                let visibleCount = 0;
+
+
+                cards.forEach(function (card) {
+
+                    const category =
+                        card.dataset.category;
+
+                    const title =
+                        card.dataset.title
+                            .toLowerCase();
+
+                    const cardText =
+                        card.innerText
+                            .toLowerCase();
+
+                    const matchesCategory =
+                        activeFilter === "all" ||
+                        category === activeFilter;
+
+                    const matchesSearch =
+                        searchTerm === "" ||
+                        title.includes(searchTerm) ||
+                        cardText.includes(searchTerm);
+
+                    if (matchesCategory && matchesSearch) {
+
+                        card.style.display = "flex";
+
+                        visibleCount++;
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+
+                if (visibleCount === 0) {
+
+                    emptyMessage.style.display = "block";
+
+                } else {
+
+                    emptyMessage.style.display = "none";
+
+                }
+
+            }
+
+
+            filters.forEach(function (filter) {
+
+                filter.addEventListener("click", function () {
+
+                    filters.forEach(function (button) {
+
+                        button.classList.remove("active");
+
+                    });
+
+                    this.classList.add("active");
+
+                    activeFilter =
+                        this.dataset.filter;
+
+                    filterNews();
+
+                });
+
+            });
+
+
+            searchInput.addEventListener(
+                "input",
+                filterNews
+            );
+
+
+            /* -----------------------------------------------------
+               FEATURED CORE MOUSE PARALLAX
+               ----------------------------------------------------- */
+
+            const featured =
+                document.querySelector(".featured-news");
+
+            const core =
+                document.querySelector(".featured-core");
+
+
+            if (featured && core) {
+
+                featured.addEventListener(
+                    "mousemove",
+                    function (event) {
+
+                        const rect =
+                            featured.getBoundingClientRect();
+
+                        const x =
+                            (event.clientX - rect.left)
+                            / rect.width
+                            - 0.5;
+
+                        const y =
+                            (event.clientY - rect.top)
+                            / rect.height
+                            - 0.5;
+
+                        core.style.transform =
+                            "translate(" +
+                            (x * 12) +
+                            "px, " +
+                            (y * 12) +
+                            "px)";
+
+                    }
+                );
+
+
+                featured.addEventListener(
+                    "mouseleave",
+                    function () {
+
+                        core.style.transform =
+                            "translate(0, 0)";
+
+                    }
+                );
+
+            }
+
+
+            /* -----------------------------------------------------
+               CARD TILT
+               ----------------------------------------------------- */
+
+            cards.forEach(function (card) {
+
+                card.addEventListener(
+                    "mousemove",
+                    function (event) {
+
+                        if (window.innerWidth < 900) {
+                            return;
+                        }
+
+                        const rect =
+                            card.getBoundingClientRect();
+
+                        const x =
+                            (event.clientX - rect.left)
+                            / rect.width
+                            - 0.5;
+
+                        const y =
+                            (event.clientY - rect.top)
+                            / rect.height
+                            - 0.5;
+
+                        card.style.transform =
+                            "perspective(800px) " +
+                            "rotateX(" + (-y * 2.5) + "deg) " +
+                            "rotateY(" + (x * 2.5) + "deg) " +
+                            "translateY(-8px)";
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "mouseleave",
+                    function () {
+
+                        card.style.transform = "";
+
+                    }
+                );
+
+            });
+
+
+            /* -----------------------------------------------------
+               SMOOTH INTERNAL LINKS
+               ----------------------------------------------------- */
+
+            document.querySelectorAll(
+                'a[href^="#"]'
+            ).forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const targetId =
+                            this.getAttribute("href");
+
+                        if (
+                            targetId &&
+                            targetId !== "#"
+                        ) {
+
+                            const target =
+                                document.querySelector(targetId);
+
+                            if (target) {
+
+                                event.preventDefault();
+
+                                target.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start"
+                                });
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
