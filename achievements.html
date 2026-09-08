@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Achievements | IT Consultants PLC.</title>
+
+    <meta name="description"
+          content="Explore the milestones, recognition, certifications, payment infrastructure achievements and technology journey of IT Consultants PLC.">
+
+    <meta name="theme-color" content="#05070d">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <style>
+
+        /* =========================================================
+           ACHIEVEMENTS PAGE
+        ========================================================= */
+
+        .achievement-page {
+            overflow: hidden;
+        }
+
+        /* HERO */
+
+        .achievement-hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 150px 7% 90px;
+            isolation: isolate;
+        }
+
+        .achievement-hero::before {
+            content: "";
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            right: -200px;
+            top: 70px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(0, 229, 255, 0.16),
+                transparent 68%
+            );
+            filter: blur(15px);
+            z-index: -2;
+        }
+
+        .achievement-hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: -220px;
+            bottom: -180px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(124, 58, 237, 0.15),
+                transparent 68%
+            );
+            filter: blur(20px);
+            z-index: -2;
+        }
+
+        .achievement-hero-grid {
+            width: 100%;
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .achievement-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 9px 16px;
+            border: 1px solid rgba(0, 229, 255, 0.24);
+            background: rgba(0, 229, 255, 0.045);
+            backdrop-filter: blur(14px);
+            border-radius: 100px;
+            color: #8befff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 26px;
+        }
+
+        .achievement-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow: 0 0 15px #00e5ff;
+            animation: achievementPulse 1.8s infinite;
+        }
+
+        .achievement-hero h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(48px, 6vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin: 0 0 28px;
+            max-width: 850px;
+        }
+
+        .achievement-hero h1 span {
+            display: block;
+            background: linear-gradient(
+                100deg,
+                #ffffff 0%,
+                #9cf6ff 38%,
+                #8b5cf6 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .achievement-hero p {
+            max-width: 720px;
+            font-size: 18px;
+            line-height: 1.85;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 35px;
+        }
+
+        .achievement-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .achievement-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .achievement-btn.primary {
+            color: #02050a;
+            background: #00e5ff;
+            box-shadow: 0 0 28px rgba(0, 229, 255, 0.25);
+        }
+
+        .achievement-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 42px rgba(0, 229, 255, 0.45);
+        }
+
+        .achievement-btn.secondary {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(15px);
+        }
+
+        .achievement-btn.secondary:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 229, 255, 0.4);
+            background: rgba(0, 229, 255, 0.06);
+        }
+
+        /* HERO CORE */
+
+        .achievement-core {
+            min-height: 530px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .achievement-core::before {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            border: 1px solid rgba(0, 229, 255, 0.13);
+            border-radius: 50%;
+            animation: coreSpin 18s linear infinite;
+        }
+
+        .achievement-core::after {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border: 1px dashed rgba(139, 92, 246, 0.3);
+            border-radius: 50%;
+            animation: coreSpinReverse 12s linear infinite;
+        }
+
+        .core-center {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+            background:
+                radial-gradient(
+                    circle at 35% 25%,
+                    rgba(0, 229, 255, 0.17),
+                    rgba(7, 11, 20, 0.95) 65%
+                );
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            box-shadow:
+                0 0 50px rgba(0, 229, 255, 0.13),
+                inset 0 0 35px rgba(0, 229, 255, 0.08);
+        }
+
+        .core-center strong {
+            font-family: "Orbitron", sans-serif;
+            font-size: 38px;
+            color: #ffffff;
+        }
+
+        .core-center small {
+            color: #79eefe;
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 2px;
+            font-size: 9px;
+            margin-top: 5px;
+        }
+
+        .core-node {
+            position: absolute;
+            z-index: 5;
+            min-width: 120px;
+            padding: 13px 15px;
+            border-radius: 12px;
+            text-align: center;
+            background: rgba(9, 14, 24, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .core-node strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .core-node span {
+            display: block;
+            font-size: 9px;
+            color: rgba(255,255,255,0.48);
+            margin-top: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .node-one {
+            top: 35px;
+            left: 8%;
+        }
+
+        .node-two {
+            top: 40%;
+            right: -2%;
+        }
+
+        .node-three {
+            bottom: 40px;
+            left: 15%;
+        }
+
+        .node-four {
+            bottom: 22%;
+            right: 15%;
+        }
+
+        .core-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0,229,255,0.35),
+                transparent
+            );
+            transform-origin: left;
+        }
+
+        .line-one {
+            width: 190px;
+            left: 22%;
+            top: 33%;
+            transform: rotate(18deg);
+        }
+
+        .line-two {
+            width: 175px;
+            right: 19%;
+            top: 42%;
+            transform: rotate(-12deg);
+        }
+
+        .line-three {
+            width: 210px;
+            left: 27%;
+            bottom: 28%;
+            transform: rotate(-17deg);
+        }
+
+        .line-four {
+            width: 150px;
+            right: 28%;
+            bottom: 32%;
+            transform: rotate(23deg);
+        }
+
+        /* METRICS */
+
+        .achievement-metrics {
+            padding: 25px 7% 110px;
+        }
+
+        .metric-grid {
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .metric-card {
+            position: relative;
+            padding: 30px 25px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+            backdrop-filter: blur(18px);
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+
+        .metric-card::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: -60px;
+            right: -50px;
+            border-radius: 50%;
+            background: rgba(0,229,255,0.12);
+            filter: blur(20px);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,229,255,0.25);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+
+        .metric-number {
+            font-family: "Orbitron", sans-serif;
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 9px;
+        }
+
+        .metric-label {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* SECTION */
+
+        .achievement-section {
+            padding: 100px 7%;
+            position: relative;
+        }
+
+        .achievement-container {
+            max-width: 1450px;
+            margin: auto;
+        }
+
+        .section-heading {
+            max-width: 800px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading .eyebrow {
+            color: #00e5ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-heading h2 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(32px, 4vw, 58px);
+            line-height: 1.08;
+            margin: 0 0 18px;
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            color: rgba(255,255,255,0.57);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* RECOGNITION */
+
+        .recognition-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .recognition-card {
+            min-height: 290px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+            backdrop-filter: blur(20px);
+            transition: 0.4s ease;
+        }
+
+        .recognition-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,229,255,0.3);
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.35),
+                0 0 35px rgba(0,229,255,0.05);
+        }
+
+        .recognition-icon {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            border: 1px solid rgba(0,229,255,0.2);
+            background: rgba(0,229,255,0.055);
+            color: #8cf3ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .recognition-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 19px;
+            margin-bottom: 13px;
+        }
+
+        .recognition-card p {
+            color: rgba(255,255,255,0.53);
+            line-height: 1.75;
+            font-size: 14px;
+        }
+
+        .recognition-tag {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.32);
+            text-transform: uppercase;
+        }
+
+        /* TIMELINE */
+
+        .timeline-section {
+            padding: 110px 7%;
+        }
+
+        .timeline {
+            max-width: 1150px;
+            margin: 70px auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            transform: translateX(-50%);
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(0,229,255,0.4),
+                rgba(139,92,246,0.4),
+                transparent
+            );
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 0 55px 70px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            top: 4px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow:
+                0 0 0 5px rgba(0,229,255,0.08),
+                0 0 25px rgba(0,229,255,0.65);
+            z-index: 3;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -7px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -7px;
+        }
+
+        .timeline-year {
+            font-family: "Orbitron", sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #00e5ff;
+            margin-bottom: 13px;
+        }
+
+        .timeline-card {
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.035);
+            backdrop-filter: blur(15px);
+            transition: 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(0,229,255,0.28);
+            transform: translateY(-4px);
+        }
+
+        .timeline-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-card p {
+            color: rgba(255,255,255,0.52);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* ECOSYSTEM */
+
+        .ecosystem {
+            padding: 100px 7%;
+        }
+
+        .ecosystem-panel {
+            max-width: 1450px;
+            min-height: 500px;
+            margin: auto;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(0,229,255,0.08),
+                    transparent 35%
+                ),
+                rgba(255,255,255,0.02);
+        }
+
+        .ecosystem-grid {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ecosystem-core {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            font-family: "Orbitron", sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,229,255,0.18),
+                    rgba(5,8,15,0.95) 68%
+                );
+            border: 1px solid rgba(0,229,255,0.35);
+            box-shadow:
+                0 0 70px rgba(0,229,255,0.15),
+                inset 0 0 40px rgba(0,229,255,0.07);
+        }
+
+        .ecosystem-ring {
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            border: 1px dashed rgba(0,229,255,0.16);
+            animation: coreSpin 20s linear infinite;
+        }
+
+        .ecosystem-node {
+            position: absolute;
+            min-width: 140px;
+            padding: 16px;
+            text-align: center;
+            border-radius: 14px;
+            background: rgba(5,10,18,0.82);
+            border: 1px solid rgba(255,255,255,0.09);
+            backdrop-filter: blur(15px);
+        }
+
+        .ecosystem-node strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+
+        .ecosystem-node span {
+            color: rgba(255,255,255,0.4);
+            font-size: 9px;
+        }
+
+        .eco-a {
+            top: 55px;
+            left: 14%;
+        }
+
+        .eco-b {
+            top: 80px;
+            right: 14%;
+        }
+
+        .eco-c {
+            bottom: 55px;
+            left: 16%;
+        }
+
+        .eco-d {
+            bottom: 65px;
+            right: 15%;
+        }
+
+        .eco-line {
+            position: absolute;
+            width: 28%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0,229,255,0.28),
+                transparent
+            );
+        }
+
+        .eco-line-a {
+            transform: rotate(23deg);
+            left: 25%;
+            top: 35%;
+        }
+
+        .eco-line-b {
+            transform: rotate(-23deg);
+            right: 25%;
+            top: 35%;
+        }
+
+        .eco-line-c {
+            transform: rotate(-21deg);
+            left: 25%;
+            bottom: 35%;
+        }
+
+        .eco-line-d {
+            transform: rotate(21deg);
+            right: 25%;
+            bottom: 35%;
+        }
+
+        /* IMPACT */
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .impact-card {
+            padding: 34px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.035);
+            backdrop-filter: blur(18px);
+            transition: 0.35s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139,92,246,0.3);
+        }
+
+        .impact-card h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .impact-card p {
+            color: rgba(255,255,255,0.54);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .impact-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+        }
+
+        .impact-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.62);
+            font-size: 13px;
+        }
+
+        .impact-list li::before {
+            content: "→";
+            color: #00e5ff;
+            margin-right: 10px;
+        }
+
+        /* CTA */
+
+        .achievement-cta {
+            padding: 100px 7% 130px;
+        }
+
+        .cta-panel {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 30px;
+            border: 1px solid rgba(0,229,255,0.14);
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(0,229,255,0.11),
+                    transparent 48%
+                ),
+                rgba(255,255,255,0.025);
+        }
+
+        .cta-panel::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(0,229,255,0.07);
+            border-radius: 50%;
+        }
+
+        .cta-panel h2 {
+            position: relative;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(32px, 4vw, 55px);
+            margin-bottom: 18px;
+        }
+
+        .cta-panel p {
+            position: relative;
+            max-width: 700px;
+            margin: auto auto 30px;
+            color: rgba(255,255,255,0.54);
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+
+        .achievement-footer {
+            padding: 50px 7% 35px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-grid {
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            max-width: 440px;
+            color: rgba(255,255,255,0.42);
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        .footer-column h4 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            margin-bottom: 17px;
+            color: #fff;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 0;
+            transition: 0.25s ease;
+        }
+
+        .footer-column a:hover {
+            color: #00e5ff;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            max-width: 1450px;
+            margin: auto;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.3);
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes coreSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes coreSpinReverse {
+            from {
+                transform: rotate(360deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes achievementPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.35;
+                transform: scale(0.65);
+            }
+        }
+
+        @media (max-width: 1050px) {
+
+            .achievement-hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-core {
+                min-height: 450px;
+            }
+
+            .metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .recognition-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 750px) {
+
+            .achievement-hero {
+                padding: 125px 6% 70px;
+            }
+
+            .achievement-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .achievement-hero p {
+                font-size: 15px;
+            }
+
+            .achievement-core {
+                min-height: 390px;
+            }
+
+            .achievement-core::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .achievement-core::after {
+                width: 220px;
+                height: 220px;
+            }
+
+            .core-center {
+                width: 140px;
+                height: 140px;
+            }
+
+            .core-center strong {
+                font-size: 29px;
+            }
+
+            .core-node {
+                min-width: 95px;
+                padding: 9px;
+            }
+
+            .core-node strong {
+                font-size: 11px;
+            }
+
+            .core-node span {
+                font-size: 7px;
+            }
+
+            .node-one {
+                left: 0;
+                top: 25px;
+            }
+
+            .node-two {
+                right: 0;
+            }
+
+            .node-three {
+                left: 4%;
+                bottom: 25px;
+            }
+
+            .node-four {
+                right: 4%;
+            }
+
+            .metric-grid,
+            .recognition-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-section,
+            .timeline-section,
+            .ecosystem,
+            .achievement-cta {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .timeline {
+                margin-top: 50px;
+            }
+
+            .timeline::before {
+                left: 8px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+                width: 100%;
+                margin-left: 0;
+                text-align: left;
+                padding-left: 35px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 2px;
+                right: auto;
+            }
+
+            .ecosystem-panel,
+            .ecosystem-grid {
+                min-height: 620px;
+            }
+
+            .ecosystem-node {
+                min-width: 120px;
+            }
+
+            .eco-a {
+                top: 45px;
+                left: 6%;
+            }
+
+            .eco-b {
+                top: 45px;
+                right: 6%;
+            }
+
+            .eco-c {
+                bottom: 45px;
+                left: 6%;
+            }
+
+            .eco-d {
+                bottom: 45px;
+                right: 6%;
+            }
+
+            .ecosystem-ring {
+                width: 260px;
+                height: 260px;
+            }
+
+            .ecosystem-core {
+                width: 135px;
+                height: 135px;
+                font-size: 10px;
+            }
+
+            .cta-panel {
+                padding: 50px 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="achievement-page">
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">ITC</span>
+                <span class="logo-text">IT CONSULTANTS PLC.</span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="company.html">Company</a>
+
+                <a href="solutions.html">Solutions</a>
+
+                <a href="technology.html">Technology</a>
+
+                <a href="achievements.html" class="active">
+                    Achievements
+                </a>
+
+                <a href="investors.html">
+                    Investors
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <button class="menu-toggle"
+                    aria-label="Open navigation">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main>
+
+        <section class="achievement-hero">
+
+            <div class="achievement-hero-grid">
+
+                <div class="reveal">
+
+                    <div class="achievement-kicker">
+                        MILESTONES // RECOGNITION // IMPACT
+                    </div>
+
+                    <h1>
+                        Built through
+                        <span>milestones.</span>
+                    </h1>
+
+                    <p>
+                        For more than two decades, IT Consultants PLC.
+                        has evolved alongside Bangladesh's electronic
+                        payment ecosystem — building transaction
+                        infrastructure, expanding financial connectivity
+                        and delivering technology for critical financial
+                        environments.
+                    </p>
+
+                    <div class="achievement-actions">
+
+                        <a href="#timeline"
+                           class="achievement-btn primary">
+                            Explore timeline →
+                        </a>
+
+                        <a href="investors.html"
+                           class="achievement-btn secondary">
+                            Investor relations
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FUTURISTIC ACHIEVEMENT CORE -->
+
+                <div class="achievement-core reveal">
+
+                    <div class="core-line line-one"></div>
+                    <div class="core-line line-two"></div>
+                    <div class="core-line line-three"></div>
+                    <div class="core-line line-four"></div>
+
+                    <div class="core-center">
+
+                        <strong>24+</strong>
+
+                        <small>YEARS OF EVOLUTION</small>
+
+                    </div>
+
+                    <div class="core-node node-one">
+                        <strong>2000</strong>
+                        <span>Founded</span>
+                    </div>
+
+                    <div class="core-node node-two">
+                        <strong>PSO</strong>
+                        <span>Licensed</span>
+                    </div>
+
+                    <div class="core-node node-three">
+                        <strong>PCI DSS</strong>
+                        <span>Certified</span>
+                    </div>
+
+                    <div class="core-node node-four">
+                        <strong>Q-CASH</strong>
+                        <span>Network</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             METRICS
+        ========================================================== -->
+
+        <section class="achievement-metrics">
+
+            <div class="metric-grid">
+
+                <div class="metric-card reveal">
+
+                    <div class="metric-number">
+                        2000
+                    </div>
+
+                    <div class="metric-label">
+                        Company formed
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card reveal">
+
+                    <div class="metric-number">
+                        2001
+                    </div>
+
+                    <div class="metric-label">
+                        Technology operations introduced
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card reveal">
+
+                    <div class="metric-number">
+                        35+
+                    </div>
+
+                    <div class="metric-label">
+                        Q-Cash member banks
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card reveal">
+
+                    <div class="metric-number">
+                        24/7
+                    </div>
+
+                    <div class="metric-label">
+                        Transaction infrastructure
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             RECOGNITION
+        ========================================================== -->
+
+        <section class="achievement-section">
+
+            <div class="achievement-container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        01 // Recognition
+                    </div>
+
+                    <h2>
+                        Trusted by the
+                        payment ecosystem.
+                    </h2>
+
+                    <p>
+                        ITC's technology journey has been shaped by
+                        industry certifications, payment-network
+                        relationships and infrastructure built for
+                        high-volume financial transactions.
+                    </p>
+
+                </div>
+
+
+                <div class="recognition-grid">
+
+
+                    <article class="recognition-card reveal">
+
+                        <div class="recognition-tag">
+                            Security
+                        </div>
+
+                        <div class="recognition-icon">
+                            PCI
+                        </div>
+
+                        <h3>
+                            PCI DSS Certification
+                        </h3>
+
+                        <p>
+                            ITC has positioned payment security as a
+                            foundational part of its infrastructure,
+                            with PCI DSS certification supporting
+                            secure payment processing environments.
+                        </p>
+
+                    </article>
+
+
+                    <article class="recognition-card reveal">
+
+                        <div class="recognition-tag">
+                            Payments
+                        </div>
+
+                        <div class="recognition-icon">
+                            PSO
+                        </div>
+
+                        <h3>
+                            Licensed Payment System Operator
+                        </h3>
+
+                        <p>
+                            IT Consultants PLC. operates as a licensed
+                            Payment System Operator, providing payment
+                            infrastructure and transaction-processing
+                            capabilities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="recognition-card reveal">
+
+                        <div class="recognition-tag">
+                            Networks
+                        </div>
+
+                        <div class="recognition-icon">
+                            VISA
+                        </div>
+
+                        <h3>
+                            Global Payment Network Recognition
+                        </h3>
+
+                        <p>
+                            ITC's payment systems and capabilities have
+                            been recognized, accredited or certified
+                            through relationships with international
+                            payment organizations.
+                        </p>
+
+                    </article>
+
+
+                    <article class="recognition-card reveal">
+
+                        <div class="recognition-tag">
+                            Cards
+                        </div>
+
+                        <div class="recognition-icon">
+                            MC
+                        </div>
+
+                        <h3>
+                            Card Payment Ecosystem
+                        </h3>
+
+                        <p>
+                            The company's technology ecosystem supports
+                            card issuing, acquiring, transaction
+                            switching and payment processing environments.
+                        </p>
+
+                    </article>
+
+
+                    <article class="recognition-card reveal">
+
+                        <div class="recognition-tag">
+                            Infrastructure
+                        </div>
+
+                        <div class="recognition-icon">
+                            24H
+                        </div>
+
+                        <h3>
+                            Critical Infrastructure
+                        </h3>
+
+                        <p>
+                            High availability, monitoring, disaster
+                            recovery and resilient transaction
+                            architecture form an essential part of
+                            ITC's technology capabilities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="recognition-card reveal">
+
+                        <div class="recognition-tag">
+                            Digital
+                        </div>
+
+                        <div class="recognition-icon">
+                            QR
+                        </div>
+
+                        <h3>
+                            Digital Payment Evolution
+                        </h3>
+
+                        <p>
+                            ITC continues to support modern payment
+                            technologies including QR payments,
+                            e-commerce, mobile financial services and
+                            digital transaction platforms.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             TIMELINE
+        ========================================================== -->
+
+        <section class="timeline-section" id="timeline">
+
+            <div class="achievement-container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        02 // Timeline
+                    </div>
+
+                    <h2>
+                        From foundation
+                        to infrastructure.
+                    </h2>
+
+                    <p>
+                        A technology company is measured not only by
+                        where it starts, but by how continuously it
+                        evolves.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-year">
+                            2000
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <h3>
+                                ITC is formed
+                            </h3>
+
+                            <p>
+                                IT Consultants PLC. was formed as a
+                                technology company focused on developing
+                                solutions for Bangladesh's growing
+                                financial and electronic transaction
+                                environment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-year">
+                            2001
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <h3>
+                                Operations begin
+                            </h3>
+
+                            <p>
+                                Technology and business operations were
+                                introduced, establishing the foundation
+                                for ITC's long-term payment and banking
+                                technology journey.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-year">
+                            2008
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <h3>
+                                BEPS acquisition
+                            </h3>
+
+                            <p>
+                                ITC acquired Bangladesh Electronic
+                                Payment Systems Ltd. on 20 September
+                                2008, strengthening its position in
+                                electronic transaction processing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-year">
+                            Q-CASH ERA
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <h3>
+                                Expanding financial connectivity
+                            </h3>
+
+                            <p>
+                                The Q-Cash ecosystem grew into a major
+                                independent ATM and merchant network,
+                                connecting member banks and supporting
+                                electronic transaction processing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-year">
+                            DIGITAL ERA
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <h3>
+                                Beyond traditional banking
+                            </h3>
+
+                            <p>
+                                ITC expanded its technology ecosystem
+                                across e-commerce, mobile financial
+                                services, QR payments, internet banking,
+                                payment gateways and modern digital
+                                transaction infrastructure.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-year">
+                            TODAY
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <h3>
+                                Building the next transaction era
+                            </h3>
+
+                            <p>
+                                Today, ITC operates as a public limited
+                                company and licensed payment system
+                                operator, continuing to develop secure,
+                                scalable and intelligent financial
+                                infrastructure.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             PAYMENT ECOSYSTEM
+        ========================================================== -->
+
+        <section class="ecosystem">
+
+            <div class="ecosystem-panel reveal">
+
+                <div class="ecosystem-grid">
+
+                    <div class="ecosystem-ring"></div>
+
+                    <div class="eco-line eco-line-a"></div>
+                    <div class="eco-line eco-line-b"></div>
+                    <div class="eco-line eco-line-c"></div>
+                    <div class="eco-line eco-line-d"></div>
+
+
+                    <div class="ecosystem-core">
+                        ITC<br>
+                        PAYMENT<br>
+                        CORE
+                    </div>
+
+
+                    <div class="ecosystem-node eco-a">
+
+                        <strong>BANKS</strong>
+
+                        <span>
+                            Financial institutions
+                        </span>
+
+                    </div>
+
+
+                    <div class="ecosystem-node eco-b">
+
+                        <strong>ATM / POS</strong>
+
+                        <span>
+                            Physical channels
+                        </span>
+
+                    </div>
+
+
+                    <div class="ecosystem-node eco-c">
+
+                        <strong>DIGITAL</strong>
+
+                        <span>
+                            E-commerce / QR / MFS
+                        </span>
+
+                    </div>
+
+
+                    <div class="ecosystem-node eco-d">
+
+                        <strong>GOVERNMENT</strong>
+
+                        <span>
+                            Digital services
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             IMPACT
+        ========================================================== -->
+
+        <section class="achievement-section">
+
+            <div class="achievement-container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        03 // Impact
+                    </div>
+
+                    <h2>
+                        Technology that
+                        moves economies.
+                    </h2>
+
+                    <p>
+                        ITC's achievements are ultimately measured by
+                        the infrastructure and connectivity that allow
+                        financial institutions, businesses and
+                        customers to transact.
+                    </p>
+
+                </div>
+
+
+                <div class="impact-grid">
+
+
+                    <article class="impact-card reveal">
+
+                        <h3>
+                            Financial Inclusion
+                        </h3>
+
+                        <p>
+                            Electronic payment infrastructure helps
+                            extend financial services beyond traditional
+                            banking channels and supports broader
+                            participation in the digital economy.
+                        </p>
+
+                        <ul class="impact-list">
+
+                            <li>
+                                ATM and POS transaction processing
+                            </li>
+
+                            <li>
+                                Inter-bank payment connectivity
+                            </li>
+
+                            <li>
+                                Digital and QR payment capabilities
+                            </li>
+
+                            <li>
+                                Mobile financial service integration
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="impact-card reveal">
+
+                        <h3>
+                            Banking Technology
+                        </h3>
+
+                        <p>
+                            ITC develops and integrates technologies
+                            that connect banking systems with modern
+                            transaction channels.
+                        </p>
+
+                        <ul class="impact-list">
+
+                            <li>
+                                Transaction switching
+                            </li>
+
+                            <li>
+                                Card management
+                            </li>
+
+                            <li>
+                                Payment gateways
+                            </li>
+
+                            <li>
+                                Banking system integration
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="impact-card reveal">
+
+                        <h3>
+                            Digital Government
+                        </h3>
+
+                        <p>
+                            Payment infrastructure can also support
+                            government automation and digital collection
+                            services.
+                        </p>
+
+                        <ul class="impact-list">
+
+                            <li>
+                                Government revenue collection
+                            </li>
+
+                            <li>
+                                Digital service payments
+                            </li>
+
+                            <li>
+                                Electronic transaction processing
+                            </li>
+
+                            <li>
+                                Secure infrastructure
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="impact-card reveal">
+
+                        <h3>
+                            Future-Ready Platforms
+                        </h3>
+
+                        <p>
+                            ITC continues to develop capabilities around
+                            emerging payment technologies and evolving
+                            financial infrastructure.
+                        </p>
+
+                        <ul class="impact-list">
+
+                            <li>
+                                Bangla QR
+                            </li>
+
+                            <li>
+                                VISA QR
+                            </li>
+
+                            <li>
+                                TakaPay ecosystem
+                            </li>
+
+                            <li>
+                                E-KYC and digital services
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             CTA
+        ========================================================== -->
+
+        <section class="achievement-cta">
+
+            <div class="cta-panel reveal">
+
+                <h2>
+                    The next milestone
+                    starts here.
+                </h2>
+
+                <p>
+                    Explore the technology, solutions and corporate
+                    information behind IT Consultants PLC.
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="technology.html"
+                       class="achievement-btn primary">
+                        Explore technology →
+                    </a>
+
+                    <a href="news.html"
+                       class="achievement-btn secondary">
+                        View latest news
+                    </a>
+
+                    <a href="contact.html"
+                       class="achievement-btn secondary">
+                        Contact ITC
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="achievement-footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <strong>
+                    IT CONSULTANTS PLC.
+                </strong>
+
+                <p>
+                    Building digital infrastructure and capabilities
+                    for financial services and payment frameworks.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    EXPLORE
+                </h4>
+
+                <a href="index.html">Home</a>
+                <a href="company.html">Company</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="technology.html">Technology</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    CORPORATE
+                </h4>
+
+                <a href="achievements.html">
+                    Achievements
+                </a>
+
+                <a href="investors.html">
+                    Investors
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 IT Consultants PLC. All rights reserved.
+            </span>
+
+            <span>
+                Secure • Scalable • Intelligent
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         PAGE SCRIPT
+    ========================================================== -->
+
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+
+    <script>
+
+        /* =========================================
+           REVEAL ON SCROLL
+        ========================================= */
+
+        const achievementReveal =
+            document.querySelectorAll(".reveal");
+
+        const achievementObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        achievementReveal.forEach((element) => {
+
+            achievementObserver.observe(element);
+
+        });
+
+
+        /* =========================================
+           TIMELINE ACTIVE EFFECT
+        ========================================= */
+
+        const timelineItems =
+            document.querySelectorAll(".timeline-item");
+
+        const timelineObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            const dot =
+                                entry.target.querySelector(
+                                    ".timeline-dot"
+                                );
+
+                            if (dot) {
+
+                                dot.style.transform = "scale(1.45)";
+
+                                setTimeout(() => {
+
+                                    dot.style.transform =
+                                        "scale(1)";
+
+                                }, 550);
+
+                            }
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+        timelineItems.forEach((item) => {
+
+            timelineObserver.observe(item);
+
+        });
+
+
+        /* =========================================
+           ECOSYSTEM PARALLAX
+        ========================================= */
+
+        const ecosystemPanel =
+            document.querySelector(".ecosystem-panel");
+
+        if (ecosystemPanel) {
+
+            ecosystemPanel.addEventListener(
+                "mousemove",
+                (event) => {
+
+                    const rect =
+                        ecosystemPanel.getBoundingClientRect();
+
+                    const x =
+                        event.clientX - rect.left;
+
+                    const y =
+                        event.clientY - rect.top;
+
+                    const rotateX =
+                        ((y / rect.height) - 0.5) * -3;
+
+                    const rotateY =
+                        ((x / rect.width) - 0.5) * 3;
+
+                    ecosystemPanel.style.transform =
+                        `perspective(1200px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)`;
+
+                }
+            );
+
+            ecosystemPanel.addEventListener(
+                "mouseleave",
+                () => {
+
+                    ecosystemPanel.style.transform =
+                        "perspective(1200px) rotateX(0) rotateY(0)";
+
+                }
+            );
+
+        }
+
+
+        /* =========================================
+           CORE NODE FLOATING EFFECT
+        ========================================= */
+
+        const coreNodes =
+            document.querySelectorAll(".core-node");
+
+        coreNodes.forEach((node, index) => {
+
+            let direction = index % 2 === 0 ? 1 : -1;
+
+            setInterval(() => {
+
+                node.style.transform =
+                    `translateY(${direction * 3}px)`;
+
+                direction *= -1;
+
+            }, 1700 + (index * 180));
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
