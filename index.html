@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -21,7 +23,7 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
           rel="stylesheet">
 
     <link rel="stylesheet"
@@ -29,13 +31,1507 @@
 
     <link rel="stylesheet"
           href="responsive.css">
+
+
+    <style>
+
+        /* =========================================================
+           FUTURISTIC MOTION ENGINE
+        ========================================================= */
+
+        :root {
+            --cyan: #5eeaff;
+            --cyan-soft: rgba(94,234,255,.12);
+            --violet: #9a7cff;
+            --white: #f4fbff;
+            --muted: rgba(255,255,255,.48);
+            --line: rgba(255,255,255,.08);
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================================
+           LOADING SCREEN
+        ========================================================= */
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #03050b;
+
+            transition:
+                opacity .9s ease,
+                visibility .9s ease;
+        }
+
+        .loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-core {
+            position: relative;
+
+            width: 110px;
+            height: 110px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-ring {
+            position: absolute;
+            inset: 0;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(94,234,255,.15);
+            border-top-color: var(--cyan);
+
+            animation:
+                loaderSpin 1.3s linear infinite;
+        }
+
+        .loader-ring:nth-child(2) {
+            inset: 13px;
+
+            border-color:
+                rgba(154,124,255,.15);
+
+            border-right-color:
+                var(--violet);
+
+            animation-direction:
+                reverse;
+
+            animation-duration:
+                1.8s;
+        }
+
+        .loader-ring:nth-child(3) {
+            inset: 27px;
+
+            border-color:
+                rgba(255,255,255,.08);
+
+            border-bottom-color:
+                white;
+
+            animation-duration:
+                2.3s;
+        }
+
+        .loader-text {
+            font-family:
+                Orbitron,
+                sans-serif;
+
+            font-size:
+                18px;
+
+            font-weight:
+                700;
+
+            color:
+                white;
+
+            letter-spacing:
+                2px;
+        }
+
+        @keyframes loaderSpin {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================================================
+           PARTICLE FIELD
+        ========================================================= */
+
+        .particle-field {
+            position: fixed;
+            inset: 0;
+
+            z-index: -3;
+
+            pointer-events: none;
+
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+
+            width: 2px;
+            height: 2px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(94,234,255,.7);
+
+            box-shadow:
+                0 0 10px
+                rgba(94,234,255,.7);
+
+            animation:
+                particleFloat
+                var(--duration)
+                linear infinite;
+
+            animation-delay:
+                var(--delay);
+        }
+
+        @keyframes particleFloat {
+
+            0% {
+                transform:
+                    translate3d(
+                        0,
+                        110vh,
+                        0
+                    );
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .8;
+            }
+
+            85% {
+                opacity: .5;
+            }
+
+            100% {
+                transform:
+                    translate3d(
+                        var(--x),
+                        -20vh,
+                        0
+                    );
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOVING GRID
+        ========================================================= */
+
+        .grid-background {
+            animation:
+                gridMove
+                22s
+                linear
+                infinite;
+        }
+
+        @keyframes gridMove {
+
+            from {
+                background-position:
+                    0 0,
+                    0 0;
+            }
+
+            to {
+                background-position:
+                    80px 80px,
+                    80px 80px;
+            }
+
+        }
+
+
+        /* =========================================================
+           SCANLINE
+        ========================================================= */
+
+        .scanline {
+            position: fixed;
+
+            left: 0;
+            right: 0;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(94,234,255,.35),
+                    transparent
+                );
+
+            z-index: 100;
+
+            pointer-events: none;
+
+            opacity: .18;
+
+            animation:
+                scanMove
+                8s
+                linear
+                infinite;
+        }
+
+        @keyframes scanMove {
+
+            0% {
+                top: -5%;
+            }
+
+            100% {
+                top: 105%;
+            }
+
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .header {
+            transition:
+                background .4s ease,
+                border-color .4s ease,
+                transform .4s ease;
+        }
+
+        .header.scrolled {
+            background:
+                rgba(3,5,11,.72);
+
+            backdrop-filter:
+                blur(22px);
+
+            border-bottom:
+                1px solid
+                rgba(94,234,255,.08);
+        }
+
+        .brand {
+            transition:
+                transform .35s ease;
+        }
+
+        .brand:hover {
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height:
+                100vh;
+
+            position:
+                relative;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            overflow:
+                hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                900px;
+
+            height:
+                900px;
+
+            right:
+                -300px;
+
+            top:
+                -250px;
+
+            border-radius:
+                50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(94,234,255,.11),
+                    transparent 65%
+                );
+
+            filter:
+                blur(30px);
+
+            animation:
+                heroGlow
+                8s
+                ease-in-out
+                infinite;
+        }
+
+        .hero::after {
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                700px;
+
+            height:
+                700px;
+
+            left:
+                -300px;
+
+            bottom:
+                -250px;
+
+            border-radius:
+                50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(154,124,255,.10),
+                    transparent 65%
+                );
+
+            animation:
+                heroGlow
+                10s
+                ease-in-out
+                infinite
+                reverse;
+        }
+
+        @keyframes heroGlow {
+
+            0%,
+            100% {
+                transform:
+                    scale(1)
+                    translate(0,0);
+            }
+
+            50% {
+                transform:
+                    scale(1.18)
+                    translate(
+                        20px,
+                        -15px
+                    );
+            }
+
+        }
+
+
+        .hero-content {
+            animation:
+                heroEnter
+                1.2s
+                cubic-bezier(.16,1,.3,1)
+                both;
+        }
+
+        @keyframes heroEnter {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        .eyebrow {
+            animation:
+                eyebrowReveal
+                1s
+                .2s
+                both;
+        }
+
+        @keyframes eyebrowReveal {
+
+            from {
+                opacity: 0;
+                letter-spacing:
+                    10px;
+            }
+
+            to {
+                opacity: 1;
+                letter-spacing:
+                    2px;
+            }
+
+        }
+
+
+        .hero h1 {
+            perspective:
+                800px;
+        }
+
+        .hero h1 span,
+        .hero h1 em {
+            display:
+                inline-block;
+
+            animation:
+                titleLine
+                1.2s
+                cubic-bezier(.16,1,.3,1)
+                both;
+        }
+
+        .hero h1 span {
+            animation-delay:
+                .15s;
+        }
+
+        .hero h1 em {
+            animation-delay:
+                .28s;
+        }
+
+        @keyframes titleLine {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    rotateX(60deg);
+
+                filter:
+                    blur(8px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    rotateX(0);
+
+                filter:
+                    blur(0);
+            }
+
+        }
+
+
+        .hero-description {
+            animation:
+                fadeUp
+                1s
+                .5s
+                both;
+        }
+
+        .hero-actions {
+            animation:
+                fadeUp
+                1s
+                .65s
+                both;
+        }
+
+        .hero-meta {
+            animation:
+                fadeUp
+                1s
+                .8s
+                both;
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+
+        .hero-visual {
+            perspective:
+                1000px;
+
+            animation:
+                visualEnter
+                1.4s
+                .2s
+                both;
+        }
+
+        @keyframes visualEnter {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    scale(.7)
+                    rotateY(25deg);
+
+                filter:
+                    blur(10px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    rotateY(0);
+
+                filter:
+                    blur(0);
+            }
+
+        }
+
+
+        .orbit-system {
+            animation:
+                systemFloat
+                7s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes systemFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotateX(0deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-13px)
+                    rotateX(2deg);
+            }
+
+        }
+
+
+        .orbit {
+            animation:
+                orbitRotate
+                18s
+                linear
+                infinite;
+        }
+
+        .orbit-medium {
+            animation-duration:
+                13s;
+
+            animation-direction:
+                reverse;
+        }
+
+        .orbit-small {
+            animation-duration:
+                8s;
+        }
+
+        @keyframes orbitRotate {
+
+            from {
+                transform:
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        .orbit-node {
+            animation:
+                nodeFloat
+                4s
+                ease-in-out
+                infinite;
+        }
+
+        .node-two {
+            animation-delay:
+                -.8s;
+        }
+
+        .node-three {
+            animation-delay:
+                -1.6s;
+        }
+
+        .node-four {
+            animation-delay:
+                -2.4s;
+        }
+
+        @keyframes nodeFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translateY(-8px)
+                    scale(1.05);
+            }
+
+        }
+
+
+        .central-core {
+            animation:
+                corePulse
+                3.5s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes corePulse {
+
+            0%,
+            100% {
+                box-shadow:
+                    0 0 35px
+                    rgba(94,234,255,.10);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 80px
+                    rgba(94,234,255,.28),
+                    0 0 140px
+                    rgba(154,124,255,.10);
+            }
+
+        }
+
+
+        .core-ring {
+            animation:
+                coreRing
+                7s
+                linear
+                infinite;
+        }
+
+        .ring-two {
+            animation-direction:
+                reverse;
+
+            animation-duration:
+                11s;
+        }
+
+        @keyframes coreRing {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================================================
+           DATA PANELS
+        ========================================================= */
+
+        .data-panel {
+            animation:
+                panelFloat
+                5s
+                ease-in-out
+                infinite;
+        }
+
+        .panel-two {
+            animation-delay:
+                -1.7s;
+        }
+
+        .panel-three {
+            animation-delay:
+                -3.2s;
+        }
+
+        @keyframes panelFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-10px);
+            }
+
+        }
+
+
+        /* =========================================================
+           DATA STREAM
+        ========================================================= */
+
+        .data-stream {
+            position:
+                absolute;
+
+            width:
+                3px;
+
+            height:
+                3px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--cyan);
+
+            box-shadow:
+                0 0 15px
+                var(--cyan);
+
+            pointer-events:
+                none;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .button {
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            isolation:
+                isolate;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .button::before {
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                0;
+
+            height:
+                0;
+
+            left:
+                var(--mx, 50%);
+
+            top:
+                var(--my, 50%);
+
+            transform:
+                translate(-50%, -50%);
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,.16);
+
+            transition:
+                width .5s ease,
+                height .5s ease;
+
+            z-index:
+                -1;
+        }
+
+        .button:hover::before {
+            width:
+                300px;
+
+            height:
+                300px;
+        }
+
+        .button:hover {
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* =========================================================
+           SECTION REVEAL
+        ========================================================= */
+
+        .section-heading,
+        .about-grid,
+        .solution-grid,
+        .technology-panel,
+        .achievement-grid,
+        .investor-panel,
+        .news-grid,
+        .contact-grid,
+        .final-panel {
+            opacity:
+                0;
+
+            transform:
+                translateY(45px);
+
+            transition:
+                opacity .9s ease,
+                transform .9s cubic-bezier(.16,1,.3,1);
+        }
+
+        .section-heading.revealed,
+        .about-grid.revealed,
+        .solution-grid.revealed,
+        .technology-panel.revealed,
+        .achievement-grid.revealed,
+        .investor-panel.revealed,
+        .news-grid.revealed,
+        .contact-grid.revealed,
+        .final-panel.revealed {
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           CARDS
+        ========================================================= */
+
+        .glass-card,
+        .solution-card,
+        .achievement-card,
+        .news-card,
+        .mini-card {
+            transform-style:
+                preserve-3d;
+
+            will-change:
+                transform;
+        }
+
+
+        .solution-card {
+            transition:
+                transform .45s cubic-bezier(.16,1,.3,1),
+                border-color .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .solution-card:hover {
+            border-color:
+                rgba(94,234,255,.28);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,.3),
+                0 0 40px
+                rgba(94,234,255,.05);
+        }
+
+
+        .solution-icon {
+            transition:
+                transform .5s ease;
+        }
+
+        .solution-card:hover .solution-icon {
+            transform:
+                translateZ(25px)
+                rotateY(180deg);
+        }
+
+
+        .achievement-card {
+            transition:
+                transform .4s ease,
+                border-color .3s ease;
+        }
+
+        .achievement-card:hover {
+            transform:
+                translateY(-8px);
+        }
+
+
+        .news-card {
+            transition:
+                transform .4s ease,
+                border-color .3s ease;
+        }
+
+        .news-card:hover {
+            transform:
+                translateY(-8px)
+                scale(1.015);
+        }
+
+
+        /* =========================================================
+           SECTION NUMBER
+        ========================================================= */
+
+        .section-number {
+            position:
+                relative;
+        }
+
+        .section-number::after {
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--cyan);
+
+            box-shadow:
+                0 0 20px
+                var(--cyan);
+
+            animation:
+                numberPulse
+                2s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes numberPulse {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.8);
+            }
+
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-main {
+            position:
+                relative;
+
+            overflow:
+                hidden;
+        }
+
+        .about-main::after {
+            content:
+                "ITC";
+
+            position:
+                absolute;
+
+            right:
+                -30px;
+
+            bottom:
+                -65px;
+
+            font-family:
+                Orbitron,
+                sans-serif;
+
+            font-size:
+                180px;
+
+            font-weight:
+                700;
+
+            color:
+                rgba(255,255,255,.015);
+
+            pointer-events:
+                none;
+        }
+
+
+        /* =========================================================
+           TECHNOLOGY
+        ========================================================= */
+
+        .network-visual {
+            animation:
+                networkFloat
+                8s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes networkFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-12px);
+            }
+
+        }
+
+
+        .network-core {
+            animation:
+                networkCorePulse
+                3s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes networkCorePulse {
+
+            0%,
+            100% {
+                box-shadow:
+                    0 0 30px
+                    rgba(94,234,255,.10);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 70px
+                    rgba(94,234,255,.25);
+            }
+
+        }
+
+
+        .network-line {
+            overflow:
+                hidden;
+        }
+
+        .network-line::after {
+            content: "";
+
+            position:
+                absolute;
+
+            top:
+                50%;
+
+            left:
+                -30px;
+
+            width:
+                30px;
+
+            height:
+                2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--cyan)
+                );
+
+            box-shadow:
+                0 0 12px
+                var(--cyan);
+
+            animation:
+                packetTravel
+                2.8s
+                linear
+                infinite;
+        }
+
+        @keyframes packetTravel {
+
+            from {
+                left:
+                    -30px;
+            }
+
+            to {
+                left:
+                    110%;
+            }
+
+        }
+
+
+        /* =========================================================
+           ACHIEVEMENT CARDS
+        ========================================================= */
+
+        .achievement-card span {
+            transition:
+                text-shadow .3s ease;
+        }
+
+        .achievement-card:hover span {
+            text-shadow:
+                0 0 25px
+                rgba(94,234,255,.65);
+        }
+
+
+        /* =========================================================
+           INVESTOR VISUAL
+        ========================================================= */
+
+        .investor-circle {
+            animation:
+                investorRotate
+                15s
+                linear
+                infinite;
+        }
+
+        .circle-two {
+            animation-duration:
+                21s;
+
+            animation-direction:
+                reverse;
+        }
+
+        .circle-three {
+            animation-duration:
+                28s;
+        }
+
+        @keyframes investorRotate {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        .investor-core {
+            animation:
+                investorPulse
+                4s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes investorPulse {
+
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.07);
+            }
+
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .final-panel {
+            position:
+                relative;
+
+            overflow:
+                hidden;
+        }
+
+        .final-panel::before {
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                -50%;
+
+            background:
+                conic-gradient(
+                    from 0deg,
+                    transparent,
+                    rgba(94,234,255,.08),
+                    transparent,
+                    rgba(154,124,255,.08),
+                    transparent
+                );
+
+            animation:
+                finalSpin
+                16s
+                linear
+                infinite;
+        }
+
+        @keyframes finalSpin {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        .final-content {
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-details a,
+        .contact-details > div {
+            transition:
+                transform .35s ease,
+                color .35s ease;
+        }
+
+        .contact-details a:hover {
+            transform:
+                translateX(8px);
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        .back-top {
+            transition:
+                opacity .3s ease,
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .back-top:hover {
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 0 30px
+                rgba(94,234,255,.2);
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .particle {
+                display:
+                    none;
+            }
+
+            .scanline {
+                opacity:
+                    .08;
+            }
+
+            .hero::before {
+                width:
+                    500px;
+
+                height:
+                    500px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
+
     <!-- =====================================================
-         BACKGROUND
+         LOADER
     ====================================================== -->
+
+    <div class="loader"
+         id="loader">
+
+        <div class="loader-core">
+
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+
+            <div class="loader-text">
+                ITC
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GLOBAL MOTION
+    ====================================================== -->
+
+    <div class="scanline"></div>
+
+    <div class="particle-field"
+         id="particleField"></div>
+
 
     <div class="noise"></div>
 
@@ -79,17 +1575,29 @@
             <nav class="desktop-nav"
                  aria-label="Primary navigation">
 
-                <a href="#about">Company</a>
+                <a href="#about">
+                    Company
+                </a>
 
-                <a href="#solutions">Solutions</a>
+                <a href="#solutions">
+                    Solutions
+                </a>
 
-                <a href="#technology">Technology</a>
+                <a href="#technology">
+                    Technology
+                </a>
 
-                <a href="#achievements">Achievements</a>
+                <a href="#achievements">
+                    Achievements
+                </a>
 
-                <a href="#investors">Investors</a>
+                <a href="#investors">
+                    Investors
+                </a>
 
-                <a href="#news">News</a>
+                <a href="#news">
+                    News
+                </a>
 
                 <a href="#contact"
                    class="nav-contact">
@@ -127,7 +1635,9 @@
 
             <div class="mobile-menu-top">
 
-                <span>ITC / NAVIGATION</span>
+                <span>
+                    ITC / NAVIGATION
+                </span>
 
                 <button id="mobileClose"
                         type="button"
@@ -139,19 +1649,33 @@
 
             <nav>
 
-                <a href="#about">01 / Company</a>
+                <a href="#about">
+                    01 / Company
+                </a>
 
-                <a href="#solutions">02 / Solutions</a>
+                <a href="#solutions">
+                    02 / Solutions
+                </a>
 
-                <a href="#technology">03 / Technology</a>
+                <a href="#technology">
+                    03 / Technology
+                </a>
 
-                <a href="#achievements">04 / Achievements</a>
+                <a href="#achievements">
+                    04 / Achievements
+                </a>
 
-                <a href="#investors">05 / Investors</a>
+                <a href="#investors">
+                    05 / Investors
+                </a>
 
-                <a href="#news">06 / News</a>
+                <a href="#news">
+                    06 / News
+                </a>
 
-                <a href="#contact">07 / Contact</a>
+                <a href="#contact">
+                    07 / Contact
+                </a>
 
             </nav>
 
@@ -175,55 +1699,106 @@
                 <div class="hero-content">
 
                     <div class="eyebrow">
+
                         <span class="eyebrow-dot"></span>
+
                         DIGITAL PAYMENT INFRASTRUCTURE
+
                     </div>
 
+
                     <h1>
+
                         POWERING
-                        <span>THE NEXT</span>
-                        <em>TRANSACTION ERA.</em>
+
+                        <span>
+                            THE NEXT
+                        </span>
+
+                        <em>
+                            TRANSACTION ERA.
+                        </em>
+
                     </h1>
 
+
                     <p class="hero-description">
+
                         IT Consultants PLC. delivers secure,
                         scalable and intelligent payment
                         infrastructure connecting banks,
                         governments, financial institutions
                         and businesses across Bangladesh.
+
                     </p>
+
 
                     <div class="hero-actions">
 
                         <a href="#solutions"
                            class="button button-primary">
+
                             Explore Solutions
-                            <span>↗</span>
+
+                            <span>
+                                ↗
+                            </span>
+
                         </a>
+
 
                         <a href="#about"
                            class="button button-secondary">
+
                             Discover ITC
-                            <span>↓</span>
+
+                            <span>
+                                ↓
+                            </span>
+
                         </a>
 
                     </div>
 
+
                     <div class="hero-meta">
 
                         <div>
-                            <strong>2000</strong>
-                            <span>Established</span>
+
+                            <strong>
+                                2000
+                            </strong>
+
+                            <span>
+                                Established
+                            </span>
+
                         </div>
 
-                        <div>
-                            <strong>24/7</strong>
-                            <span>Transaction Processing</span>
-                        </div>
 
                         <div>
-                            <strong>PSO</strong>
-                            <span>Licensed Operator</span>
+
+                            <strong>
+                                24/7
+                            </strong>
+
+                            <span>
+                                Transaction Processing
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                PSO
+                            </strong>
+
+                            <span>
+                                Licensed Operator
+                            </span>
+
                         </div>
 
                     </div>
@@ -231,24 +1806,34 @@
                 </div>
 
 
-                <!-- HERO VISUAL -->
+                <!-- =================================================
+                     HERO NETWORK
+                ================================================== -->
 
                 <div class="hero-visual">
 
                     <div class="visual-status">
+
                         <span></span>
+
                         SYSTEMS OPERATIONAL
+
                     </div>
+
 
                     <div class="orbit-system">
 
                         <div class="orbit orbit-large"></div>
+
                         <div class="orbit orbit-medium"></div>
+
                         <div class="orbit orbit-small"></div>
+
 
                         <div class="orbit-line line-one"></div>
                         <div class="orbit-line line-two"></div>
                         <div class="orbit-line line-three"></div>
+
 
                         <div class="orbit-node node-one">
                             BANKS
@@ -266,14 +1851,23 @@
                             GOV
                         </div>
 
+
                         <div class="central-core">
 
                             <div class="core-ring"></div>
+
                             <div class="core-ring ring-two"></div>
 
                             <div class="core-content">
-                                <span>ITC</span>
-                                <small>NETWORK</small>
+
+                                <span>
+                                    ITC
+                                </span>
+
+                                <small>
+                                    NETWORK
+                                </small>
+
                             </div>
 
                         </div>
@@ -283,22 +1877,39 @@
 
                     <div class="data-panel panel-one">
 
-                        <span>TRANSACTION</span>
-                        <strong>ACTIVE</strong>
+                        <span>
+                            TRANSACTION
+                        </span>
+
+                        <strong>
+                            ACTIVE
+                        </strong>
 
                     </div>
+
 
                     <div class="data-panel panel-two">
 
-                        <span>SECURITY</span>
-                        <strong>PCI DSS</strong>
+                        <span>
+                            SECURITY
+                        </span>
+
+                        <strong>
+                            PCI DSS
+                        </strong>
 
                     </div>
 
+
                     <div class="data-panel panel-three">
 
-                        <span>NETWORK</span>
-                        <strong>Q-CASH</strong>
+                        <span>
+                            NETWORK
+                        </span>
+
+                        <strong>
+                            Q-CASH
+                        </strong>
 
                     </div>
 
@@ -308,8 +1919,13 @@
 
 
             <div class="hero-scroll">
-                <span>SCROLL TO EXPLORE</span>
+
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
+
                 <div></div>
+
             </div>
 
         </section>
@@ -363,7 +1979,9 @@
 
                 <div class="section-heading">
 
-                    <div class="section-number">01</div>
+                    <div class="section-number">
+                        01
+                    </div>
 
                     <div>
 
@@ -391,29 +2009,39 @@
                         </div>
 
                         <p class="large-copy">
+
                             IT Consultants PLC. is a public
                             limited company and licensed
                             Payment System Operator,
                             delivering technology and
                             payment infrastructure to
                             institutions across Bangladesh.
+
                         </p>
 
                         <p>
+
                             Founded in 2000, ITC has developed
                             into a leading technology and
                             transaction-processing company,
                             providing solutions for banks,
                             governments, financial institutions
                             and other organizations.
+
                         </p>
+
 
                         <a href="https://www.itcbd.com/company-background"
                            target="_blank"
                            rel="noopener noreferrer"
                            class="text-link">
+
                             Official Company Profile
-                            <span>↗</span>
+
+                            <span>
+                                ↗
+                            </span>
+
                         </a>
 
                     </div>
@@ -423,9 +2051,13 @@
 
                         <div class="mini-card">
 
-                            <span>ESTABLISHED</span>
+                            <span>
+                                ESTABLISHED
+                            </span>
 
-                            <strong>2000</strong>
+                            <strong>
+                                2000
+                            </strong>
 
                             <p>
                                 More than two decades of
@@ -438,9 +2070,13 @@
 
                         <div class="mini-card">
 
-                            <span>OPERATIONS</span>
+                            <span>
+                                OPERATIONS
+                            </span>
 
-                            <strong>24/7</strong>
+                            <strong>
+                                24/7
+                            </strong>
 
                             <p>
                                 Transaction systems designed
@@ -469,7 +2105,9 @@
 
                 <div class="section-heading">
 
-                    <div class="section-number">02</div>
+                    <div class="section-number">
+                        02
+                    </div>
 
                     <div>
 
@@ -514,7 +2152,9 @@
                             financial networks.
                         </p>
 
-                        <span class="card-arrow">↗</span>
+                        <span class="card-arrow">
+                            ↗
+                        </span>
 
                     </a>
 
@@ -543,7 +2183,9 @@
                             capabilities.
                         </p>
 
-                        <span class="card-arrow">↗</span>
+                        <span class="card-arrow">
+                            ↗
+                        </span>
 
                     </a>
 
@@ -571,7 +2213,9 @@
                             secure and accessible banking.
                         </p>
 
-                        <span class="card-arrow">↗</span>
+                        <span class="card-arrow">
+                            ↗
+                        </span>
 
                     </a>
 
@@ -600,7 +2244,9 @@
                             technology services.
                         </p>
 
-                        <span class="card-arrow">↗</span>
+                        <span class="card-arrow">
+                            ↗
+                        </span>
 
                     </a>
 
@@ -630,7 +2276,9 @@
 
                         <h2>
                             One network.
-                            <span>Many possibilities.</span>
+                            <span>
+                                Many possibilities.
+                            </span>
                         </h2>
 
                         <p>
@@ -645,8 +2293,13 @@
                            target="_blank"
                            rel="noopener noreferrer"
                            class="button button-secondary">
+
                             Explore ITC Experience
-                            <span>↗</span>
+
+                            <span>
+                                ↗
+                            </span>
+
                         </a>
 
                     </div>
@@ -680,8 +2333,15 @@
                         </div>
 
                         <div class="network-core">
-                            <strong>ITC</strong>
-                            <span>CORE</span>
+
+                            <strong>
+                                ITC
+                            </strong>
+
+                            <span>
+                                CORE
+                            </span>
+
                         </div>
 
                     </div>
@@ -704,7 +2364,9 @@
 
                 <div class="section-heading">
 
-                    <div class="section-number">04</div>
+                    <div class="section-number">
+                        04
+                    </div>
 
                     <div>
 
@@ -714,7 +2376,9 @@
 
                         <h2>
                             Milestones that
-                            <span>matter.</span>
+                            <span>
+                                matter.
+                            </span>
                         </h2>
 
                     </div>
@@ -726,9 +2390,12 @@
 
                     <article class="achievement-card">
 
-                        <span>2015</span>
+                        <span>
+                            2015
+                        </span>
 
                         <div>
+
                             <small>
                                 BASIS — DAILY STAR
                             </small>
@@ -741,6 +2408,7 @@
                                 Best IT Solution Provider —
                                 Local Market Focus.
                             </p>
+
                         </div>
 
                     </article>
@@ -748,9 +2416,12 @@
 
                     <article class="achievement-card featured">
 
-                        <span>2019</span>
+                        <span>
+                            2019
+                        </span>
 
                         <div>
+
                             <small>
                                 GOVERNMENT OF BANGLADESH
                             </small>
@@ -763,6 +2434,7 @@
                                 Industrial Development —
                                 Hi-Tech category.
                             </p>
+
                         </div>
 
                     </article>
@@ -770,9 +2442,12 @@
 
                     <article class="achievement-card">
 
-                        <span>2023</span>
+                        <span>
+                            2023
+                        </span>
 
                         <div>
+
                             <small>
                                 CORPORATE GOVERNANCE
                             </small>
@@ -786,6 +2461,7 @@
                                 National Award for Corporate
                                 Governance Excellence.
                             </p>
+
                         </div>
 
                     </article>
@@ -793,9 +2469,12 @@
 
                     <article class="achievement-card">
 
-                        <span>2026</span>
+                        <span>
+                            2026
+                        </span>
 
                         <div>
+
                             <small>
                                 CYBER SECURITY
                             </small>
@@ -809,6 +2488,7 @@
                                 its technology and cyber
                                 resilience capabilities.
                             </p>
+
                         </div>
 
                     </article>
@@ -839,7 +2519,9 @@
 
                         <h2>
                             Transparency
-                            <span>by design.</span>
+                            <span>
+                                by design.
+                            </span>
                         </h2>
 
                         <p>
@@ -848,22 +2530,34 @@
                             shareholder resources.
                         </p>
 
+
                         <div class="investor-actions">
 
                             <a href="https://www.itcbd.com/annual-report"
                                target="_blank"
                                rel="noopener noreferrer"
                                class="button button-primary">
+
                                 Annual Reports
-                                <span>↗</span>
+
+                                <span>
+                                    ↗
+                                </span>
+
                             </a>
+
 
                             <a href="https://www.itcbd.com/shareholder-info"
                                target="_blank"
                                rel="noopener noreferrer"
                                class="button button-secondary">
+
                                 Shareholder Information
-                                <span>↗</span>
+
+                                <span>
+                                    ↗
+                                </span>
+
                             </a>
 
                         </div>
@@ -878,8 +2572,15 @@
                         <div class="investor-circle circle-three"></div>
 
                         <div class="investor-core">
-                            <span>ITC</span>
-                            <small>PUBLIC COMPANY</small>
+
+                            <span>
+                                ITC
+                            </span>
+
+                            <small>
+                                PUBLIC COMPANY
+                            </small>
+
                         </div>
 
                     </div>
@@ -902,7 +2603,9 @@
 
                 <div class="section-heading">
 
-                    <div class="section-number">06</div>
+                    <div class="section-number">
+                        06
+                    </div>
 
                     <div>
 
@@ -911,7 +2614,10 @@
                         </span>
 
                         <h2>
-                            News & <span>events.</span>
+                            News &
+                            <span>
+                                events.
+                            </span>
                         </h2>
 
                     </div>
@@ -921,12 +2627,15 @@
 
                 <div class="news-grid">
 
+
                     <a href="https://www.itcbd.com/news-events"
                        target="_blank"
                        rel="noopener noreferrer"
                        class="news-card featured-news">
 
-                        <span>17 MAY 2026</span>
+                        <span>
+                            17 MAY 2026
+                        </span>
 
                         <h3>
                             National Cyber Drill 2026
@@ -949,7 +2658,9 @@
                        rel="noopener noreferrer"
                        class="news-card">
 
-                        <span>07 DEC 2025</span>
+                        <span>
+                            07 DEC 2025
+                        </span>
 
                         <h3>
                             12% Cash Dividend Approved
@@ -972,7 +2683,9 @@
                        rel="noopener noreferrer"
                        class="news-card">
 
-                        <span>05 OCT 2024</span>
+                        <span>
+                            05 OCT 2024
+                        </span>
 
                         <h3>
                             Corporate Governance Recognition
@@ -1016,7 +2729,9 @@
 
                         <h2>
                             Let's build what
-                            <span>comes next.</span>
+                            <span>
+                                comes next.
+                            </span>
                         </h2>
 
                         <p>
@@ -1027,8 +2742,13 @@
 
                         <a href="#contact"
                            class="button button-primary">
+
                             Connect With ITC
-                            <span>↓</span>
+
+                            <span>
+                                ↓
+                            </span>
+
                         </a>
 
                     </div>
@@ -1059,7 +2779,9 @@
 
                         <h2>
                             Let's start a
-                            <span>conversation.</span>
+                            <span>
+                                conversation.
+                            </span>
                         </h2>
 
                         <p>
@@ -1073,27 +2795,50 @@
                     <div class="contact-details">
 
                         <a href="tel:+88029830310">
-                            <span>PHONE</span>
+
+                            <span>
+                                PHONE
+                            </span>
+
                             +880 2 983 0310
+
                         </a>
 
+
                         <a href="mailto:info@itcbd.com">
-                            <span>EMAIL</span>
+
+                            <span>
+                                EMAIL
+                            </span>
+
                             info@itcbd.com
+
                         </a>
+
 
                         <a href="https://www.itcbd.com/"
                            target="_blank"
                            rel="noopener noreferrer">
-                            <span>OFFICIAL WEBSITE</span>
+
+                            <span>
+                                OFFICIAL WEBSITE
+                            </span>
+
                             itcbd.com ↗
+
                         </a>
 
+
                         <div>
-                            <span>OFFICE</span>
+
+                            <span>
+                                OFFICE
+                            </span>
+
                             Evergreen Plaza,
                             260/B Tejgaon I/A,
                             Dhaka 1208, Bangladesh
+
                         </div>
 
                     </div>
@@ -1121,14 +2866,23 @@
                    class="brand footer-brand">
 
                     <span class="brand-symbol">
+
                         <span></span>
                         <span></span>
                         <span></span>
+
                     </span>
 
                     <span class="brand-text">
-                        <strong>ITC</strong>
-                        <small>CONSULTANTS PLC.</small>
+
+                        <strong>
+                            ITC
+                        </strong>
+
+                        <small>
+                            CONSULTANTS PLC.
+                        </small>
+
                     </span>
 
                 </a>
@@ -1136,12 +2890,29 @@
 
                 <div class="footer-links">
 
-                    <a href="#about">Company</a>
-                    <a href="#solutions">Solutions</a>
-                    <a href="#technology">Technology</a>
-                    <a href="#investors">Investors</a>
-                    <a href="#news">News</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about">
+                        Company
+                    </a>
+
+                    <a href="#solutions">
+                        Solutions
+                    </a>
+
+                    <a href="#technology">
+                        Technology
+                    </a>
+
+                    <a href="#investors">
+                        Investors
+                    </a>
+
+                    <a href="#news">
+                        News
+                    </a>
+
+                    <a href="#contact">
+                        Contact
+                    </a>
 
                 </div>
 
@@ -1161,7 +2932,9 @@
                 <a href="https://www.itcbd.com/"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     OFFICIAL ITC WEBSITE ↗
+
                 </a>
 
             </div>
@@ -1171,18 +2944,1034 @@
     </footer>
 
 
-    <!-- BACK TO TOP -->
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
 
     <button class="back-top"
             id="backTop"
             type="button"
             aria-label="Back to top">
+
         ↑
+
     </button>
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="main.js"></script>
     <script src="animations.js"></script>
 
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =================================================
+                   LOADER
+                ================================================= */
+
+                const loader =
+                    document.getElementById(
+                        "loader"
+                    );
+
+
+                window.addEventListener(
+                    "load",
+                    function () {
+
+                        setTimeout(
+                            function () {
+
+                                loader.classList.add(
+                                    "loaded"
+                                );
+
+                            },
+                            700
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   PARTICLES
+                ================================================= */
+
+                const particleField =
+                    document.getElementById(
+                        "particleField"
+                    );
+
+
+                if (particleField) {
+
+                    const particleCount =
+                        window.innerWidth < 700
+                            ? 18
+                            : 45;
+
+
+                    for (
+                        let i = 0;
+                        i < particleCount;
+                        i++
+                    ) {
+
+                        const particle =
+                            document.createElement(
+                                "span"
+                            );
+
+
+                        particle.className =
+                            "particle";
+
+
+                        particle.style.left =
+                            Math.random() * 100 +
+                            "%";
+
+
+                        particle.style.setProperty(
+                            "--x",
+                            (
+                                Math.random() *
+                                300 -
+                                150
+                            ) +
+                            "px"
+                        );
+
+
+                        particle.style.setProperty(
+                            "--duration",
+                            (
+                                12 +
+                                Math.random() *
+                                20
+                            ) +
+                            "s"
+                        );
+
+
+                        particle.style.setProperty(
+                            "--delay",
+                            (
+                                Math.random() *
+                                -25
+                            ) +
+                            "s"
+                        );
+
+
+                        const size =
+                            Math.random() *
+                            2.5 +
+                            1;
+
+
+                        particle.style.width =
+                            size +
+                            "px";
+
+
+                        particle.style.height =
+                            size +
+                            "px";
+
+
+                        particleField.appendChild(
+                            particle
+                        );
+
+                    }
+
+                }
+
+
+                /* =================================================
+                   HEADER SCROLL
+                ================================================= */
+
+                const header =
+                    document.getElementById(
+                        "header"
+                    );
+
+
+                function updateHeader() {
+
+                    if (
+                        window.scrollY > 50
+                    ) {
+
+                        header.classList.add(
+                            "scrolled"
+                        );
+
+                    } else {
+
+                        header.classList.remove(
+                            "scrolled"
+                        );
+
+                    }
+
+                }
+
+
+                window.addEventListener(
+                    "scroll",
+                    updateHeader,
+                    {
+                        passive: true
+                    }
+                );
+
+
+                updateHeader();
+
+
+                /* =================================================
+                   INTERSECTION REVEALS
+                ================================================= */
+
+                const revealTargets =
+                    document.querySelectorAll(
+                        ".section-heading, " +
+                        ".about-grid, " +
+                        ".solution-grid, " +
+                        ".technology-panel, " +
+                        ".achievement-grid, " +
+                        ".investor-panel, " +
+                        ".news-grid, " +
+                        ".contact-grid, " +
+                        ".final-panel"
+                    );
+
+
+                const revealObserver =
+                    new IntersectionObserver(
+                        function (entries) {
+
+                            entries.forEach(
+                                function (entry) {
+
+                                    if (
+                                        entry.isIntersecting
+                                    ) {
+
+                                        entry.target.classList.add(
+                                            "revealed"
+                                        );
+
+                                        revealObserver.unobserve(
+                                            entry.target
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                        },
+                        {
+                            threshold:
+                                0.12
+                        }
+                    );
+
+
+                revealTargets.forEach(
+                    function (element) {
+
+                        revealObserver.observe(
+                            element
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   MAGNETIC BUTTONS
+                ================================================= */
+
+                document.querySelectorAll(
+                    ".button"
+                ).forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "mousemove",
+                            function (event) {
+
+                                const rect =
+                                    button.getBoundingClientRect();
+
+
+                                const x =
+                                    event.clientX -
+                                    rect.left;
+
+
+                                const y =
+                                    event.clientY -
+                                    rect.top;
+
+
+                                button.style.setProperty(
+                                    "--mx",
+                                    x + "px"
+                                );
+
+
+                                button.style.setProperty(
+                                    "--my",
+                                    y + "px"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   3D CARD TILT
+                ================================================= */
+
+                const tiltCards =
+                    document.querySelectorAll(
+                        ".solution-card, " +
+                        ".achievement-card, " +
+                        ".news-card, " +
+                        ".mini-card, " +
+                        ".glass-card"
+                    );
+
+
+                tiltCards.forEach(
+                    function (card) {
+
+                        card.addEventListener(
+                            "mousemove",
+                            function (event) {
+
+                                if (
+                                    window.innerWidth < 900
+                                ) {
+                                    return;
+                                }
+
+
+                                const rect =
+                                    card.getBoundingClientRect();
+
+
+                                const x =
+                                    (
+                                        event.clientX -
+                                        rect.left
+                                    ) /
+                                    rect.width -
+                                    .5;
+
+
+                                const y =
+                                    (
+                                        event.clientY -
+                                        rect.top
+                                    ) /
+                                    rect.height -
+                                    .5;
+
+
+                                const rotateX =
+                                    y * -5;
+
+
+                                const rotateY =
+                                    x * 5;
+
+
+                                card.style.transform =
+                                    "perspective(900px) " +
+                                    "rotateX(" +
+                                    rotateX +
+                                    "deg) " +
+                                    "rotateY(" +
+                                    rotateY +
+                                    "deg) " +
+                                    "translateY(-5px)";
+
+                            }
+                        );
+
+
+                        card.addEventListener(
+                            "mouseleave",
+                            function () {
+
+                                card.style.transform =
+                                    "";
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   CURSOR GLOW
+                ================================================= */
+
+                const cursorGlow =
+                    document.getElementById(
+                        "cursorGlow"
+                    );
+
+
+                if (cursorGlow) {
+
+                    window.addEventListener(
+                        "mousemove",
+                        function (event) {
+
+                            cursorGlow.style.left =
+                                event.clientX +
+                                "px";
+
+
+                            cursorGlow.style.top =
+                                event.clientY +
+                                "px";
+
+                        },
+                        {
+                            passive: true
+                        }
+                    );
+
+                }
+
+
+                /* =================================================
+                   LIVE HERO DATA
+                ================================================= */
+
+                const transactionPanel =
+                    document.querySelector(
+                        ".panel-one strong"
+                    );
+
+
+                if (transactionPanel) {
+
+                    const states = [
+                        "ACTIVE",
+                        "LIVE",
+                        "SECURE",
+                        "ONLINE"
+                    ];
+
+
+                    let stateIndex = 0;
+
+
+                    setInterval(
+                        function () {
+
+                            transactionPanel.animate(
+                                [
+                                    {
+                                        opacity: 1,
+                                        transform:
+                                            "translateY(0)"
+                                    },
+                                    {
+                                        opacity: 0,
+                                        transform:
+                                            "translateY(-5px)"
+                                    },
+                                    {
+                                        opacity: 1,
+                                        transform:
+                                            "translateY(0)"
+                                    }
+                                ],
+                                {
+                                    duration:
+                                        500
+                                }
+                            );
+
+
+                            stateIndex =
+                                (
+                                    stateIndex +
+                                    1
+                                ) %
+                                states.length;
+
+
+                            setTimeout(
+                                function () {
+
+                                    transactionPanel.textContent =
+                                        states[
+                                            stateIndex
+                                        ];
+
+                                },
+                                180
+                            );
+
+                        },
+                        3200
+                    );
+
+                }
+
+
+                /* =================================================
+                   NETWORK PACKETS
+                ================================================= */
+
+                const heroVisual =
+                    document.querySelector(
+                        ".hero-visual"
+                    );
+
+
+                if (
+                    heroVisual &&
+                    window.innerWidth > 700
+                ) {
+
+                    setInterval(
+                        function () {
+
+                            const packet =
+                                document.createElement(
+                                    "span"
+                                );
+
+
+                            packet.className =
+                                "data-stream";
+
+
+                            packet.style.left =
+                                (
+                                    25 +
+                                    Math.random() *
+                                    50
+                                ) +
+                                "%";
+
+
+                            packet.style.top =
+                                (
+                                    25 +
+                                    Math.random() *
+                                    50
+                                ) +
+                                "%";
+
+
+                            heroVisual.appendChild(
+                                packet
+                            );
+
+
+                            packet.animate(
+                                [
+                                    {
+                                        transform:
+                                            "translate(0,0) scale(1)",
+                                        opacity: 0
+                                    },
+                                    {
+                                        transform:
+                                            "translate(35px,-25px) scale(1.8)",
+                                        opacity: 1
+                                    },
+                                    {
+                                        transform:
+                                            "translate(90px,-60px) scale(.2)",
+                                        opacity: 0
+                                    }
+                                ],
+                                {
+                                    duration:
+                                        1800 +
+                                        Math.random() *
+                                        1200,
+                                    easing:
+                                        "ease-out"
+                                }
+                            ).finished.then(
+                                function () {
+
+                                    packet.remove();
+
+                                }
+                            );
+
+                        },
+                        700
+                    );
+
+                }
+
+
+                /* =================================================
+                   SCROLL PARALLAX
+                ================================================= */
+
+                const hero =
+                    document.querySelector(
+                        ".hero"
+                    );
+
+
+                const heroVisualElement =
+                    document.querySelector(
+                        ".hero-visual"
+                    );
+
+
+                window.addEventListener(
+                    "scroll",
+                    function () {
+
+                        if (
+                            !hero ||
+                            !heroVisualElement
+                        ) {
+                            return;
+                        }
+
+
+                        if (
+                            window.innerWidth < 900
+                        ) {
+                            return;
+                        }
+
+
+                        const scroll =
+                            window.scrollY;
+
+
+                        if (
+                            scroll < window.innerHeight
+                        ) {
+
+                            heroVisualElement.style.transform =
+                                "translateY(" +
+                                (
+                                    scroll *
+                                    .08
+                                ) +
+                                "px)";
+
+                        }
+
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+
+                /* =================================================
+                   ACTIVE NAV
+                ================================================= */
+
+                const sections =
+                    document.querySelectorAll(
+                        "main section[id]"
+                    );
+
+
+                const navLinks =
+                    document.querySelectorAll(
+                        ".desktop-nav a"
+                    );
+
+
+                const navObserver =
+                    new IntersectionObserver(
+                        function (entries) {
+
+                            entries.forEach(
+                                function (entry) {
+
+                                    if (
+                                        entry.isIntersecting
+                                    ) {
+
+                                        navLinks.forEach(
+                                            function (link) {
+
+                                                link.classList.remove(
+                                                    "active"
+                                                );
+
+                                                if (
+                                                    link.getAttribute(
+                                                        "href"
+                                                    ) ===
+                                                    "#" +
+                                                    entry.target.id
+                                                ) {
+
+                                                    link.classList.add(
+                                                        "active"
+                                                    );
+
+                                                }
+
+                                            }
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                        },
+                        {
+                            threshold:
+                                .45
+                        }
+                    );
+
+
+                sections.forEach(
+                    function (section) {
+
+                        navObserver.observe(
+                            section
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   COUNTER ANIMATION
+                ================================================= */
+
+                const counterElements =
+                    document.querySelectorAll(
+                        ".mini-card strong"
+                    );
+
+
+                counterElements.forEach(
+                    function (element) {
+
+                        const value =
+                            element.textContent.trim();
+
+
+                        if (
+                            value !== "2000"
+                        ) {
+                            return;
+                        }
+
+
+                        const observer =
+                            new IntersectionObserver(
+                                function (entries) {
+
+                                    if (
+                                        !entries[0]
+                                            .isIntersecting
+                                    ) {
+                                        return;
+                                    }
+
+
+                                    let current =
+                                        0;
+
+
+                                    const target =
+                                        2000;
+
+
+                                    const duration =
+                                        1300;
+
+
+                                    const start =
+                                        performance.now();
+
+
+                                    function animate(
+                                        now
+                                    ) {
+
+                                        const progress =
+                                            Math.min(
+                                                (
+                                                    now -
+                                                    start
+                                                ) /
+                                                duration,
+                                                1
+                                            );
+
+
+                                        const eased =
+                                            1 -
+                                            Math.pow(
+                                                1 -
+                                                progress,
+                                                3
+                                            );
+
+
+                                        current =
+                                            Math.floor(
+                                                target *
+                                                eased
+                                            );
+
+
+                                        element.textContent =
+                                            current;
+
+
+                                        if (
+                                            progress <
+                                            1
+                                        ) {
+
+                                            requestAnimationFrame(
+                                                animate
+                                            );
+
+                                        }
+
+                                    }
+
+
+                                    requestAnimationFrame(
+                                        animate
+                                    );
+
+
+                                    observer.disconnect();
+
+                                },
+                                {
+                                    threshold:
+                                        .7
+                                }
+                            );
+
+
+                        observer.observe(
+                            element
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   BACK TO TOP
+                ================================================= */
+
+                const backTop =
+                    document.getElementById(
+                        "backTop"
+                    );
+
+
+                if (backTop) {
+
+                    window.addEventListener(
+                        "scroll",
+                        function () {
+
+                            if (
+                                window.scrollY >
+                                600
+                            ) {
+
+                                backTop.classList.add(
+                                    "show"
+                                );
+
+                            } else {
+
+                                backTop.classList.remove(
+                                    "show"
+                                );
+
+                            }
+
+                        },
+                        {
+                            passive: true
+                        }
+                    );
+
+
+                    backTop.addEventListener(
+                        "click",
+                        function () {
+
+                            window.scrollTo(
+                                {
+                                    top: 0,
+                                    behavior:
+                                        "smooth"
+                                }
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                /* =================================================
+                   MOBILE MENU
+                ================================================= */
+
+                const menuButton =
+                    document.getElementById(
+                        "menuButton"
+                    );
+
+
+                const mobileMenu =
+                    document.getElementById(
+                        "mobileMenu"
+                    );
+
+
+                const mobileClose =
+                    document.getElementById(
+                        "mobileClose"
+                    );
+
+
+                function closeMobileMenu() {
+
+                    if (!mobileMenu) {
+                        return;
+                    }
+
+                    mobileMenu.classList.remove(
+                        "open"
+                    );
+
+
+                    if (menuButton) {
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+
+
+                if (menuButton) {
+
+                    menuButton.addEventListener(
+                        "click",
+                        function () {
+
+                            mobileMenu.classList.add(
+                                "open"
+                            );
+
+
+                            menuButton.setAttribute(
+                                "aria-expanded",
+                                "true"
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                if (mobileClose) {
+
+                    mobileClose.addEventListener(
+                        "click",
+                        closeMobileMenu
+                    );
+
+                }
+
+
+                document.querySelectorAll(
+                    ".mobile-menu a"
+                ).forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            closeMobileMenu
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   KEYBOARD ESCAPE
+                ================================================= */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key ===
+                            "Escape"
+                        ) {
+
+                            closeMobileMenu();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
 </body>
+
 </html>
+
